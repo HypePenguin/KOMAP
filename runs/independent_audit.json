@@ -1,0 +1,26 @@
+[
+  {
+    "variant": "centerline_baseline",
+    "independent_mIoU": 77.26280490514819,
+    "difference": 0.0,
+    "valid_masks": 18,
+    "test_masks": 10,
+    "passed": true,
+    "split_file": "C:\\Users\\SSAFY\\Desktop\\KOMAP\\configs\\split_fold0.json",
+    "split_sha256": "ff64917efc1ac2474d94101e58c1a333ad1844cd4edea676ae5db4d80ef656bc",
+    "group_invariants": null,
+    "source_hashes_verified": 100
+  },
+  {
+    "variant": "e_softmask_geometry",
+    "independent_mIoU": 77.49962168453507,
+    "difference": 0.0,
+    "valid_masks": 18,
+    "test_masks": 10,
+    "passed": true,
+    "split_file": "C:\\Users\\SSAFY\\Desktop\\KOMAP\\configs\\split_fold0.json",
+    "split_sha256": "ff64917efc1ac2474d94101e58c1a333ad1844cd4edea676ae5db4d80ef656bc",
+    "group_invariants": null,
+    "source_hashes_verified": 100
+  }
+]

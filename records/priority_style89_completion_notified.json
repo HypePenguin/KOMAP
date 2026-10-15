@@ -1,0 +1,11 @@
+{
+  "notified_at": "2026-10-15T15:52:19.7529032+09:00",
+  "experiment": "priority_style89_20261015",
+  "zip_path": "C:\\Users\\SSAFY\\Desktop\\KOMAP\\share_261015_priority_style89_A170_excluded.zip",
+  "zip_bytes": 84024863,
+  "zip_sha256": "32f506b4d3ca31c027c161be4a9faf98df2035d5ea1a13dbc12ae4cd6b5d9e5e",
+  "independent_mIoU": 86.61428017677498,
+  "scope": "A170 single-image reference; not original valid20 or independent test",
+  "reported_in": "Report revision turn; commentary and final delivery link",
+  "model_inside_zip": "model/best.pt"
+}

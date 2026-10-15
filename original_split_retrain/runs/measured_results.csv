@@ -1,0 +1,2 @@
+﻿variant,mIoU,Al,Primary Si,Al3Ni,Eutectic Si,epochs,best_epoch,train_minutes,scope
+centerline_baseline,78.81838026518486,94.17966374809808,90.32477030762593,73.65463499831563,59.067558050855624,85,65,190.04007316500005,original supplied train70/valid20; test10 unlabeled; groups retained as supplied

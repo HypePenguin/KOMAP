@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "batch": 8,
+  "input": [
+    8,
+    3,
+    768,
+    768
+  ],
+  "loss": 2.427549362182617,
+  "center_is_subset_of_final_E": true,
+  "parameters": 22093908,
+  "peak_gpu_gib": 11.082117080688477,
+  "original_split_verified": false
+}

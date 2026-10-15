@@ -1,0 +1,19 @@
+{
+  "variant": "phase_style_exchange",
+  "epoch": 75,
+  "max_epochs": 100,
+  "best_no_tta": 79.79765307030156,
+  "minutes": 173.61256450666892,
+  "last_epoch": {
+    "epoch": 75,
+    "loss": 0.2381158399581909,
+    "train_seconds": 133.4965945999138,
+    "augmentation_applied": 280,
+    "samples": 600,
+    "mIoU": 79.74035848007878,
+    "validation_seconds": 11.371916699688882
+  },
+  "attempts": 5625,
+  "updates": 5625,
+  "amp_skips": 0
+}

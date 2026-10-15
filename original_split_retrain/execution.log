@@ -1,0 +1,403 @@
+START centerline_baseline epoch=1 initial=C:\Users\SSAFY\Desktop\KOMAP\original_split_retrain\common\initial_weights.pt
+BATCH centerline_baseline epoch1 25/75
+BATCH centerline_baseline epoch1 50/75
+BATCH centerline_baseline epoch1 75/75
+EPOCH centerline_baseline 1 loss=1.24588 val=None best=-1.00000 seconds=231.1
+BATCH centerline_baseline epoch2 25/75
+BATCH centerline_baseline epoch2 50/75
+BATCH centerline_baseline epoch2 75/75
+EPOCH centerline_baseline 2 loss=0.56587 val=None best=-1.00000 seconds=127.9
+BATCH centerline_baseline epoch3 25/75
+BATCH centerline_baseline epoch3 50/75
+BATCH centerline_baseline epoch3 75/75
+EPOCH centerline_baseline 3 loss=0.48095 val=None best=-1.00000 seconds=127.6
+BATCH centerline_baseline epoch4 25/75
+BATCH centerline_baseline epoch4 50/75
+BATCH centerline_baseline epoch4 75/75
+EPOCH centerline_baseline 4 loss=0.44302 val=None best=-1.00000 seconds=127.5
+BATCH centerline_baseline epoch5 25/75
+BATCH centerline_baseline epoch5 50/75
+BATCH centerline_baseline epoch5 75/75
+EPOCH centerline_baseline 5 loss=0.42069 val=5.749888202767677 best=5.74989 seconds=127.6
+BATCH centerline_baseline epoch6 25/75
+BATCH centerline_baseline epoch6 50/75
+BATCH centerline_baseline epoch6 75/75
+EPOCH centerline_baseline 6 loss=0.40453 val=None best=5.74989 seconds=127.8
+BATCH centerline_baseline epoch7 25/75
+BATCH centerline_baseline epoch7 50/75
+BATCH centerline_baseline epoch7 75/75
+EPOCH centerline_baseline 7 loss=0.39324 val=None best=5.74989 seconds=127.8
+BATCH centerline_baseline epoch8 25/75
+BATCH centerline_baseline epoch8 50/75
+BATCH centerline_baseline epoch8 75/75
+EPOCH centerline_baseline 8 loss=0.38772 val=None best=5.74989 seconds=128.8
+BATCH centerline_baseline epoch9 25/75
+BATCH centerline_baseline epoch9 50/75
+BATCH centerline_baseline epoch9 75/75
+EPOCH centerline_baseline 9 loss=0.36944 val=None best=5.74989 seconds=125.4
+BATCH centerline_baseline epoch10 25/75
+BATCH centerline_baseline epoch10 50/75
+BATCH centerline_baseline epoch10 75/75
+EPOCH centerline_baseline 10 loss=0.36790 val=22.4695839111832 best=22.46958 seconds=132.8
+BATCH centerline_baseline epoch11 25/75
+BATCH centerline_baseline epoch11 50/75
+BATCH centerline_baseline epoch11 75/75
+EPOCH centerline_baseline 11 loss=0.36683 val=None best=22.46958 seconds=131.0
+BATCH centerline_baseline epoch12 25/75
+BATCH centerline_baseline epoch12 50/75
+BATCH centerline_baseline epoch12 75/75
+EPOCH centerline_baseline 12 loss=0.36532 val=None best=22.46958 seconds=131.1
+BATCH centerline_baseline epoch13 25/75
+BATCH centerline_baseline epoch13 50/75
+BATCH centerline_baseline epoch13 75/75
+EPOCH centerline_baseline 13 loss=0.35396 val=None best=22.46958 seconds=129.5
+BATCH centerline_baseline epoch14 25/75
+BATCH centerline_baseline epoch14 50/75
+BATCH centerline_baseline epoch14 75/75
+EPOCH centerline_baseline 14 loss=0.35445 val=None best=22.46958 seconds=132.4
+BATCH centerline_baseline epoch15 25/75
+BATCH centerline_baseline epoch15 50/75
+BATCH centerline_baseline epoch15 75/75
+EPOCH centerline_baseline 15 loss=0.35177 val=51.59255980606537 best=51.59256 seconds=130.0
+BATCH centerline_baseline epoch16 25/75
+BATCH centerline_baseline epoch16 50/75
+BATCH centerline_baseline epoch16 75/75
+EPOCH centerline_baseline 16 loss=0.34580 val=None best=51.59256 seconds=128.8
+BATCH centerline_baseline epoch17 25/75
+BATCH centerline_baseline epoch17 50/75
+BATCH centerline_baseline epoch17 75/75
+EPOCH centerline_baseline 17 loss=0.34209 val=None best=51.59256 seconds=128.8
+BATCH centerline_baseline epoch18 25/75
+BATCH centerline_baseline epoch18 50/75
+BATCH centerline_baseline epoch18 75/75
+EPOCH centerline_baseline 18 loss=0.34058 val=None best=51.59256 seconds=128.7
+BATCH centerline_baseline epoch19 25/75
+BATCH centerline_baseline epoch19 50/75
+BATCH centerline_baseline epoch19 75/75
+EPOCH centerline_baseline 19 loss=0.33900 val=None best=51.59256 seconds=128.8
+BATCH centerline_baseline epoch20 25/75
+BATCH centerline_baseline epoch20 50/75
+BATCH centerline_baseline epoch20 75/75
+EPOCH centerline_baseline 20 loss=0.33102 val=61.66043349645683 best=61.66043 seconds=128.8
+BATCH centerline_baseline epoch21 25/75
+BATCH centerline_baseline epoch21 50/75
+BATCH centerline_baseline epoch21 75/75
+EPOCH centerline_baseline 21 loss=0.32939 val=None best=61.66043 seconds=127.9
+BATCH centerline_baseline epoch22 25/75
+BATCH centerline_baseline epoch22 50/75
+BATCH centerline_baseline epoch22 75/75
+EPOCH centerline_baseline 22 loss=0.32627 val=None best=61.66043 seconds=128.9
+BATCH centerline_baseline epoch23 25/75
+BATCH centerline_baseline epoch23 50/75
+BATCH centerline_baseline epoch23 75/75
+EPOCH centerline_baseline 23 loss=0.32726 val=None best=61.66043 seconds=132.2
+BATCH centerline_baseline epoch24 25/75
+BATCH centerline_baseline epoch24 50/75
+BATCH centerline_baseline epoch24 75/75
+EPOCH centerline_baseline 24 loss=0.32290 val=None best=61.66043 seconds=131.9
+BATCH centerline_baseline epoch25 25/75
+BATCH centerline_baseline epoch25 50/75
+BATCH centerline_baseline epoch25 75/75
+EPOCH centerline_baseline 25 loss=0.31925 val=68.03198207110614 best=68.03198 seconds=130.6
+BATCH centerline_baseline epoch26 25/75
+BATCH centerline_baseline epoch26 50/75
+BATCH centerline_baseline epoch26 75/75
+EPOCH centerline_baseline 26 loss=0.31913 val=None best=68.03198 seconds=131.2
+BATCH centerline_baseline epoch27 25/75
+BATCH centerline_baseline epoch27 50/75
+BATCH centerline_baseline epoch27 75/75
+EPOCH centerline_baseline 27 loss=0.32137 val=None best=68.03198 seconds=130.4
+BATCH centerline_baseline epoch28 25/75
+BATCH centerline_baseline epoch28 50/75
+BATCH centerline_baseline epoch28 75/75
+EPOCH centerline_baseline 28 loss=0.31866 val=None best=68.03198 seconds=130.2
+BATCH centerline_baseline epoch29 25/75
+BATCH centerline_baseline epoch29 50/75
+BATCH centerline_baseline epoch29 75/75
+EPOCH centerline_baseline 29 loss=0.31376 val=None best=68.03198 seconds=130.3
+BATCH centerline_baseline epoch30 25/75
+BATCH centerline_baseline epoch30 50/75
+BATCH centerline_baseline epoch30 75/75
+EPOCH centerline_baseline 30 loss=0.31689 val=72.28745538602391 best=72.28746 seconds=129.6
+BATCH centerline_baseline epoch31 25/75
+BATCH centerline_baseline epoch31 50/75
+BATCH centerline_baseline epoch31 75/75
+EPOCH centerline_baseline 31 loss=0.30839 val=None best=72.28746 seconds=129.8
+BATCH centerline_baseline epoch32 25/75
+BATCH centerline_baseline epoch32 50/75
+BATCH centerline_baseline epoch32 75/75
+EPOCH centerline_baseline 32 loss=0.31320 val=None best=72.28746 seconds=128.7
+BATCH centerline_baseline epoch33 25/75
+BATCH centerline_baseline epoch33 50/75
+BATCH centerline_baseline epoch33 75/75
+EPOCH centerline_baseline 33 loss=0.31360 val=None best=72.28746 seconds=129.5
+BATCH centerline_baseline epoch34 25/75
+BATCH centerline_baseline epoch34 50/75
+BATCH centerline_baseline epoch34 75/75
+EPOCH centerline_baseline 34 loss=0.30875 val=None best=72.28746 seconds=131.0
+BATCH centerline_baseline epoch35 25/75
+BATCH centerline_baseline epoch35 50/75
+BATCH centerline_baseline epoch35 75/75
+EPOCH centerline_baseline 35 loss=0.30671 val=74.81331901343523 best=74.81332 seconds=130.4
+BATCH centerline_baseline epoch36 25/75
+BATCH centerline_baseline epoch36 50/75
+BATCH centerline_baseline epoch36 75/75
+EPOCH centerline_baseline 36 loss=0.30051 val=None best=74.81332 seconds=130.2
+BATCH centerline_baseline epoch37 25/75
+BATCH centerline_baseline epoch37 50/75
+BATCH centerline_baseline epoch37 75/75
+EPOCH centerline_baseline 37 loss=0.30387 val=None best=74.81332 seconds=128.5
+BATCH centerline_baseline epoch38 25/75
+BATCH centerline_baseline epoch38 50/75
+BATCH centerline_baseline epoch38 75/75
+EPOCH centerline_baseline 38 loss=0.30457 val=None best=74.81332 seconds=128.0
+BATCH centerline_baseline epoch39 25/75
+BATCH centerline_baseline epoch39 50/75
+BATCH centerline_baseline epoch39 75/75
+EPOCH centerline_baseline 39 loss=0.30593 val=None best=74.81332 seconds=128.8
+BATCH centerline_baseline epoch40 25/75
+BATCH centerline_baseline epoch40 50/75
+BATCH centerline_baseline epoch40 75/75
+EPOCH centerline_baseline 40 loss=0.30498 val=76.83594079617185 best=76.83594 seconds=129.0
+BATCH centerline_baseline epoch41 25/75
+BATCH centerline_baseline epoch41 50/75
+BATCH centerline_baseline epoch41 75/75
+EPOCH centerline_baseline 41 loss=0.29800 val=None best=76.83594 seconds=125.8
+BATCH centerline_baseline epoch42 25/75
+BATCH centerline_baseline epoch42 50/75
+BATCH centerline_baseline epoch42 75/75
+EPOCH centerline_baseline 42 loss=0.28900 val=None best=76.83594 seconds=126.1
+BATCH centerline_baseline epoch43 25/75
+BATCH centerline_baseline epoch43 50/75
+BATCH centerline_baseline epoch43 75/75
+EPOCH centerline_baseline 43 loss=0.28910 val=None best=76.83594 seconds=128.7
+BATCH centerline_baseline epoch44 25/75
+BATCH centerline_baseline epoch44 50/75
+BATCH centerline_baseline epoch44 75/75
+EPOCH centerline_baseline 44 loss=0.29764 val=None best=76.83594 seconds=125.8
+BATCH centerline_baseline epoch45 25/75
+BATCH centerline_baseline epoch45 50/75
+BATCH centerline_baseline epoch45 75/75
+EPOCH centerline_baseline 45 loss=0.29822 val=77.57517514565978 best=77.57518 seconds=126.9
+BATCH centerline_baseline epoch46 25/75
+BATCH centerline_baseline epoch46 50/75
+BATCH centerline_baseline epoch46 75/75
+EPOCH centerline_baseline 46 loss=0.29243 val=None best=77.57518 seconds=125.6
+BATCH centerline_baseline epoch47 25/75
+BATCH centerline_baseline epoch47 50/75
+BATCH centerline_baseline epoch47 75/75
+EPOCH centerline_baseline 47 loss=0.29527 val=None best=77.57518 seconds=126.5
+BATCH centerline_baseline epoch48 25/75
+BATCH centerline_baseline epoch48 50/75
+BATCH centerline_baseline epoch48 75/75
+EPOCH centerline_baseline 48 loss=0.30219 val=None best=77.57518 seconds=126.5
+BATCH centerline_baseline epoch49 25/75
+BATCH centerline_baseline epoch49 50/75
+BATCH centerline_baseline epoch49 75/75
+EPOCH centerline_baseline 49 loss=0.29554 val=None best=77.57518 seconds=126.7
+BATCH centerline_baseline epoch50 25/75
+BATCH centerline_baseline epoch50 50/75
+BATCH centerline_baseline epoch50 75/75
+EPOCH centerline_baseline 50 loss=0.29340 val=77.94512204965943 best=77.94512 seconds=126.3
+BATCH centerline_baseline epoch51 25/75
+BATCH centerline_baseline epoch51 50/75
+BATCH centerline_baseline epoch51 75/75
+EPOCH centerline_baseline 51 loss=0.28896 val=None best=77.94512 seconds=128.3
+BATCH centerline_baseline epoch52 25/75
+BATCH centerline_baseline epoch52 50/75
+BATCH centerline_baseline epoch52 75/75
+EPOCH centerline_baseline 52 loss=0.29306 val=None best=77.94512 seconds=130.2
+BATCH centerline_baseline epoch53 25/75
+BATCH centerline_baseline epoch53 50/75
+BATCH centerline_baseline epoch53 75/75
+EPOCH centerline_baseline 53 loss=0.29124 val=None best=77.94512 seconds=128.3
+BATCH centerline_baseline epoch54 25/75
+BATCH centerline_baseline epoch54 50/75
+BATCH centerline_baseline epoch54 75/75
+EPOCH centerline_baseline 54 loss=0.29003 val=None best=77.94512 seconds=128.4
+BATCH centerline_baseline epoch55 25/75
+BATCH centerline_baseline epoch55 50/75
+BATCH centerline_baseline epoch55 75/75
+EPOCH centerline_baseline 55 loss=0.28600 val=78.04428259832919 best=78.04428 seconds=128.4
+BATCH centerline_baseline epoch56 25/75
+BATCH centerline_baseline epoch56 50/75
+BATCH centerline_baseline epoch56 75/75
+EPOCH centerline_baseline 56 loss=0.28398 val=None best=78.04428 seconds=128.7
+BATCH centerline_baseline epoch57 25/75
+BATCH centerline_baseline epoch57 50/75
+BATCH centerline_baseline epoch57 75/75
+EPOCH centerline_baseline 57 loss=0.28319 val=None best=78.04428 seconds=129.4
+BATCH centerline_baseline epoch58 25/75
+BATCH centerline_baseline epoch58 50/75
+BATCH centerline_baseline epoch58 75/75
+EPOCH centerline_baseline 58 loss=0.29701 val=None best=78.04428 seconds=132.8
+BATCH centerline_baseline epoch59 25/75
+BATCH centerline_baseline epoch59 50/75
+BATCH centerline_baseline epoch59 75/75
+EPOCH centerline_baseline 59 loss=0.28838 val=None best=78.04428 seconds=129.9
+BATCH centerline_baseline epoch60 25/75
+BATCH centerline_baseline epoch60 50/75
+BATCH centerline_baseline epoch60 75/75
+EPOCH centerline_baseline 60 loss=0.28784 val=78.09743792498486 best=78.09744 seconds=132.0
+BATCH centerline_baseline epoch61 25/75
+BATCH centerline_baseline epoch61 50/75
+BATCH centerline_baseline epoch61 75/75
+EPOCH centerline_baseline 61 loss=0.28181 val=None best=78.09744 seconds=130.6
+BATCH centerline_baseline epoch62 25/75
+BATCH centerline_baseline epoch62 50/75
+BATCH centerline_baseline epoch62 75/75
+EPOCH centerline_baseline 62 loss=0.28660 val=None best=78.09744 seconds=128.6
+BATCH centerline_baseline epoch63 25/75
+BATCH centerline_baseline epoch63 50/75
+BATCH centerline_baseline epoch63 75/75
+EPOCH centerline_baseline 63 loss=0.28978 val=None best=78.09744 seconds=130.7
+BATCH centerline_baseline epoch64 25/75
+BATCH centerline_baseline epoch64 50/75
+BATCH centerline_baseline epoch64 75/75
+EPOCH centerline_baseline 64 loss=0.27682 val=None best=78.09744 seconds=131.5
+BATCH centerline_baseline epoch65 25/75
+BATCH centerline_baseline epoch65 50/75
+BATCH centerline_baseline epoch65 75/75
+EPOCH centerline_baseline 65 loss=0.28334 val=78.13799383488232 best=78.13799 seconds=133.6
+BATCH centerline_baseline epoch66 25/75
+BATCH centerline_baseline epoch66 50/75
+BATCH centerline_baseline epoch66 75/75
+EPOCH centerline_baseline 66 loss=0.29339 val=None best=78.13799 seconds=127.5
+BATCH centerline_baseline epoch67 25/75
+BATCH centerline_baseline epoch67 50/75
+BATCH centerline_baseline epoch67 75/75
+EPOCH centerline_baseline 67 loss=0.28331 val=None best=78.13799 seconds=138.1
+BATCH centerline_baseline epoch68 25/75
+BATCH centerline_baseline epoch68 50/75
+BATCH centerline_baseline epoch68 75/75
+EPOCH centerline_baseline 68 loss=0.28832 val=None best=78.13799 seconds=131.4
+BATCH centerline_baseline epoch69 25/75
+BATCH centerline_baseline epoch69 50/75
+BATCH centerline_baseline epoch69 75/75
+EPOCH centerline_baseline 69 loss=0.28703 val=None best=78.13799 seconds=130.9
+BATCH centerline_baseline epoch70 25/75
+BATCH centerline_baseline epoch70 50/75
+BATCH centerline_baseline epoch70 75/75
+EPOCH centerline_baseline 70 loss=0.27780 val=78.12180668079063 best=78.13799 seconds=133.4
+BATCH centerline_baseline epoch71 25/75
+BATCH centerline_baseline epoch71 50/75
+BATCH centerline_baseline epoch71 75/75
+EPOCH centerline_baseline 71 loss=0.27985 val=None best=78.13799 seconds=133.5
+BATCH centerline_baseline epoch72 25/75
+BATCH centerline_baseline epoch72 50/75
+BATCH centerline_baseline epoch72 75/75
+EPOCH centerline_baseline 72 loss=0.27636 val=None best=78.13799 seconds=130.6
+BATCH centerline_baseline epoch73 25/75
+BATCH centerline_baseline epoch73 50/75
+BATCH centerline_baseline epoch73 75/75
+EPOCH centerline_baseline 73 loss=0.28398 val=None best=78.13799 seconds=130.6
+BATCH centerline_baseline epoch74 25/75
+BATCH centerline_baseline epoch74 50/75
+BATCH centerline_baseline epoch74 75/75
+EPOCH centerline_baseline 74 loss=0.27521 val=None best=78.13799 seconds=130.6
+BATCH centerline_baseline epoch75 25/75
+BATCH centerline_baseline epoch75 50/75
+BATCH centerline_baseline epoch75 75/75
+EPOCH centerline_baseline 75 loss=0.28594 val=78.1076635962724 best=78.13799 seconds=134.2
+BATCH centerline_baseline epoch76 25/75
+BATCH centerline_baseline epoch76 50/75
+BATCH centerline_baseline epoch76 75/75
+EPOCH centerline_baseline 76 loss=0.27910 val=None best=78.13799 seconds=133.9
+BATCH centerline_baseline epoch77 25/75
+BATCH centerline_baseline epoch77 50/75
+BATCH centerline_baseline epoch77 75/75
+EPOCH centerline_baseline 77 loss=0.27838 val=None best=78.13799 seconds=130.2
+BATCH centerline_baseline epoch78 25/75
+BATCH centerline_baseline epoch78 50/75
+BATCH centerline_baseline epoch78 75/75
+EPOCH centerline_baseline 78 loss=0.27176 val=None best=78.13799 seconds=130.0
+BATCH centerline_baseline epoch79 25/75
+BATCH centerline_baseline epoch79 50/75
+BATCH centerline_baseline epoch79 75/75
+EPOCH centerline_baseline 79 loss=0.27494 val=None best=78.13799 seconds=129.3
+BATCH centerline_baseline epoch80 25/75
+BATCH centerline_baseline epoch80 50/75
+BATCH centerline_baseline epoch80 75/75
+EPOCH centerline_baseline 80 loss=0.27746 val=77.44947130936005 best=78.13799 seconds=129.4
+BATCH centerline_baseline epoch81 25/75
+BATCH centerline_baseline epoch81 50/75
+BATCH centerline_baseline epoch81 75/75
+EPOCH centerline_baseline 81 loss=0.27504 val=None best=78.13799 seconds=129.6
+BATCH centerline_baseline epoch82 25/75
+BATCH centerline_baseline epoch82 50/75
+BATCH centerline_baseline epoch82 75/75
+EPOCH centerline_baseline 82 loss=0.27433 val=None best=78.13799 seconds=129.3
+BATCH centerline_baseline epoch83 25/75
+BATCH centerline_baseline epoch83 50/75
+BATCH centerline_baseline epoch83 75/75
+EPOCH centerline_baseline 83 loss=0.28250 val=None best=78.13799 seconds=129.6
+BATCH centerline_baseline epoch84 25/75
+BATCH centerline_baseline epoch84 50/75
+BATCH centerline_baseline epoch84 75/75
+EPOCH centerline_baseline 84 loss=0.27952 val=None best=78.13799 seconds=130.1
+BATCH centerline_baseline epoch85 25/75
+BATCH centerline_baseline epoch85 50/75
+BATCH centerline_baseline epoch85 75/75
+EPOCH centerline_baseline 85 loss=0.27387 val=77.43358810640323 best=78.13799 seconds=130.1
+EARLY_STOP centerline_baseline epoch85
+RESULT centerline_baseline mIoU=78.818380 best_epoch=65
+[
+  {
+    "variant": "centerline_baseline",
+    "passed": true,
+    "independent_mIoU": 78.81838026518486,
+    "independent_class_iou": [
+      94.17966374809808,
+      90.32477030762593,
+      73.65463499831563,
+      59.067558050855624
+    ],
+    "difference": 0.0,
+    "valid_masks": 20,
+    "test_masks": 10,
+    "split_file": "C:\\Users\\SSAFY\\Desktop\\KOMAP\\original_split_retrain\\split.json",
+    "split_sha256": "af482b5d242ffda4cc4ebc77f859467f6bd369ed9d613b95bf20392a3789b084",
+    "data_manifest_sha256": "15cfef36482eb62a1d92f678c8d8690e75923a58b2c9bc77e7184445ef2d877d",
+    "result_sha256": "e3bc608fd2c141c7eff89775150127d2e074b63cf266b1a0cc5784f432f556cc",
+    "config_sha256": "32586cee3efed66bd476f3bf603a0163313e275b2f88d7411c7e46803851128c",
+    "data_boundary_sha256": "ecd950fa5b344d53eea5be0e351bdb47fc9735782d1318d9b79d929061bc45b4",
+    "source_subset_split_verified": true,
+    "source_hashes_verified": 100,
+    "source_image_hashes_verified": 100,
+    "source_mask_hashes_verified": 90,
+    "train_valid_image_sha256_overlap": [],
+    "train_ids_verified": 70,
+    "donor_ids_verified": 70,
+    "historical_score_comparison": "No direct difference is reported against past scores from a different partition",
+    "group_overlap": [
+      "A125",
+      "A153",
+      "A181",
+      "A191",
+      "A40",
+      "A55",
+      "A7"
+    ]
+  }
+]
+ORIGINAL_SPLIT_RESULT centerline_baseline mIoU=78.818380265
+START e_softmask_geometry epoch=1 initial=C:\Users\SSAFY\Desktop\KOMAP\original_split_retrain\runs\centerline_baseline\best.pt
+BATCH e_softmask_geometry epoch1 25/75
+BATCH e_softmask_geometry epoch1 50/75
+BATCH e_softmask_geometry epoch1 75/75
+EPOCH e_softmask_geometry 1 loss=0.34823 val=None best=-1.00000 seconds=157.3
+BATCH e_softmask_geometry epoch2 25/75
+BATCH e_softmask_geometry epoch2 50/75
+BATCH e_softmask_geometry epoch2 75/75
+EPOCH e_softmask_geometry 2 loss=0.33557 val=None best=-1.00000 seconds=130.1
+BATCH e_softmask_geometry epoch3 25/75
+BATCH e_softmask_geometry epoch3 50/75
+BATCH e_softmask_geometry epoch3 75/75
+EPOCH e_softmask_geometry 3 loss=0.34669 val=None best=-1.00000 seconds=129.7
+BATCH e_softmask_geometry epoch4 25/75
+BATCH e_softmask_geometry epoch4 50/75
+BATCH e_softmask_geometry epoch4 75/75
+EPOCH e_softmask_geometry 4 loss=0.33710 val=None best=-1.00000 seconds=129.7
+BATCH e_softmask_geometry epoch5 25/75
+BATCH e_softmask_geometry epoch5 50/75
+BATCH e_softmask_geometry epoch5 75/75

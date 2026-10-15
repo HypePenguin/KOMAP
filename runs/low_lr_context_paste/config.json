@@ -1,0 +1,58 @@
+{
+  "encoder": "tu-tf_efficientnetv2_s",
+  "mean": [
+    0.5,
+    0.5,
+    0.5
+  ],
+  "std": [
+    0.5,
+    0.5,
+    0.5
+  ],
+  "native_crop": 384,
+  "input_crop": 768,
+  "patches_per_epoch": 600,
+  "batch": 8,
+  "workers": 2,
+  "inference_batch": 8,
+  "max_epochs": 100,
+  "patience_epochs": 20,
+  "min_delta_pp": 0.02,
+  "encoder_lr": 1e-06,
+  "decoder_lr": 1e-05,
+  "reference_mIoU": {
+    "centerline_baseline": 78.9309711410583,
+    "e_softmask_geometry": 79.00779879382462,
+    "low_lr_context_paste": 78.94274586106262,
+    "phase_style_exchange": 78.92420324957915,
+    "e_protected_illumination": 78.92165697045854
+  },
+  "verified_from_sheet": [
+    "U-Net + EfficientNetV2-S",
+    "native384 to768 inputx2",
+    "seed42 fold0 train72 valid18 test10",
+    "600patch per epoch batch8 from preceding common protocol",
+    "5epoch validation max100 patience20 min_delta0.02 percentage points",
+    "D4 TTA tile768 overlap0.5",
+    "CE+Dice+0.1 E centerline recall",
+    "low LR encoder1e-6 decoder1e-5",
+    "geometry rotation3to7degrees and704to768 central zoom",
+    "phase median IQR exchange",
+    "E and3px boundary protected illumination"
+  ],
+  "reconstruction_assumptions": [
+    "Original file-level split unavailable: sorted IDs KFold5 shuffle42 fold0",
+    "Original decoder channels, encoder variant and package versions unavailable: SMP0.5.0 tu-tf_efficientnetv2_s standard U-Net decoder",
+    "Original base optimizer schedule and normalization unavailable: encoder-pretrained mean/std0.5 AdamW enc3e-5 dec3e-4 WD1e-4 cosine100",
+    "Original best.pt lost: train centerline baseline from ImageNet then fine-tune four variants",
+    "Geometry acceptance thresholds inferred: area ratio0.85to1.15 component ratio0.6to1.6 and bilinear soft targets",
+    "Original style strength and lighting amplitudes unavailable: recorded reconstructed values in source",
+    "Original tile blend unknown: uniform probability accumulation; FP16 AMP and FP32 probability mean",
+    "Checkpoint selected by no-TTA valid18; D4 evaluated only after selection",
+    "Loader workers reduced from4 to2 after execution storage exhaustion; seed/index sampling and learning settings unchanged"
+  ],
+  "variant": "low_lr_context_paste",
+  "initial_checkpoint": "C:\\Users\\SSAFY\\Desktop\\KOMAP\\runs\\centerline_baseline\\best.pt",
+  "status": "reconstructed, original split/code unavailable"
+}

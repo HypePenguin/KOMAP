@@ -1,0 +1,304 @@
+CHECKPOINT_WRITE_PROBE_START CPU clean baseline last.pt
+CHECKPOINT_WRITE_PROBE_PASSED bytes=355755568
+START phase_style_exchange epoch=1 initial=C:\Users\SSAFY\Desktop\KOMAP\priority_style89_20261015\common\initial_weights.pt
+BATCH phase_style_exchange epoch1 25/75
+BATCH phase_style_exchange epoch1 50/75
+BATCH phase_style_exchange epoch1 75/75
+EPOCH phase_style_exchange 1 loss=0.32115 val=None best=-1.00000 seconds=179.1
+BATCH phase_style_exchange epoch2 25/75
+BATCH phase_style_exchange epoch2 50/75
+BATCH phase_style_exchange epoch2 75/75
+EPOCH phase_style_exchange 2 loss=0.30198 val=None best=-1.00000 seconds=127.8
+BATCH phase_style_exchange epoch3 25/75
+BATCH phase_style_exchange epoch3 50/75
+BATCH phase_style_exchange epoch3 75/75
+EPOCH phase_style_exchange 3 loss=0.30826 val=None best=-1.00000 seconds=127.8
+BATCH phase_style_exchange epoch4 25/75
+BATCH phase_style_exchange epoch4 50/75
+BATCH phase_style_exchange epoch4 75/75
+EPOCH phase_style_exchange 4 loss=0.30608 val=None best=-1.00000 seconds=127.2
+BATCH phase_style_exchange epoch5 25/75
+BATCH phase_style_exchange epoch5 50/75
+BATCH phase_style_exchange epoch5 75/75
+EPOCH phase_style_exchange 5 loss=0.29645 val=85.63257093026841 best=85.63257 seconds=126.8
+BATCH phase_style_exchange epoch6 25/75
+BATCH phase_style_exchange epoch6 50/75
+BATCH phase_style_exchange epoch6 75/75
+EPOCH phase_style_exchange 6 loss=0.29643 val=None best=85.63257 seconds=128.3
+BATCH phase_style_exchange epoch7 25/75
+BATCH phase_style_exchange epoch7 50/75
+BATCH phase_style_exchange epoch7 75/75
+EPOCH phase_style_exchange 7 loss=0.29716 val=None best=85.63257 seconds=127.2
+BATCH phase_style_exchange epoch8 25/75
+BATCH phase_style_exchange epoch8 50/75
+BATCH phase_style_exchange epoch8 75/75
+EPOCH phase_style_exchange 8 loss=0.29152 val=None best=85.63257 seconds=136.5
+BATCH phase_style_exchange epoch9 25/75
+BATCH phase_style_exchange epoch9 50/75
+BATCH phase_style_exchange epoch9 75/75
+EPOCH phase_style_exchange 9 loss=0.29295 val=None best=85.63257 seconds=134.6
+BATCH phase_style_exchange epoch10 25/75
+BATCH phase_style_exchange epoch10 50/75
+BATCH phase_style_exchange epoch10 75/75
+EPOCH phase_style_exchange 10 loss=0.29141 val=85.85841200155426 best=85.85841 seconds=132.7
+BATCH phase_style_exchange epoch11 25/75
+BATCH phase_style_exchange epoch11 50/75
+BATCH phase_style_exchange epoch11 75/75
+EPOCH phase_style_exchange 11 loss=0.29288 val=None best=85.85841 seconds=132.2
+BATCH phase_style_exchange epoch12 25/75
+BATCH phase_style_exchange epoch12 50/75
+BATCH phase_style_exchange epoch12 75/75
+EPOCH phase_style_exchange 12 loss=0.29176 val=None best=85.85841 seconds=129.5
+BATCH phase_style_exchange epoch13 25/75
+BATCH phase_style_exchange epoch13 50/75
+BATCH phase_style_exchange epoch13 75/75
+EPOCH phase_style_exchange 13 loss=0.28952 val=None best=85.85841 seconds=129.4
+BATCH phase_style_exchange epoch14 25/75
+BATCH phase_style_exchange epoch14 50/75
+START phase_style_exchange epoch=11 initial=C:\Users\SSAFY\Desktop\KOMAP\priority_style89_20261015\common\initial_weights.pt
+BATCH phase_style_exchange epoch11 25/75
+BATCH phase_style_exchange epoch11 50/75
+BATCH phase_style_exchange epoch11 75/75
+EPOCH phase_style_exchange 11 loss=0.29289 val=None best=85.85841 seconds=173.4
+BATCH phase_style_exchange epoch12 25/75
+BATCH phase_style_exchange epoch12 50/75
+BATCH phase_style_exchange epoch12 75/75
+EPOCH phase_style_exchange 12 loss=0.29176 val=None best=85.85841 seconds=129.3
+BATCH phase_style_exchange epoch13 25/75
+BATCH phase_style_exchange epoch13 50/75
+BATCH phase_style_exchange epoch13 75/75
+EPOCH phase_style_exchange 13 loss=0.28952 val=None best=85.85841 seconds=130.1
+BATCH phase_style_exchange epoch14 25/75
+BATCH phase_style_exchange epoch14 50/75
+BATCH phase_style_exchange epoch14 75/75
+EPOCH phase_style_exchange 14 loss=0.27992 val=None best=85.85841 seconds=133.0
+BATCH phase_style_exchange epoch15 25/75
+BATCH phase_style_exchange epoch15 50/75
+BATCH phase_style_exchange epoch15 75/75
+EPOCH phase_style_exchange 15 loss=0.29321 val=86.01985714382036 best=86.01986 seconds=131.1
+BATCH phase_style_exchange epoch16 25/75
+BATCH phase_style_exchange epoch16 50/75
+BATCH phase_style_exchange epoch16 75/75
+EPOCH phase_style_exchange 16 loss=0.28628 val=None best=86.01986 seconds=127.7
+BATCH phase_style_exchange epoch17 25/75
+BATCH phase_style_exchange epoch17 50/75
+BATCH phase_style_exchange epoch17 75/75
+EPOCH phase_style_exchange 17 loss=0.29131 val=None best=86.01986 seconds=130.5
+BATCH phase_style_exchange epoch18 25/75
+BATCH phase_style_exchange epoch18 50/75
+BATCH phase_style_exchange epoch18 75/75
+EPOCH phase_style_exchange 18 loss=0.28563 val=None best=86.01986 seconds=132.1
+BATCH phase_style_exchange epoch19 25/75
+BATCH phase_style_exchange epoch19 50/75
+BATCH phase_style_exchange epoch19 75/75
+EPOCH phase_style_exchange 19 loss=0.28144 val=None best=86.01986 seconds=131.6
+BATCH phase_style_exchange epoch20 25/75
+BATCH phase_style_exchange epoch20 50/75
+BATCH phase_style_exchange epoch20 75/75
+EPOCH phase_style_exchange 20 loss=0.27985 val=86.0768996037744 best=86.07690 seconds=129.8
+BATCH phase_style_exchange epoch21 25/75
+BATCH phase_style_exchange epoch21 50/75
+BATCH phase_style_exchange epoch21 75/75
+EPOCH phase_style_exchange 21 loss=0.29071 val=None best=86.07690 seconds=130.5
+BATCH phase_style_exchange epoch22 25/75
+BATCH phase_style_exchange epoch22 50/75
+BATCH phase_style_exchange epoch22 75/75
+EPOCH phase_style_exchange 22 loss=0.28008 val=None best=86.07690 seconds=127.7
+BATCH phase_style_exchange epoch23 25/75
+BATCH phase_style_exchange epoch23 50/75
+BATCH phase_style_exchange epoch23 75/75
+EPOCH phase_style_exchange 23 loss=0.28692 val=None best=86.07690 seconds=127.3
+BATCH phase_style_exchange epoch24 25/75
+BATCH phase_style_exchange epoch24 50/75
+BATCH phase_style_exchange epoch24 75/75
+EPOCH phase_style_exchange 24 loss=0.28165 val=None best=86.07690 seconds=127.2
+BATCH phase_style_exchange epoch25 25/75
+BATCH phase_style_exchange epoch25 50/75
+BATCH phase_style_exchange epoch25 75/75
+EPOCH phase_style_exchange 25 loss=0.27971 val=86.14934310887028 best=86.14934 seconds=129.9
+BATCH phase_style_exchange epoch26 25/75
+BATCH phase_style_exchange epoch26 50/75
+BATCH phase_style_exchange epoch26 75/75
+EPOCH phase_style_exchange 26 loss=0.28329 val=None best=86.14934 seconds=129.7
+BATCH phase_style_exchange epoch27 25/75
+BATCH phase_style_exchange epoch27 50/75
+BATCH phase_style_exchange epoch27 75/75
+EPOCH phase_style_exchange 27 loss=0.27756 val=None best=86.14934 seconds=128.4
+BATCH phase_style_exchange epoch28 25/75
+BATCH phase_style_exchange epoch28 50/75
+BATCH phase_style_exchange epoch28 75/75
+EPOCH phase_style_exchange 28 loss=0.27344 val=None best=86.14934 seconds=131.7
+BATCH phase_style_exchange epoch29 25/75
+BATCH phase_style_exchange epoch29 50/75
+BATCH phase_style_exchange epoch29 75/75
+EPOCH phase_style_exchange 29 loss=0.28238 val=None best=86.14934 seconds=130.8
+BATCH phase_style_exchange epoch30 25/75
+BATCH phase_style_exchange epoch30 50/75
+BATCH phase_style_exchange epoch30 75/75
+EPOCH phase_style_exchange 30 loss=0.27902 val=86.12164072631288 best=86.14934 seconds=128.0
+BATCH phase_style_exchange epoch31 25/75
+BATCH phase_style_exchange epoch31 50/75
+BATCH phase_style_exchange epoch31 75/75
+EPOCH phase_style_exchange 31 loss=0.27703 val=None best=86.14934 seconds=129.1
+BATCH phase_style_exchange epoch32 25/75
+BATCH phase_style_exchange epoch32 50/75
+BATCH phase_style_exchange epoch32 75/75
+EPOCH phase_style_exchange 32 loss=0.27634 val=None best=86.14934 seconds=128.8
+BATCH phase_style_exchange epoch33 25/75
+BATCH phase_style_exchange epoch33 50/75
+BATCH phase_style_exchange epoch33 75/75
+EPOCH phase_style_exchange 33 loss=0.27424 val=None best=86.14934 seconds=128.9
+BATCH phase_style_exchange epoch34 25/75
+BATCH phase_style_exchange epoch34 50/75
+BATCH phase_style_exchange epoch34 75/75
+EPOCH phase_style_exchange 34 loss=0.27577 val=None best=86.14934 seconds=130.0
+BATCH phase_style_exchange epoch35 25/75
+BATCH phase_style_exchange epoch35 50/75
+BATCH phase_style_exchange epoch35 75/75
+EPOCH phase_style_exchange 35 loss=0.27174 val=86.10688375243026 best=86.14934 seconds=130.3
+BATCH phase_style_exchange epoch36 25/75
+BATCH phase_style_exchange epoch36 50/75
+BATCH phase_style_exchange epoch36 75/75
+EPOCH phase_style_exchange 36 loss=0.27361 val=None best=86.14934 seconds=129.8
+BATCH phase_style_exchange epoch37 25/75
+BATCH phase_style_exchange epoch37 50/75
+BATCH phase_style_exchange epoch37 75/75
+EPOCH phase_style_exchange 37 loss=0.26920 val=None best=86.14934 seconds=130.0
+BATCH phase_style_exchange epoch38 25/75
+BATCH phase_style_exchange epoch38 50/75
+BATCH phase_style_exchange epoch38 75/75
+EPOCH phase_style_exchange 38 loss=0.27058 val=None best=86.14934 seconds=130.4
+BATCH phase_style_exchange epoch39 25/75
+BATCH phase_style_exchange epoch39 50/75
+BATCH phase_style_exchange epoch39 75/75
+EPOCH phase_style_exchange 39 loss=0.28058 val=None best=86.14934 seconds=131.0
+BATCH phase_style_exchange epoch40 25/75
+BATCH phase_style_exchange epoch40 50/75
+BATCH phase_style_exchange epoch40 75/75
+EPOCH phase_style_exchange 40 loss=0.26732 val=86.11805731846869 best=86.14934 seconds=131.2
+BATCH phase_style_exchange epoch41 25/75
+BATCH phase_style_exchange epoch41 50/75
+BATCH phase_style_exchange epoch41 75/75
+EPOCH phase_style_exchange 41 loss=0.26405 val=None best=86.14934 seconds=130.9
+BATCH phase_style_exchange epoch42 25/75
+BATCH phase_style_exchange epoch42 50/75
+BATCH phase_style_exchange epoch42 75/75
+EPOCH phase_style_exchange 42 loss=0.26123 val=None best=86.14934 seconds=132.2
+BATCH phase_style_exchange epoch43 25/75
+BATCH phase_style_exchange epoch43 50/75
+BATCH phase_style_exchange epoch43 75/75
+EPOCH phase_style_exchange 43 loss=0.26969 val=None best=86.14934 seconds=128.7
+BATCH phase_style_exchange epoch44 25/75
+BATCH phase_style_exchange epoch44 50/75
+BATCH phase_style_exchange epoch44 75/75
+EPOCH phase_style_exchange 44 loss=0.27859 val=None best=86.14934 seconds=130.1
+BATCH phase_style_exchange epoch45 25/75
+BATCH phase_style_exchange epoch45 50/75
+BATCH phase_style_exchange epoch45 75/75
+EPOCH phase_style_exchange 45 loss=0.27017 val=86.10170015591362 best=86.14934 seconds=130.4
+EARLY_STOP phase_style_exchange epoch45
+RESULT phase_style_exchange mIoU=86.614280 best_epoch=25
+{
+  "variant": "phase_style_exchange",
+  "passed": true,
+  "independent_mIoU": 86.61428017677498,
+  "independent_class_iou": [
+    93.76223759626909,
+    90.23448752664632,
+    90.96517932736477,
+    71.4952162568198
+  ],
+  "difference": 0.0,
+  "valid_masks": 1,
+  "test_masks": 10,
+  "prediction_sha256": {
+    "valid_masks_d4\\A170_step4_sample3_mask.png": "4b2f458b9a00f2d49477af3560f54a57a8acfffdd41257477933932ea47c2a20",
+    "test_masks_d4\\A107_step1_sample3_mask.png": "160d37e20fb1469ad2f65bfe8137e779c2429e6881a3cb3b4c10dc207839d0e2",
+    "test_masks_d4\\A122_step4_sample1_mask.png": "dd4c88a35faaf3742027ed7128b062a3a2cec9bcfbae75c1c075f57124a511b4",
+    "test_masks_d4\\A124_step4_sample3_mask.png": "5d11b366c2ec43fcf354b97014dca1e3edbc94fc21a13381844f6eaba6dc46fa",
+    "test_masks_d4\\A127_step3_sample2_mask.png": "0de9ace03d836c337947ef720bf3d2e86b2618c0399ffb5615dbea2f8e08d59f",
+    "test_masks_d4\\A133_step4_sample1_mask.png": "8fc3b923ea70f29ed3a6a0cbc04d23931bcd11855bbb6444214a7ab27f1fb9e6",
+    "test_masks_d4\\A167_step3_sample3_mask.png": "d0d10720ba5b054558e6e7e92e7be8a7d75b0c2835aa749d919355202e5671f2",
+    "test_masks_d4\\A38_step2_sample2_mask.png": "e4528aca2a0c6ff589859737e2a985cc7aba27af2a236b423582c8972a23cf48",
+    "test_masks_d4\\A51_step3_sample3_mask.png": "7501f6dc0c2677a091321cc133b7a1b30caede35f727892d1d8508cfdcfd9221",
+    "test_masks_d4\\A63_step2_sample3_mask.png": "59b652b2a8e5d37266ec6e34cb98c936dc1fac915c177de94a863c28aeaf5cff",
+    "test_masks_d4\\A87_step1_sample4_mask.png": "d0f15ba0f22c1b1c533d1a5e8094d3c8045e460ee98b97b6aa3271c3cdc4da72"
+  },
+  "source_image_hashes_verified": 100,
+  "source_mask_hashes_verified": 90,
+  "train_valid_image_sha256_overlap": [],
+  "baseline_checkpoint_sha256": "6bf6809c18cb49d576e704fa0738d54e9e83fc0abc47a21e227ec796ee2054be",
+  "baseline_best_epoch": 65,
+  "baseline_train_ids_verified": 70,
+  "baseline_donor_ids_verified": 70,
+  "baseline_verification_sha256": "b684084d50ed8bdf723c7ff2554034c9fda05f2295d0f08cc0572b4eae91a762",
+  "baseline_holdout_used_for_checkpoint_selection": true,
+  "split_sha256": "e2c8522673771b56965af83f6d2e10bf3d7d86bc0547ece876e48318d361ea07",
+  "data_manifest_sha256": "15cfef36482eb62a1d92f678c8d8690e75923a58b2c9bc77e7184445ef2d877d",
+  "plan_sha256": "5934fb0be4cc13229fc52b0c8046113b82f790a1cd5d25e3a4d3b7d0b08c4669",
+  "result_sha256": "b214b9d820ce6b6ed9229cbd588aa8316431494f4fa97f5f893e55ba64b138ed",
+  "config_sha256": "78eaac6c2835fb86a767af7bc6912d7e329d03287cb990a8d79981e91d0399dd",
+  "provenance_sha256": "f2ef235112f963f5c67ba5d0d52fcbaeaed1474460af0b263ad7718bd73f64b1",
+  "data_boundary_sha256": "1b4eb9ad1262c1571087ca8d29a8ee9a64be273bfbb67e5c3f89ec3b6119be8c",
+  "best_checkpoint_sha256": "e464af75e27dc7e8204287b2dc6f11fca8184c05aad09db5050dd0a320b0c626",
+  "train_ids_verified": 89,
+  "donor_ids_verified": 89,
+  "excluded_id": "A170_step4_sample3",
+  "excluded_from_backpropagation_and_donors": true,
+  "validation_scope": "single_image_reference",
+  "valid20_evaluation": false,
+  "metric_caveat": "Single A170 image used for model selection, including baseline selection; not a valid20 score or an independent generalization estimate."
+}
+{
+  "variant": "phase_style_exchange",
+  "passed": true,
+  "independent_mIoU": 86.61428017677498,
+  "independent_class_iou": [
+    93.76223759626909,
+    90.23448752664632,
+    90.96517932736477,
+    71.4952162568198
+  ],
+  "difference": 0.0,
+  "valid_masks": 1,
+  "test_masks": 10,
+  "prediction_sha256": {
+    "valid_masks_d4\\A170_step4_sample3_mask.png": "4b2f458b9a00f2d49477af3560f54a57a8acfffdd41257477933932ea47c2a20",
+    "test_masks_d4\\A107_step1_sample3_mask.png": "160d37e20fb1469ad2f65bfe8137e779c2429e6881a3cb3b4c10dc207839d0e2",
+    "test_masks_d4\\A122_step4_sample1_mask.png": "dd4c88a35faaf3742027ed7128b062a3a2cec9bcfbae75c1c075f57124a511b4",
+    "test_masks_d4\\A124_step4_sample3_mask.png": "5d11b366c2ec43fcf354b97014dca1e3edbc94fc21a13381844f6eaba6dc46fa",
+    "test_masks_d4\\A127_step3_sample2_mask.png": "0de9ace03d836c337947ef720bf3d2e86b2618c0399ffb5615dbea2f8e08d59f",
+    "test_masks_d4\\A133_step4_sample1_mask.png": "8fc3b923ea70f29ed3a6a0cbc04d23931bcd11855bbb6444214a7ab27f1fb9e6",
+    "test_masks_d4\\A167_step3_sample3_mask.png": "d0d10720ba5b054558e6e7e92e7be8a7d75b0c2835aa749d919355202e5671f2",
+    "test_masks_d4\\A38_step2_sample2_mask.png": "e4528aca2a0c6ff589859737e2a985cc7aba27af2a236b423582c8972a23cf48",
+    "test_masks_d4\\A51_step3_sample3_mask.png": "7501f6dc0c2677a091321cc133b7a1b30caede35f727892d1d8508cfdcfd9221",
+    "test_masks_d4\\A63_step2_sample3_mask.png": "59b652b2a8e5d37266ec6e34cb98c936dc1fac915c177de94a863c28aeaf5cff",
+    "test_masks_d4\\A87_step1_sample4_mask.png": "d0f15ba0f22c1b1c533d1a5e8094d3c8045e460ee98b97b6aa3271c3cdc4da72"
+  },
+  "source_image_hashes_verified": 100,
+  "source_mask_hashes_verified": 90,
+  "train_valid_image_sha256_overlap": [],
+  "baseline_checkpoint_sha256": "6bf6809c18cb49d576e704fa0738d54e9e83fc0abc47a21e227ec796ee2054be",
+  "baseline_best_epoch": 65,
+  "baseline_train_ids_verified": 70,
+  "baseline_donor_ids_verified": 70,
+  "baseline_verification_sha256": "b684084d50ed8bdf723c7ff2554034c9fda05f2295d0f08cc0572b4eae91a762",
+  "baseline_holdout_used_for_checkpoint_selection": true,
+  "split_sha256": "e2c8522673771b56965af83f6d2e10bf3d7d86bc0547ece876e48318d361ea07",
+  "data_manifest_sha256": "15cfef36482eb62a1d92f678c8d8690e75923a58b2c9bc77e7184445ef2d877d",
+  "plan_sha256": "5934fb0be4cc13229fc52b0c8046113b82f790a1cd5d25e3a4d3b7d0b08c4669",
+  "result_sha256": "b214b9d820ce6b6ed9229cbd588aa8316431494f4fa97f5f893e55ba64b138ed",
+  "config_sha256": "78eaac6c2835fb86a767af7bc6912d7e329d03287cb990a8d79981e91d0399dd",
+  "provenance_sha256": "f2ef235112f963f5c67ba5d0d52fcbaeaed1474460af0b263ad7718bd73f64b1",
+  "data_boundary_sha256": "1b4eb9ad1262c1571087ca8d29a8ee9a64be273bfbb67e5c3f89ec3b6119be8c",
+  "best_checkpoint_sha256": "e464af75e27dc7e8204287b2dc6f11fca8184c05aad09db5050dd0a320b0c626",
+  "train_ids_verified": 89,
+  "donor_ids_verified": 89,
+  "excluded_id": "A170_step4_sample3",
+  "excluded_from_backpropagation_and_donors": true,
+  "validation_scope": "single_image_reference",
+  "valid20_evaluation": false,
+  "metric_caveat": "Single A170 image used for model selection, including baseline selection; not a valid20 score or an independent generalization estimate."
+}
+PRIORITY_STYLE89_ZIP C:\Users\SSAFY\Desktop\KOMAP\share_261015_priority_style89_A170_excluded.zip
+PRIORITY_STYLE89_COMPLETE

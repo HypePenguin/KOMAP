@@ -1,0 +1,14 @@
+{
+  "variant": "low_lr_context_paste",
+  "stage": "training",
+  "epoch_completed": 21,
+  "epoch_in_progress": 22,
+  "batch_in_epoch": 25,
+  "batches_per_epoch": 75,
+  "max_epochs": 100,
+  "best_no_tta": 76.91750582148799,
+  "minutes": 47.08786355832902,
+  "attempts": 1600,
+  "updates": 1600,
+  "amp_skips": 0
+}

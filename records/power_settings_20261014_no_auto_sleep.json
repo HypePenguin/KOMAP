@@ -1,0 +1,19 @@
+{
+  "changed_at": "2026-10-14T17:49:22.1890935+09:00",
+  "reason": "사용자 요청: 화면 꺼짐·잠금 중에도 작업 지속",
+  "active_scheme": "전원 구성표 GUID: 381b4222-f694-41f0-9685-ff5bb260df2e  (균형 조정)\r\n",
+  "before_sleep": "전원 구성표 GUID: 381b4222-f694-41f0-9685-ff5bb260df2e  (균형 조정)\r\n  GUID 별칭: SCHEME_BALANCED\r\n  하위 그룹 GUID: 238c9fa8-0aad-41ed-83f4-97be242c8f20  (절전)\r\n    GUID 별칭: SUB_SLEEP\r\n    전원 설정 GUID: 29f6c1db-86da-48c5-9fdb-f2b67b1f44da  (다음 시간 후 절전 모드로 전환)\r\n      GUID 별칭: STANDBYIDLE\r\n      가능한 최소 설정: 0x00000000\r\n      가능한 최대 설정: 0xffffffff\r\n      가능한 설정 증가: 0x00000001\r\n      가능한 설정 단위: 초\r\n    현재 AC 전원 설정 색인: 0x00001c20\r\n    현재 DC 전원 설정 색인: 0x00000258\r\n\r\n",
+  "before_hibernate": "전원 구성표 GUID: 381b4222-f694-41f0-9685-ff5bb260df2e  (균형 조정)\r\n  GUID 별칭: SCHEME_BALANCED\r\n  하위 그룹 GUID: 238c9fa8-0aad-41ed-83f4-97be242c8f20  (절전)\r\n    GUID 별칭: SUB_SLEEP\r\n    전원 설정 GUID: 9d7815a6-7ee4-497e-8888-515a05f02364  (다음 시간 이후에 최대 절전 모드로 전환)\r\n      GUID 별칭: HIBERNATEIDLE\r\n      가능한 최소 설정: 0x00000000\r\n      가능한 최대 설정: 0xffffffff\r\n      가능한 설정 증가: 0x00000001\r\n      가능한 설정 단위: 초\r\n    현재 AC 전원 설정 색인: 0x00001c20\r\n    현재 DC 전원 설정 색인: 0x00000000\r\n\r\n",
+  "before_display": "전원 구성표 GUID: 381b4222-f694-41f0-9685-ff5bb260df2e  (균형 조정)\r\n  GUID 별칭: SCHEME_BALANCED\r\n  하위 그룹 GUID: 7516b95f-f776-4464-8c53-06167f40cc99  (디스플레이)\r\n    GUID 별칭: SUB_VIDEO\r\n    전원 설정 GUID: 3c0bc021-c8a8-4e07-a973-6b14cbcb2b7e  (다음 시간 이후에 끄기)\r\n      GUID 별칭: VIDEOIDLE\r\n      가능한 최소 설정: 0x00000000\r\n      가능한 최대 설정: 0xffffffff\r\n      가능한 설정 증가: 0x00000001\r\n      가능한 설정 단위: 초\r\n    현재 AC 전원 설정 색인: 0x00001c20\r\n    현재 DC 전원 설정 색인: 0x000000b4\r\n\r\n",
+  "state": "verified",
+  "scope": "AC power only",
+  "manual_sleep_prevented": false,
+  "after_sleep": "전원 구성표 GUID: 381b4222-f694-41f0-9685-ff5bb260df2e  (균형 조정)\r\n  GUID 별칭: SCHEME_BALANCED\r\n  하위 그룹 GUID: 238c9fa8-0aad-41ed-83f4-97be242c8f20  (절전)\r\n    GUID 별칭: SUB_SLEEP\r\n    전원 설정 GUID: 29f6c1db-86da-48c5-9fdb-f2b67b1f44da  (다음 시간 후 절전 모드로 전환)\r\n      GUID 별칭: STANDBYIDLE\r\n      가능한 최소 설정: 0x00000000\r\n      가능한 최대 설정: 0xffffffff\r\n      가능한 설정 증가: 0x00000001\r\n      가능한 설정 단위: 초\r\n    현재 AC 전원 설정 색인: 0x00000000\r\n    현재 DC 전원 설정 색인: 0x00000258\r\n\r\n",
+  "after_hibernate": "전원 구성표 GUID: 381b4222-f694-41f0-9685-ff5bb260df2e  (균형 조정)\r\n  GUID 별칭: SCHEME_BALANCED\r\n  하위 그룹 GUID: 238c9fa8-0aad-41ed-83f4-97be242c8f20  (절전)\r\n    GUID 별칭: SUB_SLEEP\r\n    전원 설정 GUID: 9d7815a6-7ee4-497e-8888-515a05f02364  (다음 시간 이후에 최대 절전 모드로 전환)\r\n      GUID 별칭: HIBERNATEIDLE\r\n      가능한 최소 설정: 0x00000000\r\n      가능한 최대 설정: 0xffffffff\r\n      가능한 설정 증가: 0x00000001\r\n      가능한 설정 단위: 초\r\n    현재 AC 전원 설정 색인: 0x00000000\r\n    현재 DC 전원 설정 색인: 0x00000000\r\n\r\n",
+  "after_display": "전원 구성표 GUID: 381b4222-f694-41f0-9685-ff5bb260df2e  (균형 조정)\r\n  GUID 별칭: SCHEME_BALANCED\r\n  하위 그룹 GUID: 7516b95f-f776-4464-8c53-06167f40cc99  (디스플레이)\r\n    GUID 별칭: SUB_VIDEO\r\n    전원 설정 GUID: 3c0bc021-c8a8-4e07-a973-6b14cbcb2b7e  (다음 시간 이후에 끄기)\r\n      GUID 별칭: VIDEOIDLE\r\n      가능한 최소 설정: 0x00000000\r\n      가능한 최대 설정: 0xffffffff\r\n      가능한 설정 증가: 0x00000001\r\n      가능한 설정 단위: 초\r\n    현재 AC 전원 설정 색인: 0x00001c20\r\n    현재 DC 전원 설정 색인: 0x000000b4\r\n\r\n",
+  "display_and_dc_unchanged": true,
+  "restore_commands": [
+    "powercfg /change standby-timeout-ac 120",
+    "powercfg /change hibernate-timeout-ac 120"
+  ]
+}

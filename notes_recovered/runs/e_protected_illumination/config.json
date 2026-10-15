@@ -1,0 +1,70 @@
+{
+  "encoder": "tu-tf_efficientnetv2_s.in21k_ft_in1k",
+  "mean": [
+    0.5,
+    0.5,
+    0.5
+  ],
+  "std": [
+    0.5,
+    0.5,
+    0.5
+  ],
+  "native_crop": 384,
+  "input_crop": 768,
+  "patches_per_epoch": 600,
+  "batch": 8,
+  "workers": 2,
+  "inference_batch": 8,
+  "max_epochs": 100,
+  "patience_epochs": 20,
+  "min_delta_pp": 0.02,
+  "encoder_lr": 3e-05,
+  "decoder_lr": 0.0003,
+  "weight_decay": 0.05,
+  "ema_decay": 0.999,
+  "recall_smooth": 1e-05,
+  "center_after_final_transform": true,
+  "scheduler_per_step": true,
+  "min_lr": 1e-07,
+  "reference_mIoU": {
+    "centerline_baseline": 78.9309711410583,
+    "e_softmask_geometry": 79.00779879382462,
+    "low_lr_context_paste": 78.94274586106262,
+    "phase_style_exchange": 78.92420324957915,
+    "e_protected_illumination": 78.92165697045854
+  },
+  "source_notes_rows": [
+    1,
+    10,
+    22,
+    28
+  ],
+  "expected_parameters": 22093908,
+  "expected_original_initial_sha256": "401b67f68607def4bcba0a0987983012f2733a1c9dc62243e08433483e5c996e",
+  "confirmed_from_notes": [
+    "explicit encoder/pretrained tag",
+    "AdamW decoder3e-4 encoder multiplier0.1",
+    "weight decay0.05",
+    "EMA0.999",
+    "final-transformed GT skeleton + cross dilation twice intersect E",
+    "aux recall smooth1e-5 per-present-E-patch mean",
+    "primary checkpoint selection tile512 and secondary tile768",
+    "batch8 samples600 seed42 workers2 threads4",
+    "22,093,908 model parameters",
+    "train72 valid18 valid14 A groups and train/valid A group disjoint"
+  ],
+  "remaining_assumptions": [
+    "Original folds.csv not recovered; documented group split candidate frozen before any model evaluation.",
+    "Cosine per-update schedule with minimum1e-7 inferred; exact schedule not specified in recovered config notes.",
+    "Fine-tune selection tile512 inherited from earlier common protocol; final Oct7 fine-tune selection tile not explicit.",
+    "Original source code/software versions and detailed augmentation gates/intensities unavailable; reconstruct values retained.",
+    "Inference batch8, uniform overlap probability mean and FP16 AMP retained; exact original inference batching/blend unknown.",
+    "All five runs follow the final Oct7 max100/patience20/minDelta0.02 protocol, including the baseline retrain in row98."
+  ],
+  "variant": "e_protected_illumination",
+  "initial_checkpoint": "C:\\Users\\SSAFY\\Desktop\\KOMAP\\notes_recovered\\runs\\centerline_baseline\\best.pt",
+  "selection_tile": 512,
+  "early_stop_enabled": true,
+  "status": "reconstructed, original split/code unavailable"
+}

@@ -1,0 +1,277 @@
+{
+  "created_date": "2026-10-15",
+  "language": "ko",
+  "purpose": "KOMAP 기법별 문헌 근거와 실제 구현 차이",
+  "source_code": "C:/Users/SSAFY/Desktop/KOMAP/src/experiment.py",
+  "papers": [
+    {
+      "id": "unet2015",
+      "title": "U-Net: Convolutional Networks for Biomedical Image Segmentation",
+      "year": 2015,
+      "authors": [
+        "Olaf Ronneberger",
+        "Philipp Fischer",
+        "Thomas Brox"
+      ],
+      "url": "https://arxiv.org/abs/1505.04597",
+      "pdf_url": "https://arxiv.org/pdf/1505.04597",
+      "venue": "MICCAI 2015",
+      "techniques": [
+        "U-Net",
+        "기하·명암 증강",
+        "overlap tile",
+        "회전 예측 평균"
+      ],
+      "supported_claim_ko": "축소 경로의 문맥 정보와 고해상도 특징을 확대 경로에서 결합해 픽셀 위치를 복원한다. 적은 현미경 학습 영상에 기하·명암 변화 증강을 사용하며, 큰 영상을 메모리 범위 내에서 분할하는 overlap-tile과 회전 입력 예측 평균을 보고한다.",
+      "local_implementation_ko": "EfficientNetV2-S encoder를 붙인 SMP U-Net. 원본384 crop을768로 확대하고 D4 학습 증강을 한다. 추론은50% 겹침 타일과 D4 8방향 확률 평균이다.",
+      "limitation_ko": "원 U-Net 전체 구조의 동일 재현은 아니다. 원문 v1의 회전 평균 설명은 '7 rotated versions'이므로 정확한 D4 8개를 원문 수치로 쓰지 않는다. crop384/768·overlap0.5·조명 보호 규칙의 최적성은 입증하지 않는다.",
+      "locator": "§2, §3.1, Fig.2, §4 (PDF pp.3–6)"
+    },
+    {
+      "id": "efficientnetv2_2021",
+      "title": "EfficientNetV2: Smaller Models and Faster Training",
+      "year": 2021,
+      "authors": [
+        "Mingxing Tan",
+        "Quoc V. Le"
+      ],
+      "url": "https://proceedings.mlr.press/v139/tan21a.html",
+      "pdf_url": "https://proceedings.mlr.press/v139/tan21a/tan21a.pdf",
+      "venue": "ICML 2021",
+      "techniques": [
+        "EfficientNetV2-S encoder",
+        "사전학습"
+      ],
+      "supported_claim_ko": "학습속도와 파라미터 효율을 함께 고려한 구조 탐색 및 Fused-MBConv로 효율적인 특징 추출망을 제안한다. 분류 벤치마크에서 효율을 검증한다.",
+      "local_implementation_ko": "tu-tf_efficientnetv2_s.in21k_ft_in1k를 U-Net encoder로 사용한다. encoder의 사전학습 특징을 미세조정한다.",
+      "limitation_ko": "논문은 본 합금 조직의 4클래스 분할이나 encoder/decoder 학습률 비율10배를 입증하지 않는다. 현재 고정768 입력은 논문의 progressive learning 전체 절차와 다르다.",
+      "locator": "Abstract; architecture/progressive learning sections"
+    },
+    {
+      "id": "skeleton_recall2024",
+      "title": "Skeleton Recall Loss for Connectivity Conserving and Resource Efficient Segmentation of Thin Tubular Structures",
+      "year": 2024,
+      "authors": [
+        "Yannick Kirchhoff",
+        "Maximilian R. Rokuss",
+        "Saikat Roy",
+        "Balint Kovacs",
+        "Constantin Ulrich",
+        "Tassilo Wald",
+        "Maximilian Zenk",
+        "Philipp Vollmuth",
+        "Jens Kleesiek",
+        "Fabian Isensee",
+        "Klaus Maier-Hein"
+      ],
+      "url": "https://arxiv.org/abs/2404.03010",
+      "html_url": "https://arxiv.org/html/2404.03010v2",
+      "pdf_url": "https://arxiv.org/pdf/2404.03010",
+      "venue": "ECCV 2024",
+      "techniques": [
+        "centerline baseline의 직접 관련 근거",
+        "Skeleton Recall Loss"
+      ],
+      "supported_claim_ko": "GT foreground 골격을 CPU에서 만들고 diamond 반경2로 팽창한 tubed skeleton에서 예측확률 soft recall을 계산한다. 미분 가능한 예측 골격을 계산하지 않아 추가 자원 부담을 줄인다. CE+Soft Dice에 가중 skeleton recall을 더하며 논문은 가중치0.1과1.0을 실험한다.",
+      "local_implementation_ko": "Eutectic Si만 골격화하고 4연결 구조2회 팽창 후 E 내부와 교차한다. 최종변환 후 다시 계산하며 E가 있는 샘플의 recall만 평균한다. CE+Dice+0.1×(1−recall), 분모 ε=1e-5이다.",
+      "limitation_ko": "논문 Algorithm1은 전체 foreground 골격을 얻어 클래스별로 재할당하지만 본 구현은 E-only 적응이다. -recall과1−recall은 상수만 달라 기울기는 같다. 반경2·가중치0.1은 논문 선례가 있으나 본 데이터 최적성이나 mIoU 목표를 증명하지 않는다. low_lr_context_paste 변형은 골격 대신 E 전체 면적 recall을 사용한다.",
+      "locator": "§3.2, Algorithm1, Eq.(1), §4.4 Eq.(2)"
+    },
+    {
+      "id": "copypaste2021",
+      "title": "Simple Copy-Paste Is a Strong Data Augmentation Method for Instance Segmentation",
+      "year": 2021,
+      "authors": [
+        "Golnaz Ghiasi",
+        "Yin Cui",
+        "Aravind Srinivas",
+        "Rui Qian",
+        "Tsung-Yi Lin",
+        "Ekin D. Cubuk",
+        "Quoc V. Le",
+        "Barret Zoph"
+      ],
+      "url": "https://openaccess.thecvf.com/content/CVPR2021/html/Ghiasi_Simple_Copy-Paste_Is_a_Strong_Data_Augmentation_Method_for_Instance_CVPR_2021_paper.html",
+      "pdf_url": "https://openaccess.thecvf.com/content/CVPR2021/papers/Ghiasi_Simple_Copy-Paste_Is_a_Strong_Data_Augmentation_Method_for_Instance_CVPR_2021_paper.pdf",
+      "venue": "CVPR 2021",
+      "techniques": [
+        "low_lr_context_paste"
+      ],
+      "supported_claim_ko": "학습 영상 사이에서 물체와 그 마스크를 함께 복사하면 새로운 조합을 만들 수 있으며, instance segmentation 벤치마크에서 강한 증강 효과를 보고한다.",
+      "local_implementation_ko": "훈련 donor에서 E의 연결성분4–300픽셀을 골라 최대8개 시도한다. 수용 영역의98% 이상이 Al일 때2배 확대한 성분을 색 보정·경계 혼합하여 붙이고 정답도 E로 갱신한다.",
+      "limitation_ko": "클래스 의미분할용 E 성분 선택, Al 배치 조건, Gaussian alpha, 확률0.58 및 낮은 LR은 자체 적응이다. 논문의 COCO/LVIS 성과가 이 데이터의 개선을 보장하지 않는다.",
+      "locator": "Abstract; copy-paste augmentation method"
+    },
+    {
+      "id": "cutmix2019",
+      "title": "CutMix: Regularization Strategy to Train Strong Classifiers with Localizable Features",
+      "year": 2019,
+      "authors": [
+        "Sangdoo Yun",
+        "Dongyoon Han",
+        "Seong Joon Oh",
+        "Sanghyuk Chun",
+        "Junsuk Choe",
+        "Youngjoon Yoo"
+      ],
+      "url": "https://arxiv.org/abs/1905.04899",
+      "pdf_url": "https://arxiv.org/pdf/1905.04899",
+      "venue": "ICCV 2019",
+      "techniques": [
+        "영역 혼합 증강의 관련 근거"
+      ],
+      "supported_claim_ko": "훈련 영상 간 패치를 교환하고 패치 면적 비율로 분류 정답을 혼합하는 CutMix를 제안한다. 유효 영상 정보의 일부를 유지하면서 다양한 문맥에 노출하는 근거다.",
+      "local_implementation_ko": "현재 context-paste는 E 객체 모양의 마스크를 따라 픽셀 정답을 바꾸는 방식이다.",
+      "limitation_ko": "현재 코드는 사각형 CutMix나 분류용 면적비 정답 혼합을 구현하지 않는다. 직접적인 구현 근거는 객체 copy-paste 쪽이 더 가깝다. 낮은 LR나 성분 면적 범위의 근거로 쓰지 않는다.",
+      "locator": "Abstract; augmentation formulation"
+    },
+    {
+      "id": "adain2017",
+      "title": "Arbitrary Style Transfer in Real-Time With Adaptive Instance Normalization",
+      "year": 2017,
+      "authors": [
+        "Xun Huang",
+        "Serge Belongie"
+      ],
+      "url": "https://openaccess.thecvf.com/content_iccv_2017/html/Huang_Arbitrary_Style_Transfer_ICCV_2017_paper.html",
+      "pdf_url": "https://openaccess.thecvf.com/content_ICCV_2017/papers/Huang_Arbitrary_Style_Transfer_ICCV_2017_paper.pdf",
+      "venue": "ICCV 2017",
+      "techniques": [
+        "phase_style_exchange 개념적 관련"
+      ],
+      "supported_claim_ko": "내용 feature의 평균·분산을 스타일 feature 통계에 맞추는 AdaIN으로 형태와 외관을 분리해 조절하는 접근을 제시한다.",
+      "local_implementation_ko": "현재 phase는 주파수 phase가 아니라 재료의 상(class)을 뜻한다. 각 클래스 RGB의 중앙값·IQR을 donor와 맞추고, 비율0.75–1.25로 제한한 뒤 강도0.2–0.4와 Gaussian 경계로 섞는다. 라벨은 유지한다.",
+      "limitation_ko": "현재 구현은 RGB 중앙값/IQR을 쓰는 자체 클래스 조건부 색 통계 증강이며 AdaIN layer나 학습된 style decoder를 사용하지 않는다. 적용확률0.47 등의 최적성을 논문이 입증하지 않는다.",
+      "locator": "Abstract; AdaIN definition"
+    },
+    {
+      "id": "fda2020",
+      "title": "FDA: Fourier Domain Adaptation for Semantic Segmentation",
+      "year": 2020,
+      "authors": [
+        "Yanchao Yang",
+        "Stefano Soatto"
+      ],
+      "url": "https://openaccess.thecvf.com/content_CVPR_2020/html/Yang_FDA_Fourier_Domain_Adaptation_for_Semantic_Segmentation_CVPR_2020_paper.html",
+      "pdf_url": "https://openaccess.thecvf.com/content_CVPR_2020/papers/Yang_FDA_Fourier_Domain_Adaptation_for_Semantic_Segmentation_CVPR_2020_paper.pdf",
+      "venue": "CVPR 2020",
+      "techniques": [
+        "외관 변화·도메인 차이의 관련 근거"
+      ],
+      "supported_claim_ko": "Fourier 저주파 amplitude 교환으로 입력 외관의 저수준 통계 차이를 줄이고 semantic segmentation 도메인 적응에 활용한다.",
+      "local_implementation_ko": "KOMAP의 phase_style_exchange는 공간 RGB에서 재료상별 중앙값/IQR을 바꾸며 FFT를 수행하지 않는다.",
+      "limitation_ko": "FDA는 현재 구현의 정확한 명칭이 아니다. '형태 정답을 유지하며 외관 통계 변화에 노출한다'는 동기의 관련 논문으로만 인용한다. 주파수 교환·FDA 적용으로 설명하면 잘못이다.",
+      "locator": "Abstract; Fig.1 and introduction"
+    },
+    {
+      "id": "mean_teacher2017",
+      "title": "Mean teachers are better role models: Weight-averaged consistency targets improve semi-supervised deep learning results",
+      "year": 2017,
+      "authors": [
+        "Antti Tarvainen",
+        "Harri Valpola"
+      ],
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2017/hash/68053af2923e00204c3ca7c6a3150cf7-Abstract.html",
+      "pdf_url": "https://arxiv.org/pdf/1703.01780",
+      "venue": "NeurIPS 2017",
+      "techniques": [
+        "EMA 가중치 평가"
+      ],
+      "supported_claim_ko": "모델 가중치를 지수이동평균한 teacher를 이용하는 방법을 제안한다. 시간에 따른 가중치 평균이 안정적인 예측 모델을 구성할 수 있다는 선행 근거다.",
+      "local_implementation_ko": "학습 모델과 별도로 EMA 가중치를 유지하고 EMA 모델로 검증·best 선택·최종 추론한다. decay는0.999이다.",
+      "limitation_ko": "현재는 teacher/student consistency loss나 비라벨 데이터 학습을 하지 않으므로 Mean Teacher 전체 알고리즘이 아니다. EMA라는 구성요소의 근거이며,0.999의 최적성·정확한 mIoU 개선을 보장하지 않는다.",
+      "locator": "Abstract; weight-averaged teacher"
+    },
+    {
+      "id": "adamw2019",
+      "title": "Decoupled Weight Decay Regularization",
+      "year": 2019,
+      "authors": [
+        "Ilya Loshchilov",
+        "Frank Hutter"
+      ],
+      "url": "https://arxiv.org/abs/1711.05101",
+      "pdf_url": "https://arxiv.org/pdf/1711.05101",
+      "venue": "ICLR 2019 (preprint2017)",
+      "techniques": [
+        "AdamW"
+      ],
+      "supported_claim_ko": "Adam 같은 적응형 optimizer에서는 L2 penalty와 weight decay가 일반적으로 같지 않음을 설명하고, gradient update와 weight decay를 분리하는 AdamW를 제안한다.",
+      "local_implementation_ko": "PyTorch AdamW를 사용하며 encoder/decoder에 서로 다른 LR을 주고 weight decay0.05를 적용한다.",
+      "limitation_ko": "논문은 이 조직 데이터에서0.05나 encoder3e-5/decoder3e-4가 최적임을 입증하지 않는다. 일반적인 정규화 기법의 선택 근거이며 수치는 기존 실험기록 기반 설정이다.",
+      "locator": "Abstract; decoupled weight decay formulation"
+    },
+    {
+      "id": "sgdr2017",
+      "title": "SGDR: Stochastic Gradient Descent with Warm Restarts",
+      "year": 2017,
+      "authors": [
+        "Ilya Loshchilov",
+        "Frank Hutter"
+      ],
+      "url": "https://arxiv.org/abs/1608.03983",
+      "pdf_url": "https://arxiv.org/pdf/1608.03983",
+      "venue": "ICLR 2017 (preprint2016)",
+      "techniques": [
+        "cosine LR"
+      ],
+      "supported_claim_ko": "각 학습 구간 내에서 batch마다 cosine 곡선을 따라 학습률을 낮추는 방식을 제시한다(식5). 후반 업데이트 크기를 줄이는 스케줄의 근거다.",
+      "local_implementation_ko": "CosineAnnealingLR를 optimizer step 단위로 갱신한다. 최대100epoch 길이의 단일 감소 구간이며 최저 LR은1e-7이다.",
+      "limitation_ko": "현재 warm restart는 없다. 따라서 'SGDR 전체를 구현'이 아니라 'cosine annealing을 사용'이라고 쓴다. 최대100epoch·최저1e-7·patience20·minDelta0.02는 논문에서 정당화되지 않는 실험 설정이다.",
+      "locator": "§3, Eq.(5), PDF p.4"
+    }
+  ],
+  "supplemental_primary_documentation": [
+    {
+      "id": "opencv_transform",
+      "title": "OpenCV Geometric Image Transformations",
+      "authors": [
+        "OpenCV"
+      ],
+      "year": null,
+      "url": "https://docs.opencv.org/4.x/da/d54/group__imgproc__transform.html",
+      "supported_claim_ko": "공식 문서는 INTER_LINEAR가 bilinear interpolation이고 INTER_NEAREST가 nearest-neighbor interpolation임을 명시한다.",
+      "local_implementation_ko": "softmask는 one-hot 4채널 라벨을 영상과 함께 bilinear 회전·재크기화하고 클래스 합으로 정규화한다. hard argmax는 형태 검사·center 재생성에 쓰고 soft target은 CE+Dice에 사용한다.",
+      "limitation_ko": "경계 픽셀에 여러 클래스 비율이 생기는 것은 연산상의 성질이다. 작은 E 구조 보존과 mIoU 향상은 검증할 가설이며 문서가 보장하지 않는다. ±3–7도, crop32, 면적0.85–1.15, 성분수0.6–1.6,확률0.5는 자체 제약이다."
+    }
+  ],
+  "implementation_notes": [
+    "정정: centerline 손실의 중심 인용은 Kirchhoff et al. ECCV2024 Skeleton Recall Loss이며 clDice는 관련 배경이다. diamond 반경2와 loss 가중치0.1은 해당 논문에 선례가 있다. 다만 본 E-only/최종변환 후 재계산/평균 방식 및 정확한 성능의 동일성을 뜻하지 않는다.",
+    "centerline baseline은 CE+soft Dice+0.1×(1−E recall). low_lr_context_paste만 center 대신 E 전체 soft target 면적에서 recall을 계산한다.",
+    "phase_style_exchange는 공간 RGB에서 클래스별 median/IQR 전달이다. FDA, Fourier phase 교환, AdaIN의 직접 재현으로 명명하지 않는다.",
+    "e_protected_illumination은 E mask3회팽창 보호영역 밖에 작은 선형 조명 gradient와 contrast0.95–1.05를 주는 자체 휴리스틱이다. 명암 변화에 대한 강건성을 의도하지만 보호반경3·gradient±0.04·확률0.56은 논문에서 도출한 값이 아니다.",
+    "원본 crop384→input768 확대는 연산 격자상 얇은 구조를 더 많은 픽셀로 표시하지만 새로운 광학 정보/실제 해상도를 생성하지 않는다.",
+    "D4는0/90/180/270도×좌우반전2개, 예측을 역변환하여 확률 평균. 겹침 영역 역시 균일 확률 평균이며 Gaussian/Hann weighting은 현재 사용하지 않는다.",
+    "EMA는 매학습step 갱신하며 최종best가 EMA모델이다. Mean Teacher consistency loss와 uniform Polyak averaging을 실제 구현했다고 쓰지 않는다.",
+    "성능 차이의 인과적 귀속에는 동일분할·동일초기화·단일변인 ablation과 반복seed 검증이 필요하다. 기존 재분할72/18 점수와 train89/holdout1 점수는 직접 비교할 수 없다.",
+    "정확한384/768,0.5,0.999,0.05,확률·면적·반경은 기록 기반 복원/자체설계값이다. 인용 논문은 일반 원리를 뒷받침할 뿐 본 설정의 최적성이나79/80% 달성을 입증하지 않는다."
+  ],
+  "background_papers": [
+    {
+      "id": "cldice2021",
+      "title": "clDice — A Novel Topology-Preserving Loss Function for Tubular Structure Segmentation",
+      "year": 2021,
+      "authors": [
+        "Suprosanna Shit",
+        "Johannes C. Paetzold",
+        "Anjany Sekuboyina",
+        "Ivan Ezhov",
+        "Alexander Unger",
+        "Andrey Zhylka",
+        "Josien P. W. Pluim",
+        "Ulrich Bauer",
+        "Bjoern H. Menze"
+      ],
+      "url": "https://arxiv.org/abs/2003.07311",
+      "pdf_url": "https://openaccess.thecvf.com/content/CVPR2021/papers/Shit_clDice_-_A_Novel_Topology-Preserving_Loss_Function_for_Tubular_Structure_CVPR_2021_paper.pdf",
+      "venue": "CVPR 2021",
+      "techniques": [
+        "centerline 보조손실"
+      ],
+      "supported_claim_ko": "마스크와 골격의 겹침을 이용하면 가늘고 연결된 구조의 연결성 정보를 학습에 반영할 수 있다. 논문은 clDice와 미분가능 soft-clDice를 제안한다.",
+      "local_implementation_ko": "GT Eutectic Si 골격을 만든 뒤2회 팽창하고 E 영역과 교집합을 취한다. CE+Dice에 해당 위치의 E 확률 recall 부족분×0.1을 더한다.",
+      "limitation_ko": "현재 손실은 clDice가 아니다. 예측 골격과 GT 마스크의 양방향 precision/recall을 쓰지 않으며 논문의 위상보존 보장이 적용되지 않는다. 2픽셀·0.1은 자체 설정이다.",
+      "locator": "Abstract; clDice/soft-clDice definition"
+    }
+  ]
+}

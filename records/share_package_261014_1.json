@@ -1,0 +1,32 @@
+{
+  "package": "C:\\Users\\SSAFY\\Desktop\\KOMAP\\share_261014_1.zip",
+  "bytes": 608689996,
+  "sha256": "0747e91a17f39c980866ea4052468afba54c147a96801247dea9d15e0a17c413",
+  "verified_members": 280,
+  "every_member_sha256_checked": true,
+  "validation_mIoU": 79.84738714714055,
+  "cpu_checks": {
+    "file_sha256": {
+      "passed": true,
+      "files": 278
+    },
+    "relocated_cpu_audit": {
+      "passed": true,
+      "mIoU": 79.84738714714055,
+      "difference": 0,
+      "validation_masks": 18,
+      "test_masks": 10,
+      "source_images_hash_checked": 100,
+      "group_split_disjoint": true
+    },
+    "cpu_checkpoint_load": {
+      "passed": true,
+      "parameters": 22093908,
+      "selected_epoch": 90,
+      "model_kind": "EMA",
+      "strict_state_dict": true
+    },
+    "gpu_training_or_inference_started_for_packaging": false
+  },
+  "gpu_training_or_inference_started_for_packaging": false
+}

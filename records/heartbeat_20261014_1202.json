@@ -1,0 +1,27 @@
+{
+  "checked_at": "2026-10-14T12:05:25.5223233+09:00",
+  "completed_variants": [
+    "centerline_baseline",
+    "e_softmask_geometry"
+  ],
+  "completed_count": 2,
+  "measurements": {
+    "centerline_baseline": 79.84738714714055,
+    "e_softmask_geometry": 80.03941302084225
+  },
+  "independent_audit_passed": true,
+  "valid_masks_per_model": 18,
+  "test_masks_per_model": 10,
+  "sheet_range": "'승현_ 실험기록'!A120:K128",
+  "sheet_read_back_verified": true,
+  "xlsx_verified": true,
+  "xlsx_sha256": "c85b060230c98f07191bce2ff6e0a1fd55d419eb41b2399544030f4fe953dfd7",
+  "original_rows_1_101_preserved": true,
+  "user_notification_sent": false,
+  "notification_preference": "quiet_except_blocking_errors",
+  "ongoing_variant": "low_lr_context_paste",
+  "e_softmask_target_achieved": true,
+  "all_five_complete": false,
+  "continue_remaining_original_variants": true,
+  "additional_target_search_needed": false
+}

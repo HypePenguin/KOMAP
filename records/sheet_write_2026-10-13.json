@@ -1,0 +1,4445 @@
+{
+  "before": {
+    "content": [
+      {
+        "type": "text",
+        "text": "Action completed."
+      }
+    ],
+    "structuredContent": {
+      "spreadsheetId": "1TqGmdGTCZN1NvVGDxhnaBurkkJkzj-NpITDCnAY4DQk",
+      "spreadsheetUrl": "https://docs.google.com/spreadsheets/d/1TqGmdGTCZN1NvVGDxhnaBurkkJkzj-NpITDCnAY4DQk/edit",
+      "properties": {
+        "title": "야 ai",
+        "locale": "ko_KR",
+        "timeZone": "Asia/Seoul"
+      },
+      "sheets": [
+        {
+          "properties": {
+            "sheetId": 1262236171,
+            "title": "승현_ 실험기록",
+            "index": 1,
+            "sheetType": "GRID",
+            "gridProperties": {
+              "rowCount": 1000,
+              "columnCount": 26
+            }
+          },
+          "data": [
+            {
+              "startRow": 92,
+              "rowData": [
+                {
+                  "values": [
+                    {
+                      "userEnteredValue": {
+                        "stringValue": "2026-10-07 | 추론 상위 5개 모델 · 최대 100epoch / early stopping 재학습 · D4 TTA"
+                      },
+                      "userEnteredFormat": {
+                        "backgroundColor": {
+                          "red": 0.9372549,
+                          "green": 0.9372549,
+                          "blue": 0.9372549
+                        },
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 11,
+                          "bold": true
+                        },
+                        "backgroundColorStyle": {
+                          "rgbColor": {
+                            "red": 0.9372549,
+                            "green": 0.9372549,
+                            "blue": 0.9372549
+                          }
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "values": [
+                    {
+                      "userEnteredValue": {
+                        "stringValue": "실험명"
+                      },
+                      "userEnteredFormat": {
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "stringValue": "모델"
+                      },
+                      "userEnteredFormat": {
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "stringValue": "mIoU"
+                      },
+                      "userEnteredFormat": {
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "stringValue": "TTA"
+                      },
+                      "userEnteredFormat": {
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "stringValue": "Al"
+                      },
+                      "userEnteredFormat": {
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "stringValue": "Primary Si"
+                      },
+                      "userEnteredFormat": {
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "stringValue": "Al3Ni"
+                      },
+                      "userEnteredFormat": {
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "stringValue": "Eutectic Si"
+                      },
+                      "userEnteredFormat": {
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "stringValue": "설정"
+                      },
+                      "userEnteredFormat": {
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "stringValue": "학습 시간"
+                      },
+                      "userEnteredFormat": {
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "stringValue": "비고"
+                      },
+                      "userEnteredFormat": {
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "values": [
+                    {
+                      "userEnteredValue": {
+                        "stringValue": "기준 · 기존 E 중심선"
+                      },
+                      "userEnteredFormat": {
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "stringValue": "U-Net + EfficientNetV2-S"
+                      },
+                      "userEnteredFormat": {
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "numberValue": 78.93204859354823
+                      },
+                      "userEnteredFormat": {
+                        "numberFormat": {
+                          "type": "NUMBER",
+                          "pattern": "0.000000"
+                        },
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "stringValue": "8방향"
+                      },
+                      "userEnteredFormat": {
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "numberValue": 94.16624772307215
+                      },
+                      "userEnteredFormat": {
+                        "numberFormat": {
+                          "type": "NUMBER",
+                          "pattern": "0.00"
+                        },
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "numberValue": 84.86213638700929
+                      },
+                      "userEnteredFormat": {
+                        "numberFormat": {
+                          "type": "NUMBER",
+                          "pattern": "0.00"
+                        },
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "numberValue": 80.84367851962814
+                      },
+                      "userEnteredFormat": {
+                        "numberFormat": {
+                          "type": "NUMBER",
+                          "pattern": "0.00"
+                        },
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "numberValue": 55.85613174448335
+                      },
+                      "userEnteredFormat": {
+                        "numberFormat": {
+                          "type": "NUMBER",
+                          "pattern": "0.00"
+                        },
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "stringValue": "기존 best.pt; valid18; 입력 ×2, tile768, D4 TTA"
+                      },
+                      "userEnteredFormat": {
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "stringValue": "추가학습 없음"
+                      },
+                      "userEnteredFormat": {
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "stringValue": "얇은 E 재현율 70.904%; 이전 탐색 최고 78.950681%; test10 라벨 없음"
+                      },
+                      "userEnteredFormat": {
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "values": [
+                    {
+                      "userEnteredValue": {
+                        "stringValue": "얇은 E 보존 기하 변형"
+                      },
+                      "userEnteredFormat": {
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "stringValue": "U-Net + EfficientNetV2-S"
+                      },
+                      "userEnteredFormat": {
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "numberValue": 79.00779879382462
+                      },
+                      "userEnteredFormat": {
+                        "numberFormat": {
+                          "type": "NUMBER",
+                          "pattern": "0.000000"
+                        },
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "stringValue": "8방향"
+                      },
+                      "userEnteredFormat": {
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "numberValue": 94.15952833909697
+                      },
+                      "userEnteredFormat": {
+                        "numberFormat": {
+                          "type": "NUMBER",
+                          "pattern": "0.00"
+                        },
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "numberValue": 85.01313207262885
+                      },
+                      "userEnteredFormat": {
+                        "numberFormat": {
+                          "type": "NUMBER",
+                          "pattern": "0.00"
+                        },
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "numberValue": 80.88632365174836
+                      },
+                      "userEnteredFormat": {
+                        "numberFormat": {
+                          "type": "NUMBER",
+                          "pattern": "0.00"
+                        },
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "numberValue": 55.97221111182431
+                      },
+                      "userEnteredFormat": {
+                        "numberFormat": {
+                          "type": "NUMBER",
+                          "pattern": "0.00"
+                        },
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "stringValue": "E soft-mask·연결성 검사 기하 변형; 최대100ep, 5ep 검증, patience20ep, min Δ0.02%p; train72/valid18"
+                      },
+                      "userEnteredFormat": {
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "stringValue": "25epoch 14.5분; 선택 5epoch; 조기 종료"
+                      },
+                      "userEnteredFormat": {
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "stringValue": "과거 동일 전략 79.007236% 대비 +0.000563%p; 기준 대비 +0.075750%p (A그룹 짝 95% CI -0.069~0.194); 얇은 E 재현율 70.802%; test10 완료"
+                      },
+                      "userEnteredFormat": {
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "values": [
+                    {
+                      "userEnteredValue": {
+                        "stringValue": "저학습률 E 문맥 합성"
+                      },
+                      "userEnteredFormat": {
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "stringValue": "U-Net + EfficientNetV2-S"
+                      },
+                      "userEnteredFormat": {
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "numberValue": 78.94274586106262
+                      },
+                      "userEnteredFormat": {
+                        "numberFormat": {
+                          "type": "NUMBER",
+                          "pattern": "0.000000"
+                        },
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "stringValue": "8방향"
+                      },
+                      "userEnteredFormat": {
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "numberValue": 94.16407794402419
+                      },
+                      "userEnteredFormat": {
+                        "numberFormat": {
+                          "type": "NUMBER",
+                          "pattern": "0.00"
+                        },
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "numberValue": 84.86700689844251
+                      },
+                      "userEnteredFormat": {
+                        "numberFormat": {
+                          "type": "NUMBER",
+                          "pattern": "0.00"
+                        },
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "numberValue": 80.8262631191363
+                      },
+                      "userEnteredFormat": {
+                        "numberFormat": {
+                          "type": "NUMBER",
+                          "pattern": "0.00"
+                        },
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "numberValue": 55.91363548264741
+                      },
+                      "userEnteredFormat": {
+                        "numberFormat": {
+                          "type": "NUMBER",
+                          "pattern": "0.00"
+                        },
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "stringValue": "상 문맥 합성 + 저학습률 E 재현율 손실; 최대100ep, 5ep 검증, patience20ep, min Δ0.02%p; train72/valid18"
+                      },
+                      "userEnteredFormat": {
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "stringValue": "25epoch 13.9분; 선택 5epoch; 조기 종료"
+                      },
+                      "userEnteredFormat": {
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "stringValue": "과거 동일 전략 78.942687% 대비 +0.000059%p; 기준 대비 +0.010697%p (A그룹 짝 95% CI -0.028~0.056); 얇은 E 재현율 71.206%; test10 완료"
+                      },
+                      "userEnteredFormat": {
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "values": [
+                    {
+                      "userEnteredValue": {
+                        "stringValue": "기존 E 중심선 재학습"
+                      },
+                      "userEnteredFormat": {
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "stringValue": "U-Net + EfficientNetV2-S"
+                      },
+                      "userEnteredFormat": {
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "numberValue": 78.9309711410583
+                      },
+                      "userEnteredFormat": {
+                        "numberFormat": {
+                          "type": "NUMBER",
+                          "pattern": "0.000000"
+                        },
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "stringValue": "8방향"
+                      },
+                      "userEnteredFormat": {
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "numberValue": 94.16679832762586
+                      },
+                      "userEnteredFormat": {
+                        "numberFormat": {
+                          "type": "NUMBER",
+                          "pattern": "0.00"
+                        },
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "numberValue": 84.84779822248721
+                      },
+                      "userEnteredFormat": {
+                        "numberFormat": {
+                          "type": "NUMBER",
+                          "pattern": "0.00"
+                        },
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "numberValue": 80.84550293464851
+                      },
+                      "userEnteredFormat": {
+                        "numberFormat": {
+                          "type": "NUMBER",
+                          "pattern": "0.00"
+                        },
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "numberValue": 55.86378507947161
+                      },
+                      "userEnteredFormat": {
+                        "numberFormat": {
+                          "type": "NUMBER",
+                          "pattern": "0.00"
+                        },
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "stringValue": "E 중심선 재현율 보조 손실; ImageNet 초기; 최대100ep, 5ep 검증, patience20ep, min Δ0.02%p; train72/valid18"
+                      },
+                      "userEnteredFormat": {
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "stringValue": "100epoch 61.7분; 선택 90epoch; 100ep 상한"
+                      },
+                      "userEnteredFormat": {
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "stringValue": "과거 동일 전략 78.932049% 대비 -0.001077%p; 기준 대비 -0.001077%p (A그룹 짝 95% CI -0.041~0.027); 얇은 E 재현율 70.932%; test10 완료"
+                      },
+                      "userEnteredFormat": {
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "values": [
+                    {
+                      "userEnteredValue": {
+                        "stringValue": "상별 스타일 통계 교환"
+                      },
+                      "userEnteredFormat": {
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "stringValue": "U-Net + EfficientNetV2-S"
+                      },
+                      "userEnteredFormat": {
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "numberValue": 78.92420324957915
+                      },
+                      "userEnteredFormat": {
+                        "numberFormat": {
+                          "type": "NUMBER",
+                          "pattern": "0.000000"
+                        },
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "stringValue": "8방향"
+                      },
+                      "userEnteredFormat": {
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "numberValue": 94.1798075091703
+                      },
+                      "userEnteredFormat": {
+                        "numberFormat": {
+                          "type": "NUMBER",
+                          "pattern": "0.00"
+                        },
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "numberValue": 84.90033002908018
+                      },
+                      "userEnteredFormat": {
+                        "numberFormat": {
+                          "type": "NUMBER",
+                          "pattern": "0.00"
+                        },
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "numberValue": 80.90242288094302
+                      },
+                      "userEnteredFormat": {
+                        "numberFormat": {
+                          "type": "NUMBER",
+                          "pattern": "0.00"
+                        },
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "numberValue": 55.71425257912315
+                      },
+                      "userEnteredFormat": {
+                        "numberFormat": {
+                          "type": "NUMBER",
+                          "pattern": "0.00"
+                        },
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "stringValue": "상별 중앙값·IQR 통계 교환; 최대100ep, 5ep 검증, patience20ep, min Δ0.02%p; train72/valid18"
+                      },
+                      "userEnteredFormat": {
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "stringValue": "25epoch 15.8분; 선택 5epoch; 조기 종료"
+                      },
+                      "userEnteredFormat": {
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "stringValue": "과거 동일 전략 78.923872% 대비 +0.000331%p; 기준 대비 -0.007845%p (A그룹 짝 95% CI -0.092~0.065); 얇은 E 재현율 69.905%; test10 완료"
+                      },
+                      "userEnteredFormat": {
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "values": [
+                    {
+                      "userEnteredValue": {
+                        "stringValue": "E 보호·주변 조명"
+                      },
+                      "userEnteredFormat": {
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "stringValue": "U-Net + EfficientNetV2-S"
+                      },
+                      "userEnteredFormat": {
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "numberValue": 78.92165697045854
+                      },
+                      "userEnteredFormat": {
+                        "numberFormat": {
+                          "type": "NUMBER",
+                          "pattern": "0.000000"
+                        },
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "stringValue": "8방향"
+                      },
+                      "userEnteredFormat": {
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "numberValue": 94.1844429392164
+                      },
+                      "userEnteredFormat": {
+                        "numberFormat": {
+                          "type": "NUMBER",
+                          "pattern": "0.00"
+                        },
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "numberValue": 84.9086448481654
+                      },
+                      "userEnteredFormat": {
+                        "numberFormat": {
+                          "type": "NUMBER",
+                          "pattern": "0.00"
+                        },
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "numberValue": 80.92358683183271
+                      },
+                      "userEnteredFormat": {
+                        "numberFormat": {
+                          "type": "NUMBER",
+                          "pattern": "0.00"
+                        },
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "numberValue": 55.66995326261965
+                      },
+                      "userEnteredFormat": {
+                        "numberFormat": {
+                          "type": "NUMBER",
+                          "pattern": "0.00"
+                        },
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "stringValue": "E 원형 보호 + 주변 조명 변형; 최대100ep, 5ep 검증, patience20ep, min Δ0.02%p; train72/valid18"
+                      },
+                      "userEnteredFormat": {
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "stringValue": "25epoch 15.5분; 선택 5epoch; 조기 종료"
+                      },
+                      "userEnteredFormat": {
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "stringValue": "과거 동일 전략 78.921823% 대비 -0.000166%p; 기준 대비 -0.010392%p (A그룹 짝 95% CI -0.105~0.076); 얇은 E 재현율 69.866%; test10 완료"
+                      },
+                      "userEnteredFormat": {
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "values": [
+                    {
+                      "userEnteredValue": {
+                        "stringValue": "판정 · 얇은 E 보존 기하 변형 최고"
+                      },
+                      "userEnteredFormat": {
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "stringValue": "U-Net + EfficientNetV2-S"
+                      },
+                      "userEnteredFormat": {
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredFormat": {
+                        "numberFormat": {
+                          "type": "NUMBER",
+                          "pattern": "0.000000"
+                        },
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredFormat": {
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredFormat": {
+                        "numberFormat": {
+                          "type": "NUMBER",
+                          "pattern": "0.00"
+                        },
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredFormat": {
+                        "numberFormat": {
+                          "type": "NUMBER",
+                          "pattern": "0.00"
+                        },
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredFormat": {
+                        "numberFormat": {
+                          "type": "NUMBER",
+                          "pattern": "0.00"
+                        },
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredFormat": {
+                        "numberFormat": {
+                          "type": "NUMBER",
+                          "pattern": "0.00"
+                        },
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "stringValue": "최고 valid18 mIoU 79.007799%; 저학습률 E 문맥의 얇은 E 재현율 71.206%가 최고; 80% 미달; 4개 25ep 조기 종료, 1개 100ep 상한"
+                      },
+                      "userEnteredFormat": {
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredFormat": {
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "stringValue": "valid18 반복 사용·동일 시드; 95% CI는 0 포함; test10 정답 없어 점수 없음; 공식 대회 점수 아님. 보고서: http://127.0.0.1:8767/eutectic_top5_100ep_2026-10-07/report.html"
+                      },
+                      "userEnteredFormat": {
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "isError": false
+  },
+  "requests": [
+    {
+      "copyPaste": {
+        "source": {
+          "sheetId": 1262236171,
+          "startRowIndex": 92,
+          "endRowIndex": 93,
+          "startColumnIndex": 0,
+          "endColumnIndex": 11
+        },
+        "destination": {
+          "sheetId": 1262236171,
+          "startRowIndex": 102,
+          "endRowIndex": 103,
+          "startColumnIndex": 0,
+          "endColumnIndex": 11
+        },
+        "pasteType": "PASTE_FORMAT"
+      }
+    },
+    {
+      "copyPaste": {
+        "source": {
+          "sheetId": 1262236171,
+          "startRowIndex": 93,
+          "endRowIndex": 94,
+          "startColumnIndex": 0,
+          "endColumnIndex": 11
+        },
+        "destination": {
+          "sheetId": 1262236171,
+          "startRowIndex": 103,
+          "endRowIndex": 104,
+          "startColumnIndex": 0,
+          "endColumnIndex": 11
+        },
+        "pasteType": "PASTE_FORMAT"
+      }
+    },
+    {
+      "copyPaste": {
+        "source": {
+          "sheetId": 1262236171,
+          "startRowIndex": 95,
+          "endRowIndex": 96,
+          "startColumnIndex": 0,
+          "endColumnIndex": 11
+        },
+        "destination": {
+          "sheetId": 1262236171,
+          "startRowIndex": 104,
+          "endRowIndex": 109,
+          "startColumnIndex": 0,
+          "endColumnIndex": 11
+        },
+        "pasteType": "PASTE_FORMAT"
+      }
+    },
+    {
+      "copyPaste": {
+        "source": {
+          "sheetId": 1262236171,
+          "startRowIndex": 100,
+          "endRowIndex": 101,
+          "startColumnIndex": 0,
+          "endColumnIndex": 11
+        },
+        "destination": {
+          "sheetId": 1262236171,
+          "startRowIndex": 109,
+          "endRowIndex": 111,
+          "startColumnIndex": 0,
+          "endColumnIndex": 11
+        },
+        "pasteType": "PASTE_FORMAT"
+      }
+    },
+    {
+      "updateCells": {
+        "range": {
+          "sheetId": 1262236171,
+          "startRowIndex": 102,
+          "endRowIndex": 111,
+          "startColumnIndex": 0,
+          "endColumnIndex": 11
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "2026-10-13 | 10월 7일 최종 5종 재실험 · 기록 기반 재구성 · D4 TTA"
+                }
+              },
+              {},
+              {},
+              {},
+              {},
+              {},
+              {},
+              {},
+              {},
+              {},
+              {}
+            ]
+          },
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "실험명"
+                }
+              },
+              {
+                "userEnteredValue": {
+                  "stringValue": "모델"
+                }
+              },
+              {
+                "userEnteredValue": {
+                  "stringValue": "mIoU"
+                }
+              },
+              {
+                "userEnteredValue": {
+                  "stringValue": "TTA"
+                }
+              },
+              {
+                "userEnteredValue": {
+                  "stringValue": "Al"
+                }
+              },
+              {
+                "userEnteredValue": {
+                  "stringValue": "Primary Si"
+                }
+              },
+              {
+                "userEnteredValue": {
+                  "stringValue": "Al3Ni"
+                }
+              },
+              {
+                "userEnteredValue": {
+                  "stringValue": "Eutectic Si"
+                }
+              },
+              {
+                "userEnteredValue": {
+                  "stringValue": "설정"
+                }
+              },
+              {
+                "userEnteredValue": {
+                  "stringValue": "학습 시간"
+                }
+              },
+              {
+                "userEnteredValue": {
+                  "stringValue": "비고"
+                }
+              }
+            ]
+          },
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "재구성 · 기존 E 중심선 재학습"
+                }
+              },
+              {
+                "userEnteredValue": {
+                  "stringValue": "U-Net + EfficientNetV2-S"
+                }
+              },
+              {
+                "userEnteredValue": {
+                  "numberValue": 77.26280490514819
+                }
+              },
+              {
+                "userEnteredValue": {
+                  "stringValue": "8방향"
+                }
+              },
+              {
+                "userEnteredValue": {
+                  "numberValue": 90.97405270865201
+                }
+              },
+              {
+                "userEnteredValue": {
+                  "numberValue": 87.64143840805657
+                }
+              },
+              {
+                "userEnteredValue": {
+                  "numberValue": 77.56428500119405
+                }
+              },
+              {
+                "userEnteredValue": {
+                  "numberValue": 52.87144350269008
+                }
+              },
+              {
+                "userEnteredValue": {
+                  "stringValue": "ImageNet 초기; CE+Dice+0.1 E 중심선 recall; AdamW enc3e-5/dec3e-4·cosine100; train72/valid18; 정렬 ID KFold5·shuffle·seed42·fold0 재구성; native384→768; 600patch/ep; batch8; 최대100ep·5ep 검증·patience20ep·minΔ0.02%p; 입력×2·tile768·overlap0.5"
+                }
+              },
+              {
+                "userEnteredValue": {
+                  "stringValue": "70epoch 161.0분; 선택65epoch; 조기 종료"
+                }
+              },
+              {
+                "userEnteredValue": {
+                  "stringValue": "완료·마스크 독립 검산 일치; 기존78.930971% 대비 -1.668166%p; 얇은 E recall72.423%; test10 추론 완료·정답 없어 점수 없음. 원본 분할·코드·초기 best.pt·환경 미복구."
+                }
+              }
+            ]
+          },
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "재구성 · 얇은 E 보존 기하 변형"
+                }
+              },
+              {
+                "userEnteredValue": {
+                  "stringValue": "U-Net + EfficientNetV2-S"
+                }
+              },
+              {},
+              {
+                "userEnteredValue": {
+                  "stringValue": "8방향"
+                }
+              },
+              {},
+              {},
+              {},
+              {},
+              {
+                "userEnteredValue": {
+                  "stringValue": "공통 재구성 기준 best.pt에서 독립 시작; E soft-mask·연결성 검사; ±3–7°·704→768; p0.5·E면적비0.85–1.15·CC비0.6–1.6(검사값은 복원 가정); train72/valid18; 정렬 ID KFold5·shuffle·seed42·fold0 재구성; native384→768; 600patch/ep; batch8; 최대100ep·5ep 검증·patience20ep·minΔ0.02%p; 입력×2·tile768·overlap0.5"
+                }
+              },
+              {
+                "userEnteredValue": {
+                  "stringValue": "학습 진행 중"
+                }
+              },
+              {
+                "userEnteredValue": {
+                  "stringValue": "진행 중; 최종 mIoU 미측정; 목표79% 이상 여부 미확인. 기존79.007799%는 참고값."
+                }
+              }
+            ]
+          },
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "재구성 · 저학습률 E 문맥 합성"
+                }
+              },
+              {
+                "userEnteredValue": {
+                  "stringValue": "U-Net + EfficientNetV2-S"
+                }
+              },
+              {},
+              {
+                "userEnteredValue": {
+                  "stringValue": "8방향"
+                }
+              },
+              {},
+              {},
+              {},
+              {},
+              {
+                "userEnteredValue": {
+                  "stringValue": "공통 재구성 기준 best.pt에서 독립 시작; enc1e-6/dec1e-5; CE+Dice+0.1 dense E recall; 작은 E 최대8개·Al영역 paste·경계 feather; donor train만; train72/valid18; 정렬 ID KFold5·shuffle·seed42·fold0 재구성; native384→768; 600patch/ep; batch8; 최대100ep·5ep 검증·patience20ep·minΔ0.02%p; 입력×2·tile768·overlap0.5"
+                }
+              },
+              {
+                "userEnteredValue": {
+                  "stringValue": "대기"
+                }
+              },
+              {
+                "userEnteredValue": {
+                  "stringValue": "미실행·최종 mIoU 미측정; 기존78.942746%는 참고값."
+                }
+              }
+            ]
+          },
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "재구성 · 상별 스타일 통계 교환"
+                }
+              },
+              {
+                "userEnteredValue": {
+                  "stringValue": "U-Net + EfficientNetV2-S"
+                }
+              },
+              {},
+              {
+                "userEnteredValue": {
+                  "stringValue": "8방향"
+                }
+              },
+              {},
+              {},
+              {},
+              {},
+              {
+                "userEnteredValue": {
+                  "stringValue": "공통 재구성 기준 best.pt에서 독립 시작; train donor 상별 중앙값·IQR 교환; p0.47·강도0.2–0.4·경계 smoothing(복원 가정); train72/valid18; 정렬 ID KFold5·shuffle·seed42·fold0 재구성; native384→768; 600patch/ep; batch8; 최대100ep·5ep 검증·patience20ep·minΔ0.02%p; 입력×2·tile768·overlap0.5"
+                }
+              },
+              {
+                "userEnteredValue": {
+                  "stringValue": "대기"
+                }
+              },
+              {
+                "userEnteredValue": {
+                  "stringValue": "미실행·최종 mIoU 미측정; 기존78.924203%는 참고값."
+                }
+              }
+            ]
+          },
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "재구성 · E 보호·주변 조명"
+                }
+              },
+              {
+                "userEnteredValue": {
+                  "stringValue": "U-Net + EfficientNetV2-S"
+                }
+              },
+              {},
+              {
+                "userEnteredValue": {
+                  "stringValue": "8방향"
+                }
+              },
+              {},
+              {},
+              {},
+              {},
+              {
+                "userEnteredValue": {
+                  "stringValue": "공통 재구성 기준 best.pt에서 독립 시작; E+3px 경계 보호; p0.56·주변 gradient±0.04·contrast0.95–1.05(복원 가정); train72/valid18; 정렬 ID KFold5·shuffle·seed42·fold0 재구성; native384→768; 600patch/ep; batch8; 최대100ep·5ep 검증·patience20ep·minΔ0.02%p; 입력×2·tile768·overlap0.5"
+                }
+              },
+              {
+                "userEnteredValue": {
+                  "stringValue": "대기"
+                }
+              },
+              {
+                "userEnteredValue": {
+                  "stringValue": "미실행·최종 mIoU 미측정; 기존78.921657%는 참고값."
+                }
+              }
+            ]
+          },
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "진행 판정 · 1/5 완료"
+                }
+              },
+              {},
+              {},
+              {},
+              {},
+              {},
+              {},
+              {},
+              {
+                "userEnteredValue": {
+                  "stringValue": "기준 모델 D4 mIoU77.262805%; E softmask 및 나머지3종 결과 대기. 재현 성공·79% 달성으로 판단하지 않음."
+                }
+              },
+              {},
+              {
+                "userEnteredValue": {
+                  "stringValue": "mIoU는 이미지별 클래스 평균 IoU의 평균(%); empty union 제외. test 정답 없음."
+                }
+              }
+            ]
+          },
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "재구성 조건·산출물"
+                }
+              },
+              {},
+              {},
+              {},
+              {},
+              {},
+              {},
+              {},
+              {
+                "userEnteredValue": {
+                  "stringValue": "원본 코드·분할 ID·초기 best.pt·패키지 버전·기본 optimizer/scheduler 불명. 기록에 없는 세부값은 configs/experiment.json에 가정으로 명시. 과거 동일 환경·동일 분할 확인 불가."
+                }
+              },
+              {},
+              {
+                "userEnteredValue": {
+                  "stringValue": "바탕화면 KOMAP: data/, src/, configs/, pretrained/, records/, runs/에 데이터·소스·환경·가중치·로그·예측 저장. 기존10/7 점수 보존. 실측값만 신규 기록."
+                }
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue"
+      }
+    },
+    {
+      "mergeCells": {
+        "range": {
+          "sheetId": 1262236171,
+          "startRowIndex": 102,
+          "endRowIndex": 103,
+          "startColumnIndex": 0,
+          "endColumnIndex": 11
+        },
+        "mergeType": "MERGE_ALL"
+      }
+    },
+    {
+      "updateDimensionProperties": {
+        "range": {
+          "sheetId": 1262236171,
+          "dimension": "ROWS",
+          "startIndex": 102,
+          "endIndex": 103
+        },
+        "properties": {
+          "pixelSize": 36
+        },
+        "fields": "pixelSize"
+      }
+    },
+    {
+      "autoResizeDimensions": {
+        "dimensions": {
+          "sheetId": 1262236171,
+          "dimension": "ROWS",
+          "startIndex": 103,
+          "endIndex": 111
+        }
+      }
+    }
+  ],
+  "after": {
+    "content": [
+      {
+        "type": "text",
+        "text": "Action completed."
+      }
+    ],
+    "structuredContent": {
+      "spreadsheetId": "1TqGmdGTCZN1NvVGDxhnaBurkkJkzj-NpITDCnAY4DQk",
+      "spreadsheetUrl": "https://docs.google.com/spreadsheets/d/1TqGmdGTCZN1NvVGDxhnaBurkkJkzj-NpITDCnAY4DQk/edit",
+      "properties": {
+        "title": "야 ai",
+        "locale": "ko_KR",
+        "timeZone": "Asia/Seoul"
+      },
+      "sheets": [
+        {
+          "properties": {
+            "sheetId": 1262236171,
+            "title": "승현_ 실험기록",
+            "index": 1,
+            "sheetType": "GRID",
+            "gridProperties": {
+              "rowCount": 1000,
+              "columnCount": 26
+            }
+          },
+          "data": [
+            {
+              "startRow": 92,
+              "rowData": [
+                {
+                  "values": [
+                    {
+                      "userEnteredValue": {
+                        "stringValue": "2026-10-07 | 추론 상위 5개 모델 · 최대 100epoch / early stopping 재학습 · D4 TTA"
+                      },
+                      "userEnteredFormat": {
+                        "backgroundColor": {
+                          "red": 0.9372549,
+                          "green": 0.9372549,
+                          "blue": 0.9372549
+                        },
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 11,
+                          "bold": true
+                        },
+                        "backgroundColorStyle": {
+                          "rgbColor": {
+                            "red": 0.9372549,
+                            "green": 0.9372549,
+                            "blue": 0.9372549
+                          }
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "values": [
+                    {
+                      "userEnteredValue": {
+                        "stringValue": "실험명"
+                      },
+                      "userEnteredFormat": {
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "stringValue": "모델"
+                      },
+                      "userEnteredFormat": {
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "stringValue": "mIoU"
+                      },
+                      "userEnteredFormat": {
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "stringValue": "TTA"
+                      },
+                      "userEnteredFormat": {
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "stringValue": "Al"
+                      },
+                      "userEnteredFormat": {
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "stringValue": "Primary Si"
+                      },
+                      "userEnteredFormat": {
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "stringValue": "Al3Ni"
+                      },
+                      "userEnteredFormat": {
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "stringValue": "Eutectic Si"
+                      },
+                      "userEnteredFormat": {
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "stringValue": "설정"
+                      },
+                      "userEnteredFormat": {
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "stringValue": "학습 시간"
+                      },
+                      "userEnteredFormat": {
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "stringValue": "비고"
+                      },
+                      "userEnteredFormat": {
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "values": [
+                    {
+                      "userEnteredValue": {
+                        "stringValue": "기준 · 기존 E 중심선"
+                      },
+                      "userEnteredFormat": {
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "stringValue": "U-Net + EfficientNetV2-S"
+                      },
+                      "userEnteredFormat": {
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "numberValue": 78.93204859354823
+                      },
+                      "userEnteredFormat": {
+                        "numberFormat": {
+                          "type": "NUMBER",
+                          "pattern": "0.000000"
+                        },
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "stringValue": "8방향"
+                      },
+                      "userEnteredFormat": {
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "numberValue": 94.16624772307215
+                      },
+                      "userEnteredFormat": {
+                        "numberFormat": {
+                          "type": "NUMBER",
+                          "pattern": "0.00"
+                        },
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "numberValue": 84.86213638700929
+                      },
+                      "userEnteredFormat": {
+                        "numberFormat": {
+                          "type": "NUMBER",
+                          "pattern": "0.00"
+                        },
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "numberValue": 80.84367851962814
+                      },
+                      "userEnteredFormat": {
+                        "numberFormat": {
+                          "type": "NUMBER",
+                          "pattern": "0.00"
+                        },
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "numberValue": 55.85613174448335
+                      },
+                      "userEnteredFormat": {
+                        "numberFormat": {
+                          "type": "NUMBER",
+                          "pattern": "0.00"
+                        },
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "stringValue": "기존 best.pt; valid18; 입력 ×2, tile768, D4 TTA"
+                      },
+                      "userEnteredFormat": {
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "stringValue": "추가학습 없음"
+                      },
+                      "userEnteredFormat": {
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "stringValue": "얇은 E 재현율 70.904%; 이전 탐색 최고 78.950681%; test10 라벨 없음"
+                      },
+                      "userEnteredFormat": {
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "values": [
+                    {
+                      "userEnteredValue": {
+                        "stringValue": "얇은 E 보존 기하 변형"
+                      },
+                      "userEnteredFormat": {
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "stringValue": "U-Net + EfficientNetV2-S"
+                      },
+                      "userEnteredFormat": {
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "numberValue": 79.00779879382462
+                      },
+                      "userEnteredFormat": {
+                        "numberFormat": {
+                          "type": "NUMBER",
+                          "pattern": "0.000000"
+                        },
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "stringValue": "8방향"
+                      },
+                      "userEnteredFormat": {
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "numberValue": 94.15952833909697
+                      },
+                      "userEnteredFormat": {
+                        "numberFormat": {
+                          "type": "NUMBER",
+                          "pattern": "0.00"
+                        },
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "numberValue": 85.01313207262885
+                      },
+                      "userEnteredFormat": {
+                        "numberFormat": {
+                          "type": "NUMBER",
+                          "pattern": "0.00"
+                        },
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "numberValue": 80.88632365174836
+                      },
+                      "userEnteredFormat": {
+                        "numberFormat": {
+                          "type": "NUMBER",
+                          "pattern": "0.00"
+                        },
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "numberValue": 55.97221111182431
+                      },
+                      "userEnteredFormat": {
+                        "numberFormat": {
+                          "type": "NUMBER",
+                          "pattern": "0.00"
+                        },
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "stringValue": "E soft-mask·연결성 검사 기하 변형; 최대100ep, 5ep 검증, patience20ep, min Δ0.02%p; train72/valid18"
+                      },
+                      "userEnteredFormat": {
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "stringValue": "25epoch 14.5분; 선택 5epoch; 조기 종료"
+                      },
+                      "userEnteredFormat": {
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "stringValue": "과거 동일 전략 79.007236% 대비 +0.000563%p; 기준 대비 +0.075750%p (A그룹 짝 95% CI -0.069~0.194); 얇은 E 재현율 70.802%; test10 완료"
+                      },
+                      "userEnteredFormat": {
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "values": [
+                    {
+                      "userEnteredValue": {
+                        "stringValue": "저학습률 E 문맥 합성"
+                      },
+                      "userEnteredFormat": {
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "stringValue": "U-Net + EfficientNetV2-S"
+                      },
+                      "userEnteredFormat": {
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "numberValue": 78.94274586106262
+                      },
+                      "userEnteredFormat": {
+                        "numberFormat": {
+                          "type": "NUMBER",
+                          "pattern": "0.000000"
+                        },
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "stringValue": "8방향"
+                      },
+                      "userEnteredFormat": {
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "numberValue": 94.16407794402419
+                      },
+                      "userEnteredFormat": {
+                        "numberFormat": {
+                          "type": "NUMBER",
+                          "pattern": "0.00"
+                        },
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "numberValue": 84.86700689844251
+                      },
+                      "userEnteredFormat": {
+                        "numberFormat": {
+                          "type": "NUMBER",
+                          "pattern": "0.00"
+                        },
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "numberValue": 80.8262631191363
+                      },
+                      "userEnteredFormat": {
+                        "numberFormat": {
+                          "type": "NUMBER",
+                          "pattern": "0.00"
+                        },
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "numberValue": 55.91363548264741
+                      },
+                      "userEnteredFormat": {
+                        "numberFormat": {
+                          "type": "NUMBER",
+                          "pattern": "0.00"
+                        },
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "stringValue": "상 문맥 합성 + 저학습률 E 재현율 손실; 최대100ep, 5ep 검증, patience20ep, min Δ0.02%p; train72/valid18"
+                      },
+                      "userEnteredFormat": {
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "stringValue": "25epoch 13.9분; 선택 5epoch; 조기 종료"
+                      },
+                      "userEnteredFormat": {
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "stringValue": "과거 동일 전략 78.942687% 대비 +0.000059%p; 기준 대비 +0.010697%p (A그룹 짝 95% CI -0.028~0.056); 얇은 E 재현율 71.206%; test10 완료"
+                      },
+                      "userEnteredFormat": {
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "values": [
+                    {
+                      "userEnteredValue": {
+                        "stringValue": "기존 E 중심선 재학습"
+                      },
+                      "userEnteredFormat": {
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "stringValue": "U-Net + EfficientNetV2-S"
+                      },
+                      "userEnteredFormat": {
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "numberValue": 78.9309711410583
+                      },
+                      "userEnteredFormat": {
+                        "numberFormat": {
+                          "type": "NUMBER",
+                          "pattern": "0.000000"
+                        },
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "stringValue": "8방향"
+                      },
+                      "userEnteredFormat": {
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "numberValue": 94.16679832762586
+                      },
+                      "userEnteredFormat": {
+                        "numberFormat": {
+                          "type": "NUMBER",
+                          "pattern": "0.00"
+                        },
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "numberValue": 84.84779822248721
+                      },
+                      "userEnteredFormat": {
+                        "numberFormat": {
+                          "type": "NUMBER",
+                          "pattern": "0.00"
+                        },
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "numberValue": 80.84550293464851
+                      },
+                      "userEnteredFormat": {
+                        "numberFormat": {
+                          "type": "NUMBER",
+                          "pattern": "0.00"
+                        },
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "numberValue": 55.86378507947161
+                      },
+                      "userEnteredFormat": {
+                        "numberFormat": {
+                          "type": "NUMBER",
+                          "pattern": "0.00"
+                        },
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "stringValue": "E 중심선 재현율 보조 손실; ImageNet 초기; 최대100ep, 5ep 검증, patience20ep, min Δ0.02%p; train72/valid18"
+                      },
+                      "userEnteredFormat": {
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "stringValue": "100epoch 61.7분; 선택 90epoch; 100ep 상한"
+                      },
+                      "userEnteredFormat": {
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "stringValue": "과거 동일 전략 78.932049% 대비 -0.001077%p; 기준 대비 -0.001077%p (A그룹 짝 95% CI -0.041~0.027); 얇은 E 재현율 70.932%; test10 완료"
+                      },
+                      "userEnteredFormat": {
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "values": [
+                    {
+                      "userEnteredValue": {
+                        "stringValue": "상별 스타일 통계 교환"
+                      },
+                      "userEnteredFormat": {
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "stringValue": "U-Net + EfficientNetV2-S"
+                      },
+                      "userEnteredFormat": {
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "numberValue": 78.92420324957915
+                      },
+                      "userEnteredFormat": {
+                        "numberFormat": {
+                          "type": "NUMBER",
+                          "pattern": "0.000000"
+                        },
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "stringValue": "8방향"
+                      },
+                      "userEnteredFormat": {
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "numberValue": 94.1798075091703
+                      },
+                      "userEnteredFormat": {
+                        "numberFormat": {
+                          "type": "NUMBER",
+                          "pattern": "0.00"
+                        },
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "numberValue": 84.90033002908018
+                      },
+                      "userEnteredFormat": {
+                        "numberFormat": {
+                          "type": "NUMBER",
+                          "pattern": "0.00"
+                        },
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "numberValue": 80.90242288094302
+                      },
+                      "userEnteredFormat": {
+                        "numberFormat": {
+                          "type": "NUMBER",
+                          "pattern": "0.00"
+                        },
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "numberValue": 55.71425257912315
+                      },
+                      "userEnteredFormat": {
+                        "numberFormat": {
+                          "type": "NUMBER",
+                          "pattern": "0.00"
+                        },
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "stringValue": "상별 중앙값·IQR 통계 교환; 최대100ep, 5ep 검증, patience20ep, min Δ0.02%p; train72/valid18"
+                      },
+                      "userEnteredFormat": {
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "stringValue": "25epoch 15.8분; 선택 5epoch; 조기 종료"
+                      },
+                      "userEnteredFormat": {
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "stringValue": "과거 동일 전략 78.923872% 대비 +0.000331%p; 기준 대비 -0.007845%p (A그룹 짝 95% CI -0.092~0.065); 얇은 E 재현율 69.905%; test10 완료"
+                      },
+                      "userEnteredFormat": {
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "values": [
+                    {
+                      "userEnteredValue": {
+                        "stringValue": "E 보호·주변 조명"
+                      },
+                      "userEnteredFormat": {
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "stringValue": "U-Net + EfficientNetV2-S"
+                      },
+                      "userEnteredFormat": {
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "numberValue": 78.92165697045854
+                      },
+                      "userEnteredFormat": {
+                        "numberFormat": {
+                          "type": "NUMBER",
+                          "pattern": "0.000000"
+                        },
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "stringValue": "8방향"
+                      },
+                      "userEnteredFormat": {
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "numberValue": 94.1844429392164
+                      },
+                      "userEnteredFormat": {
+                        "numberFormat": {
+                          "type": "NUMBER",
+                          "pattern": "0.00"
+                        },
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "numberValue": 84.9086448481654
+                      },
+                      "userEnteredFormat": {
+                        "numberFormat": {
+                          "type": "NUMBER",
+                          "pattern": "0.00"
+                        },
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "numberValue": 80.92358683183271
+                      },
+                      "userEnteredFormat": {
+                        "numberFormat": {
+                          "type": "NUMBER",
+                          "pattern": "0.00"
+                        },
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "numberValue": 55.66995326261965
+                      },
+                      "userEnteredFormat": {
+                        "numberFormat": {
+                          "type": "NUMBER",
+                          "pattern": "0.00"
+                        },
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "stringValue": "E 원형 보호 + 주변 조명 변형; 최대100ep, 5ep 검증, patience20ep, min Δ0.02%p; train72/valid18"
+                      },
+                      "userEnteredFormat": {
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "stringValue": "25epoch 15.5분; 선택 5epoch; 조기 종료"
+                      },
+                      "userEnteredFormat": {
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "stringValue": "과거 동일 전략 78.921823% 대비 -0.000166%p; 기준 대비 -0.010392%p (A그룹 짝 95% CI -0.105~0.076); 얇은 E 재현율 69.866%; test10 완료"
+                      },
+                      "userEnteredFormat": {
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "values": [
+                    {
+                      "userEnteredValue": {
+                        "stringValue": "판정 · 얇은 E 보존 기하 변형 최고"
+                      },
+                      "userEnteredFormat": {
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "stringValue": "U-Net + EfficientNetV2-S"
+                      },
+                      "userEnteredFormat": {
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredFormat": {
+                        "numberFormat": {
+                          "type": "NUMBER",
+                          "pattern": "0.000000"
+                        },
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredFormat": {
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredFormat": {
+                        "numberFormat": {
+                          "type": "NUMBER",
+                          "pattern": "0.00"
+                        },
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredFormat": {
+                        "numberFormat": {
+                          "type": "NUMBER",
+                          "pattern": "0.00"
+                        },
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredFormat": {
+                        "numberFormat": {
+                          "type": "NUMBER",
+                          "pattern": "0.00"
+                        },
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredFormat": {
+                        "numberFormat": {
+                          "type": "NUMBER",
+                          "pattern": "0.00"
+                        },
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "stringValue": "최고 valid18 mIoU 79.007799%; 저학습률 E 문맥의 얇은 E 재현율 71.206%가 최고; 80% 미달; 4개 25ep 조기 종료, 1개 100ep 상한"
+                      },
+                      "userEnteredFormat": {
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredFormat": {
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "stringValue": "valid18 반복 사용·동일 시드; 95% CI는 0 포함; test10 정답 없어 점수 없음; 공식 대회 점수 아님. 보고서: http://127.0.0.1:8767/eutectic_top5_100ep_2026-10-07/report.html"
+                      },
+                      "userEnteredFormat": {
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    }
+                  ]
+                },
+                {},
+                {
+                  "values": [
+                    {
+                      "userEnteredValue": {
+                        "stringValue": "2026-10-13 | 10월 7일 최종 5종 재실험 · 기록 기반 재구성 · D4 TTA"
+                      },
+                      "userEnteredFormat": {
+                        "backgroundColor": {
+                          "red": 0.9372549,
+                          "green": 0.9372549,
+                          "blue": 0.9372549
+                        },
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 11,
+                          "bold": true
+                        },
+                        "backgroundColorStyle": {
+                          "rgbColor": {
+                            "red": 0.9372549,
+                            "green": 0.9372549,
+                            "blue": 0.9372549
+                          }
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "values": [
+                    {
+                      "userEnteredValue": {
+                        "stringValue": "실험명"
+                      },
+                      "userEnteredFormat": {
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "stringValue": "모델"
+                      },
+                      "userEnteredFormat": {
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "stringValue": "mIoU"
+                      },
+                      "userEnteredFormat": {
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "stringValue": "TTA"
+                      },
+                      "userEnteredFormat": {
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "stringValue": "Al"
+                      },
+                      "userEnteredFormat": {
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "stringValue": "Primary Si"
+                      },
+                      "userEnteredFormat": {
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "stringValue": "Al3Ni"
+                      },
+                      "userEnteredFormat": {
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "stringValue": "Eutectic Si"
+                      },
+                      "userEnteredFormat": {
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "stringValue": "설정"
+                      },
+                      "userEnteredFormat": {
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "stringValue": "학습 시간"
+                      },
+                      "userEnteredFormat": {
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "stringValue": "비고"
+                      },
+                      "userEnteredFormat": {
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "values": [
+                    {
+                      "userEnteredValue": {
+                        "stringValue": "재구성 · 기존 E 중심선 재학습"
+                      },
+                      "userEnteredFormat": {
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "stringValue": "U-Net + EfficientNetV2-S"
+                      },
+                      "userEnteredFormat": {
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "numberValue": 77.26280490514819
+                      },
+                      "userEnteredFormat": {
+                        "numberFormat": {
+                          "type": "NUMBER",
+                          "pattern": "0.000000"
+                        },
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "stringValue": "8방향"
+                      },
+                      "userEnteredFormat": {
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "numberValue": 90.97405270865201
+                      },
+                      "userEnteredFormat": {
+                        "numberFormat": {
+                          "type": "NUMBER",
+                          "pattern": "0.00"
+                        },
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "numberValue": 87.64143840805657
+                      },
+                      "userEnteredFormat": {
+                        "numberFormat": {
+                          "type": "NUMBER",
+                          "pattern": "0.00"
+                        },
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "numberValue": 77.56428500119405
+                      },
+                      "userEnteredFormat": {
+                        "numberFormat": {
+                          "type": "NUMBER",
+                          "pattern": "0.00"
+                        },
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "numberValue": 52.87144350269008
+                      },
+                      "userEnteredFormat": {
+                        "numberFormat": {
+                          "type": "NUMBER",
+                          "pattern": "0.00"
+                        },
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "stringValue": "ImageNet 초기; CE+Dice+0.1 E 중심선 recall; AdamW enc3e-5/dec3e-4·cosine100; train72/valid18; 정렬 ID KFold5·shuffle·seed42·fold0 재구성; native384→768; 600patch/ep; batch8; 최대100ep·5ep 검증·patience20ep·minΔ0.02%p; 입력×2·tile768·overlap0.5"
+                      },
+                      "userEnteredFormat": {
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "stringValue": "70epoch 161.0분; 선택65epoch; 조기 종료"
+                      },
+                      "userEnteredFormat": {
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "stringValue": "완료·마스크 독립 검산 일치; 기존78.930971% 대비 -1.668166%p; 얇은 E recall72.423%; test10 추론 완료·정답 없어 점수 없음. 원본 분할·코드·초기 best.pt·환경 미복구."
+                      },
+                      "userEnteredFormat": {
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "values": [
+                    {
+                      "userEnteredValue": {
+                        "stringValue": "재구성 · 얇은 E 보존 기하 변형"
+                      },
+                      "userEnteredFormat": {
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "stringValue": "U-Net + EfficientNetV2-S"
+                      },
+                      "userEnteredFormat": {
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredFormat": {
+                        "numberFormat": {
+                          "type": "NUMBER",
+                          "pattern": "0.000000"
+                        },
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "stringValue": "8방향"
+                      },
+                      "userEnteredFormat": {
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredFormat": {
+                        "numberFormat": {
+                          "type": "NUMBER",
+                          "pattern": "0.00"
+                        },
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredFormat": {
+                        "numberFormat": {
+                          "type": "NUMBER",
+                          "pattern": "0.00"
+                        },
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredFormat": {
+                        "numberFormat": {
+                          "type": "NUMBER",
+                          "pattern": "0.00"
+                        },
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredFormat": {
+                        "numberFormat": {
+                          "type": "NUMBER",
+                          "pattern": "0.00"
+                        },
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "stringValue": "공통 재구성 기준 best.pt에서 독립 시작; E soft-mask·연결성 검사; ±3–7°·704→768; p0.5·E면적비0.85–1.15·CC비0.6–1.6(검사값은 복원 가정); train72/valid18; 정렬 ID KFold5·shuffle·seed42·fold0 재구성; native384→768; 600patch/ep; batch8; 최대100ep·5ep 검증·patience20ep·minΔ0.02%p; 입력×2·tile768·overlap0.5"
+                      },
+                      "userEnteredFormat": {
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "stringValue": "학습 진행 중"
+                      },
+                      "userEnteredFormat": {
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "stringValue": "진행 중; 최종 mIoU 미측정; 목표79% 이상 여부 미확인. 기존79.007799%는 참고값."
+                      },
+                      "userEnteredFormat": {
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "values": [
+                    {
+                      "userEnteredValue": {
+                        "stringValue": "재구성 · 저학습률 E 문맥 합성"
+                      },
+                      "userEnteredFormat": {
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "stringValue": "U-Net + EfficientNetV2-S"
+                      },
+                      "userEnteredFormat": {
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredFormat": {
+                        "numberFormat": {
+                          "type": "NUMBER",
+                          "pattern": "0.000000"
+                        },
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "stringValue": "8방향"
+                      },
+                      "userEnteredFormat": {
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredFormat": {
+                        "numberFormat": {
+                          "type": "NUMBER",
+                          "pattern": "0.00"
+                        },
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredFormat": {
+                        "numberFormat": {
+                          "type": "NUMBER",
+                          "pattern": "0.00"
+                        },
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredFormat": {
+                        "numberFormat": {
+                          "type": "NUMBER",
+                          "pattern": "0.00"
+                        },
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredFormat": {
+                        "numberFormat": {
+                          "type": "NUMBER",
+                          "pattern": "0.00"
+                        },
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "stringValue": "공통 재구성 기준 best.pt에서 독립 시작; enc1e-6/dec1e-5; CE+Dice+0.1 dense E recall; 작은 E 최대8개·Al영역 paste·경계 feather; donor train만; train72/valid18; 정렬 ID KFold5·shuffle·seed42·fold0 재구성; native384→768; 600patch/ep; batch8; 최대100ep·5ep 검증·patience20ep·minΔ0.02%p; 입력×2·tile768·overlap0.5"
+                      },
+                      "userEnteredFormat": {
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "stringValue": "대기"
+                      },
+                      "userEnteredFormat": {
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "stringValue": "미실행·최종 mIoU 미측정; 기존78.942746%는 참고값."
+                      },
+                      "userEnteredFormat": {
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "values": [
+                    {
+                      "userEnteredValue": {
+                        "stringValue": "재구성 · 상별 스타일 통계 교환"
+                      },
+                      "userEnteredFormat": {
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "stringValue": "U-Net + EfficientNetV2-S"
+                      },
+                      "userEnteredFormat": {
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredFormat": {
+                        "numberFormat": {
+                          "type": "NUMBER",
+                          "pattern": "0.000000"
+                        },
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "stringValue": "8방향"
+                      },
+                      "userEnteredFormat": {
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredFormat": {
+                        "numberFormat": {
+                          "type": "NUMBER",
+                          "pattern": "0.00"
+                        },
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredFormat": {
+                        "numberFormat": {
+                          "type": "NUMBER",
+                          "pattern": "0.00"
+                        },
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredFormat": {
+                        "numberFormat": {
+                          "type": "NUMBER",
+                          "pattern": "0.00"
+                        },
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredFormat": {
+                        "numberFormat": {
+                          "type": "NUMBER",
+                          "pattern": "0.00"
+                        },
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "stringValue": "공통 재구성 기준 best.pt에서 독립 시작; train donor 상별 중앙값·IQR 교환; p0.47·강도0.2–0.4·경계 smoothing(복원 가정); train72/valid18; 정렬 ID KFold5·shuffle·seed42·fold0 재구성; native384→768; 600patch/ep; batch8; 최대100ep·5ep 검증·patience20ep·minΔ0.02%p; 입력×2·tile768·overlap0.5"
+                      },
+                      "userEnteredFormat": {
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "stringValue": "대기"
+                      },
+                      "userEnteredFormat": {
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "stringValue": "미실행·최종 mIoU 미측정; 기존78.924203%는 참고값."
+                      },
+                      "userEnteredFormat": {
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "values": [
+                    {
+                      "userEnteredValue": {
+                        "stringValue": "재구성 · E 보호·주변 조명"
+                      },
+                      "userEnteredFormat": {
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "stringValue": "U-Net + EfficientNetV2-S"
+                      },
+                      "userEnteredFormat": {
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredFormat": {
+                        "numberFormat": {
+                          "type": "NUMBER",
+                          "pattern": "0.000000"
+                        },
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "stringValue": "8방향"
+                      },
+                      "userEnteredFormat": {
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredFormat": {
+                        "numberFormat": {
+                          "type": "NUMBER",
+                          "pattern": "0.00"
+                        },
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredFormat": {
+                        "numberFormat": {
+                          "type": "NUMBER",
+                          "pattern": "0.00"
+                        },
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredFormat": {
+                        "numberFormat": {
+                          "type": "NUMBER",
+                          "pattern": "0.00"
+                        },
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredFormat": {
+                        "numberFormat": {
+                          "type": "NUMBER",
+                          "pattern": "0.00"
+                        },
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "stringValue": "공통 재구성 기준 best.pt에서 독립 시작; E+3px 경계 보호; p0.56·주변 gradient±0.04·contrast0.95–1.05(복원 가정); train72/valid18; 정렬 ID KFold5·shuffle·seed42·fold0 재구성; native384→768; 600patch/ep; batch8; 최대100ep·5ep 검증·patience20ep·minΔ0.02%p; 입력×2·tile768·overlap0.5"
+                      },
+                      "userEnteredFormat": {
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "stringValue": "대기"
+                      },
+                      "userEnteredFormat": {
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "stringValue": "미실행·최종 mIoU 미측정; 기존78.921657%는 참고값."
+                      },
+                      "userEnteredFormat": {
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "values": [
+                    {
+                      "userEnteredValue": {
+                        "stringValue": "진행 판정 · 1/5 완료"
+                      },
+                      "userEnteredFormat": {
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredFormat": {
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredFormat": {
+                        "numberFormat": {
+                          "type": "NUMBER",
+                          "pattern": "0.000000"
+                        },
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredFormat": {
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredFormat": {
+                        "numberFormat": {
+                          "type": "NUMBER",
+                          "pattern": "0.00"
+                        },
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredFormat": {
+                        "numberFormat": {
+                          "type": "NUMBER",
+                          "pattern": "0.00"
+                        },
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredFormat": {
+                        "numberFormat": {
+                          "type": "NUMBER",
+                          "pattern": "0.00"
+                        },
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredFormat": {
+                        "numberFormat": {
+                          "type": "NUMBER",
+                          "pattern": "0.00"
+                        },
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "stringValue": "기준 모델 D4 mIoU77.262805%; E softmask 및 나머지3종 결과 대기. 재현 성공·79% 달성으로 판단하지 않음."
+                      },
+                      "userEnteredFormat": {
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredFormat": {
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "stringValue": "mIoU는 이미지별 클래스 평균 IoU의 평균(%); empty union 제외. test 정답 없음."
+                      },
+                      "userEnteredFormat": {
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "values": [
+                    {
+                      "userEnteredValue": {
+                        "stringValue": "재구성 조건·산출물"
+                      },
+                      "userEnteredFormat": {
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredFormat": {
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredFormat": {
+                        "numberFormat": {
+                          "type": "NUMBER",
+                          "pattern": "0.000000"
+                        },
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredFormat": {
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredFormat": {
+                        "numberFormat": {
+                          "type": "NUMBER",
+                          "pattern": "0.00"
+                        },
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredFormat": {
+                        "numberFormat": {
+                          "type": "NUMBER",
+                          "pattern": "0.00"
+                        },
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredFormat": {
+                        "numberFormat": {
+                          "type": "NUMBER",
+                          "pattern": "0.00"
+                        },
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredFormat": {
+                        "numberFormat": {
+                          "type": "NUMBER",
+                          "pattern": "0.00"
+                        },
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "stringValue": "원본 코드·분할 ID·초기 best.pt·패키지 버전·기본 optimizer/scheduler 불명. 기록에 없는 세부값은 configs/experiment.json에 가정으로 명시. 과거 동일 환경·동일 분할 확인 불가."
+                      },
+                      "userEnteredFormat": {
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredFormat": {
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    },
+                    {
+                      "userEnteredValue": {
+                        "stringValue": "바탕화면 KOMAP: data/, src/, configs/, pretrained/, records/, runs/에 데이터·소스·환경·가중치·로그·예측 저장. 기존10/7 점수 보존. 실측값만 신규 기록."
+                      },
+                      "userEnteredFormat": {
+                        "verticalAlignment": "TOP",
+                        "wrapStrategy": "WRAP",
+                        "textFormat": {
+                          "fontFamily": "Arial",
+                          "fontSize": 10
+                        }
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "isError": false
+  },
+  "verified": true
+}

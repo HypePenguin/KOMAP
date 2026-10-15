@@ -1,0 +1,13 @@
+{
+  "path": "C:\\Users\\SSAFY\\Desktop\\KOMAP\\share_261014_2_esoftmask_light.zip",
+  "bytes": 86338223,
+  "sha256": "b662bf0460691a774f75e3a5ac24f830e9de66455baf0adf83a289cf59820e87",
+  "under_100000000_bytes": true,
+  "verified_members": 73,
+  "best_pt_sha256": "5b1f3a8a026782d08d9405414989718825186277b3c4810d29ded39931a947e1",
+  "model_weights_unchanged": true,
+  "selected_epoch": 30,
+  "cpu_checkpoint_load_passed": true,
+  "validation_mIoU": 80.03941302084225,
+  "source_sheet_row": 123
+}

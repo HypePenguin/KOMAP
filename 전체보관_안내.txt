@@ -1,0 +1,59 @@
+﻿KOMAP 전체 학습 자료 보관본 — 2026-10-15
+
+1. 포함 범위
+원본 이미지100장과 정답 마스크90개, 초기 가중치, 모든 실험의 코드·설정·분할,
+best/last 체크포인트, 학습 이력과 오류 로그, 예측 마스크, 독립 검산 기록,
+시트의 로컬 보관본·엑셀·보고서, 최신 efficient.py 단일 추론 패키지를 포함했습니다.
+실패한 last.pt.tmp도 실패 증거로 보관했으며 정상 재개 파일이 아닙니다.
+모델 양자화·정밀도 변경이나 추가 학습은 하지 않았습니다.
+
+가상환경(.venv), Python 캐시, 이미 존재하는 공유 ZIP과 그 해시 파일,
+priority_style89_20261015/share_package 중복 복사본은 제외했습니다.
+최신 공유 코드와 모델은 share_261015_priority_style89_efficient/에 있습니다.
+다운로드된 초기 pretrained 모델은 포함했습니다. requirements.lock.txt와
+records/environment.json에 설치 환경을 보관했습니다.
+정확한 포함 파일·파일별 SHA256·제외 사유는 ARCHIVE_MANIFEST.json을 보세요.
+
+2. 실험 상태와 평가 범위
+runs/: 초기 v1. 기준모델·E softmask 완료. 문맥 합성은22epoch 중단;
+20epoch last.pt가 있으나 최종 결과는 없습니다. 설정 복원 전 실험입니다.
+
+notes_recovered/: 셀 메모 복원5종 완료·검산. 스타일 교환80.25754088%는
+재분할 valid18에서의 실측값입니다. 학습72에 원본 valid15장이 포함됐으므로
+원본 valid20 성능으로 해석하면 안 됩니다.
+
+recorded_protocol/: 학습 시작 전에 취소된 계획입니다.
+target_search/: LR 개선 후보의 계획만 준비됐으며 학습은 실행하지 않았습니다.
+
+original_split_retrain/: 원본 train70 기준모델 완료·검산,
+원본 valid20 최종 mIoU78.81838027%. E softmask는 체크포인트 저장 오류로
+종료됐습니다. 정상 last.pt가 없으며 last.pt.tmp는 실패 파일입니다.
+당시 status.json의 running은 오래된 상태입니다. 나머지2종은 미실행입니다.
+
+priority_style89_20261015/: 사용자 요청으로 원본 train70+valid19를 학습한
+스타일 모델입니다. A170_step4_sample3은 학습·donor에서 제외했습니다.
+45epoch 종료,25epoch EMA 선택. A170 한 장 참고 mIoU86.61428018%.
+A170은 체크포인트 선택에 사용했으므로 독립 test 성능이 아닙니다.
+test10은 정답이 없어 추론 마스크만 있습니다.
+
+3. 최신 모델과 단일 파일 추론
+모델 원본: priority_style89_20261015/runs/phase_style_exchange/best.pt
+SHA256: e464af75e27dc7e8204287b2dc6f11fca8184c05aad09db5050dd0a320b0c626
+
+share_261015_priority_style89_efficient/ 폴더에서 의존성 설치 후:
+  python efficient.py --input "이미지폴더" --output "새결과폴더" --save-probs
+model/best.pt가 위 모델의 동일한 복사본입니다.
+predict_proba는 float32 (4,H,W) 확률을 반환하며 원본 해상도입니다.
+클래스 순서: Al / Primary Si / Al3Ni / Eutectic Si.
+실행 방법과 GPU 재추론의 미세한 수치 차이는 해당 폴더 README.txt에 있습니다.
+
+4. 다시 사용하기 전에
+압축을 풀면 KOMAP/ 안에 원래 프로젝트 폴더 구조가 유지됩니다.
+예전 실행 기록에는 원PC의 절대 경로가 남아 있어 다른 PC에서 재학습하려면
+설치 환경과 데이터·체크포인트 경로를 맞춰야 합니다. 압축 해제 자체로 학습이
+자동 실행되지는 않습니다. 정상 last.pt의 재개 가능 여부도 해당 실험의
+코드·설정·분할·초기화 기록과 함께 확인해야 합니다.
+원본 hsson 코드·folds.csv·당시 초기 체크포인트 미확인 한계는 그대로입니다.
+보고서와 시트 파일은 저장 당시의 스냅샷이며 실시간 Google Sheet 자체가 아닙니다.
+reports_support/에는 완성 보고서 PDF와 실험별 근거 자료가 추가됐습니다.
+refactor_checks/의 검증 소스는 실행 기록용이며 원PC 작업 경로를 참조합니다.

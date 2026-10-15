@@ -1,0 +1,43 @@
+{
+  "completed_at": "2026-10-14T17:51:32.9208090+09:00",
+  "completed_count": 5,
+  "all_five_complete": true,
+  "validation_mIoU": [
+    {
+      "variant": "centerline_baseline",
+      "independent_mIoU": 79.84738714714055
+    },
+    {
+      "variant": "e_protected_illumination",
+      "independent_mIoU": 80.04308293550106
+    },
+    {
+      "variant": "e_softmask_geometry",
+      "independent_mIoU": 80.03941302084225
+    },
+    {
+      "variant": "low_lr_context_paste",
+      "independent_mIoU": 79.84590980850167
+    },
+    {
+      "variant": "phase_style_exchange",
+      "independent_mIoU": 80.25754088175019
+    }
+  ],
+  "valid_masks_per_model": 18,
+  "test_masks_per_model": 10,
+  "independent_audit_passed": true,
+  "sheet_range": "'승현_ 실험기록'!A120:K128",
+  "sheet_read_back_verified": true,
+  "xlsx_verified": true,
+  "xlsx_sha256": "8ab94b158b7071a65a0961f5d12a33376b9ffed1cc287a038c8c38fe0b94f064",
+  "original_rows_1_101_preserved": true,
+  "e_softmask_target_achieved": true,
+  "additional_target_search_needed": false,
+  "original_folds_and_initial_checkpoint_verified": false,
+  "baseline_elapsed_time_includes_overnight_sleep": true,
+  "automation_state_observed": "PAUSED",
+  "user_notification_preference": "quiet_except_blocking_errors",
+  "completion_context": "사용자 절전 요청 처리 중 마지막 결과 확인 및 저장",
+  "final_report": "실험결과.txt"
+}

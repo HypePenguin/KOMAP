@@ -1,0 +1,19 @@
+{
+  "variant": "e_protected_illumination",
+  "epoch": 35,
+  "max_epochs": 100,
+  "best_no_tta": 79.52879013878426,
+  "minutes": 76.07046825333188,
+  "last_epoch": {
+    "epoch": 35,
+    "loss": 0.2506031022469203,
+    "train_seconds": 127.16314860014245,
+    "augmentation_applied": 330,
+    "samples": 600,
+    "mIoU": 79.5284325973609,
+    "validation_seconds": 10.744304300285876
+  },
+  "attempts": 2625,
+  "updates": 2625,
+  "amp_skips": 0
+}

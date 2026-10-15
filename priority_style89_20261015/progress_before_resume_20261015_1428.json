@@ -1,0 +1,14 @@
+{
+  "variant": "phase_style_exchange",
+  "stage": "training",
+  "epoch_completed": 13,
+  "epoch_in_progress": 14,
+  "batch_in_epoch": 50,
+  "batches_per_epoch": 75,
+  "max_epochs": 100,
+  "best_no_tta": 85.85841200155426,
+  "minutes": 31.04547358000006,
+  "attempts": 1025,
+  "updates": 1025,
+  "amp_skips": 0
+}

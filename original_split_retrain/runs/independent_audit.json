@@ -1,0 +1,39 @@
+[
+  {
+    "variant": "centerline_baseline",
+    "passed": true,
+    "independent_mIoU": 78.81838026518486,
+    "independent_class_iou": [
+      94.17966374809808,
+      90.32477030762593,
+      73.65463499831563,
+      59.067558050855624
+    ],
+    "difference": 0.0,
+    "valid_masks": 20,
+    "test_masks": 10,
+    "split_file": "C:\\Users\\SSAFY\\Desktop\\KOMAP\\original_split_retrain\\split.json",
+    "split_sha256": "af482b5d242ffda4cc4ebc77f859467f6bd369ed9d613b95bf20392a3789b084",
+    "data_manifest_sha256": "15cfef36482eb62a1d92f678c8d8690e75923a58b2c9bc77e7184445ef2d877d",
+    "result_sha256": "e3bc608fd2c141c7eff89775150127d2e074b63cf266b1a0cc5784f432f556cc",
+    "config_sha256": "32586cee3efed66bd476f3bf603a0163313e275b2f88d7411c7e46803851128c",
+    "data_boundary_sha256": "ecd950fa5b344d53eea5be0e351bdb47fc9735782d1318d9b79d929061bc45b4",
+    "source_subset_split_verified": true,
+    "source_hashes_verified": 100,
+    "source_image_hashes_verified": 100,
+    "source_mask_hashes_verified": 90,
+    "train_valid_image_sha256_overlap": [],
+    "train_ids_verified": 70,
+    "donor_ids_verified": 70,
+    "historical_score_comparison": "No direct difference is reported against past scores from a different partition",
+    "group_overlap": [
+      "A125",
+      "A153",
+      "A181",
+      "A191",
+      "A40",
+      "A55",
+      "A7"
+    ]
+  }
+]

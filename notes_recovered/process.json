@@ -1,0 +1,7 @@
+{
+  "command": "src/notes_recovered.py --resume",
+  "started_at": "2026-10-13T16:05:32.4912012+09:00",
+  "pid": 29568,
+  "log": "notes_recovered/execution.log",
+  "state": "launched"
+}

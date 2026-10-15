@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "ema_closed_form_two_updates": true,
+  "EMA_does_not_mutate_online_model": true,
+  "integer_buffers_copied": true,
+  "A_groups_disjoint": true,
+  "valid_A_groups": 14,
+  "original_split_verified": false
+}

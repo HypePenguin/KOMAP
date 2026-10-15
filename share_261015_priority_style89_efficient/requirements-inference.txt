@@ -1,0 +1,6 @@
+# Install matching torch + torchvision first. See records/environment.json.
+numpy==2.5.2
+opencv-python-headless==5.0.0.93
+pillow==12.3.0
+segmentation_models_pytorch==0.5.0
+timm==1.0.22

@@ -1,0 +1,115 @@
+{
+  "variant": "phase_style_exchange",
+  "best_epoch": 25,
+  "epochs": 45,
+  "train_minutes": 100.37985107333334,
+  "validation": {
+    "mIoU": 86.61428017677498,
+    "class_iou": [
+      93.76223759626909,
+      90.23448752664632,
+      90.96517932736477,
+      71.4952162568198
+    ],
+    "global_mIoU": 86.61428017677498,
+    "thin_e_recall": 81.71090024565291,
+    "e_to_al3ni_pixels": 1395,
+    "per_image": [
+      {
+        "id": "A170_step4_sample3",
+        "mIoU": 86.61428017677498,
+        "class_iou": [
+          93.76223759626909,
+          90.23448752664632,
+          90.96517932736477,
+          71.4952162568198
+        ],
+        "thin_e_recall": 81.71090024565291,
+        "e_to_al3ni_pixels": 1395,
+        "confusion": [
+          [
+            158025,
+            111,
+            3259,
+            848
+          ],
+          [
+            620,
+            31324,
+            645,
+            1429
+          ],
+          [
+            3489,
+            238,
+            100995,
+            1005
+          ],
+          [
+            2186,
+            347,
+            1395,
+            18084
+          ]
+        ]
+      }
+    ],
+    "metric_definition": "mean over images of mean class IoU; empty class union excluded; unit percent",
+    "seconds": 18.599380299994664
+  },
+  "test": {
+    "count": 10,
+    "mIoU": null,
+    "reason": "test masks not provided",
+    "seconds": 34.70974460000434
+  },
+  "attempts": 3375,
+  "updates": 3375,
+  "amp_skips": 0,
+  "original_split_verified": false,
+  "original_code_recovered": false,
+  "target_79_reached": null,
+  "original_record_mIoU": 78.92420324957915,
+  "selection_tile": 512,
+  "final_tta_tile": 768,
+  "early_stop_enabled": true,
+  "model_kind": "EMA",
+  "weight_decay": 0.05,
+  "ema_decay": 0.999,
+  "experiment_phase": "priority_style89_20261015",
+  "requested_boundary_verified": true,
+  "source_subset_split_verified": false,
+  "source_data_counts": {
+    "train": 89,
+    "valid": 1,
+    "test": 10
+  },
+  "training_source_counts": {
+    "train": 70,
+    "valid": 19,
+    "test": 0
+  },
+  "split_file": "C:\\Users\\SSAFY\\Desktop\\KOMAP\\priority_style89_20261015\\split.json",
+  "split_sha256": "e2c8522673771b56965af83f6d2e10bf3d7d86bc0547ece876e48318d361ea07",
+  "plan_sha256": "5934fb0be4cc13229fc52b0c8046113b82f790a1cd5d25e3a4d3b7d0b08c4669",
+  "provenance_sha256": "361c562d21193d23a7c9e66969259a177ccd0eb591339673757dad5d54009101",
+  "initial_checkpoint_sha256": "6bf6809c18cb49d576e704fa0738d54e9e83fc0abc47a21e227ec796ee2054be",
+  "source_sha256": {
+    "src/priority_style89.py": "c49f6500c1c81858b18b74afe817c146b0d6e005a8074e6f04dcabbc5d4a675b",
+    "src/experiment.py": "24ad7ed40d9f104626916a1fd69ab89a73d409a743242f0e437095d7ff7029d4",
+    "src/original_split_retrain.py": "9cffea019f86e651ae3867c775230547ea2cfdd074f3ac3490f946d2d0217360",
+    "src/target_search.py": "c72657a91a7b801f101744e5b3cadab89efeef82ee07fba775b2a37a9f194177",
+    "src/training_awake.py": "98e9c6f65f146d4de4ea33fc13be4080a33f0a68f03735addd8e45b217710378",
+    "src/audit_original_split.py": "4ddccb9af7f31f74f8fe47b987161fac82c7c903d5cf1cddb2c15f76a05cf27e",
+    "src/audit_priority_style89.py": "ca5de8c29d76730dd51d1358cf52085b36293ba34e290aa920b30a26f1aa2695",
+    "src/build_priority_style89_share.py": "bc9c85de67ea3d46fec303539da8721b3ff3500a0ca12964a5fc3e56dc1b7d39",
+    "src/share_model_priority.py": "20a0b0b587d5dc796bbfdd3dedc7965c819ca6b0d698a0de8fa85cc22e73103d"
+  },
+  "excluded_id": "A170_step4_sample3",
+  "validation_usage": "A170_step4_sample3 only: evaluation/checkpoint selection, never training or donor. Single-image reference score, not original valid20 performance or a new independent test; A170 was previously used for clean train70 baseline checkpoint selection.",
+  "validation_scope": "single_image_reference",
+  "baseline_holdout_used_for_checkpoint_selection": true,
+  "original_valid20_independent_evaluation": false,
+  "historical_reference_scores_comparable": false,
+  "single_image_reference_mIoU": 86.61428017677498
+}

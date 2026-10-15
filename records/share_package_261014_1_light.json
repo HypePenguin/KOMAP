@@ -1,0 +1,11 @@
+{
+  "path": "C:\\Users\\SSAFY\\Desktop\\KOMAP\\share_261014_1_light.zip",
+  "bytes": 86406947,
+  "sha256": "a16dc3a728e30fae4750664096bea0d31fdcc4434efbaaafd418757ab14b0eef",
+  "under_100000000_bytes": true,
+  "members_verified": 87,
+  "original_best_pt_sha256": "c70036a303d84cb10e9c6330113dd1fcc2761128e5ef6a7ad670af9be2a59a49",
+  "best_pt_unchanged": true,
+  "cpu_checkpoint_load_passed": true,
+  "original_validation_mIoU": 79.84738714714055
+}

@@ -1,0 +1,7 @@
+{
+  "checkpoint": "C:\\Users\\SSAFY\\Desktop\\KOMAP\\original_split_retrain\\runs\\centerline_baseline\\best.pt",
+  "sha256": "6bf6809c18cb49d576e704fa0738d54e9e83fc0abc47a21e227ec796ee2054be",
+  "baseline_result_sha256": "e3bc608fd2c141c7eff89775150127d2e074b63cf266b1a0cc5784f432f556cc",
+  "split_sha256": "af482b5d242ffda4cc4ebc77f859467f6bd369ed9d613b95bf20392a3789b084",
+  "baseline_initial_sha256": "dc9106bf16c414017e7365555e31e78c4a3bfe598267d4270c4ada3fbba98bb2"
+}

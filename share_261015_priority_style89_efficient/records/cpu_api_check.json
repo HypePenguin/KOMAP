@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "device": "cpu",
+  "external_default_dtype": "float64",
+  "external_autocast": "bfloat16",
+  "actual_model_dtype": "float32",
+  "output_shape": [
+    4,
+    17,
+    29
+  ],
+  "output_dtype": "float32",
+  "seconds": 6.720121400001517
+}

@@ -1,0 +1,117 @@
+{
+  "recorded_at": "2026-10-15T09:19:26.24614+09:00",
+  "user_requested_original_rows": [
+    122,
+    123,
+    124,
+    125
+  ],
+  "variants": [
+    "centerline_baseline",
+    "e_softmask_geometry",
+    "low_lr_context_paste",
+    "phase_style_exchange"
+  ],
+  "counts": {
+    "test": 10,
+    "train": 70,
+    "donor": 70,
+    "valid": 20
+  },
+  "cpu_boundary_tests": {
+    "scope": "original boundaries, real PatchDataset crop and donor refusal, hashes, independent mask metrics",
+    "failed": 0,
+    "passed": 9
+  },
+  "plan_sha256": "b41ebcb0faa7909d2319da316c138c7b36ceda7a232545c8876445ba4d345152",
+  "split_sha256": "af482b5d242ffda4cc4ebc77f859467f6bd369ed9d613b95bf20392a3789b084",
+  "source_sha256": {
+    "src/original_split_retrain.py": "9cffea019f86e651ae3867c775230547ea2cfdd074f3ac3490f946d2d0217360",
+    "src/experiment.py": "24ad7ed40d9f104626916a1fd69ab89a73d409a743242f0e437095d7ff7029d4",
+    "src/audit_original_split.py": "4ddccb9af7f31f74f8fe47b987161fac82c7c903d5cf1cddb2c15f76a05cf27e",
+    "src/target_search.py": "c72657a91a7b801f101744e5b3cadab89efeef82ee07fba775b2a37a9f194177",
+    "src/training_awake.py": "98e9c6f65f146d4de4ea33fc13be4080a33f0a68f03735addd8e45b217710378"
+  },
+  "initial_checkpoint_sha256": "dc9106bf16c414017e7365555e31e78c4a3bfe598267d4270c4ada3fbba98bb2",
+  "prior_trained_checkpoints_reused": false,
+  "independent_finetunes_from_new_baseline": true,
+  "process": {
+    "wrapper_pid": 25940,
+    "started_at": "2026-10-15T09:18:04.8916268+09:00",
+    "executable": "C:\\Users\\SSAFY\\Desktop\\KOMAP\\.venv\\Scripts\\python.exe",
+    "arguments": [
+      "-u",
+      "-B",
+      "-X",
+      "utf8",
+      "C:\\Users\\SSAFY\\Desktop\\KOMAP\\src\\original_split_retrain.py"
+    ],
+    "working_directory": "C:\\Users\\SSAFY\\Desktop\\KOMAP",
+    "source_split": {
+      "test": 10,
+      "train": 70,
+      "valid": 20
+    },
+    "initialization": "fresh initial weights; no old trained checkpoint",
+    "variants": [
+      "centerline_baseline",
+      "e_softmask_geometry",
+      "low_lr_context_paste",
+      "phase_style_exchange"
+    ]
+  },
+  "actual_python_pid": 13632,
+  "power_guard": {
+    "guard_pid": 13632,
+    "updated_at": "2026-10-15T09:18:34.62868+09:00",
+    "display_required": false,
+    "manual_sleep_overridden": false,
+    "state": "active",
+    "windows_request_verified": true,
+    "flags": "0x80000001"
+  },
+  "original_A_group_overlap_recorded_not_resplit": {
+    "train_valid": [
+      "A125",
+      "A153",
+      "A181",
+      "A191",
+      "A40",
+      "A55",
+      "A7"
+    ],
+    "train_test": [
+      "A167",
+      "A51",
+      "A87"
+    ],
+    "valid_test": [
+      "A63"
+    ]
+  },
+  "old_sheet_correction": "A120:K128: source valid20 included15 in original training pool; values apply only to repartition valid18",
+  "new_sheet_range": "A130:K137",
+  "native_sheet_and_xlsx_verified": true,
+  "monitoring": {
+    "interval_minutes": 30,
+    "status": "ACTIVE",
+    "id": "komap",
+    "notification_policy": "failed_runs_only"
+  },
+  "training_completed": false,
+  "confirmed_training_progress": {
+    "variant": "centerline_baseline",
+    "stage": "training",
+    "epoch_completed": 0,
+    "epoch_in_progress": 1,
+    "batch_in_epoch": 25,
+    "batches_per_epoch": 75,
+    "max_epochs": 100,
+    "best_no_tta": -1.0,
+    "minutes": 2.4337848783333658,
+    "attempts": 25,
+    "updates": 25,
+    "amp_skips": 0
+  },
+  "first_training_verified_at": "2026-10-15T09:21:31.0371035+09:00"
+}

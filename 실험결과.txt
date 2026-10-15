@@ -1,0 +1,30 @@
+KOMAP 셀 메모 기반 재구성 (2026-10-14T17:50:07+09:00)
+
+교정 5종 5/5 완료. 이 후보 분할의 완료 모델 최고 mIoU 80.257541%. E softmask 80.039413%: 79% 달성.
+
+셀 메모 복원: WD0.05·EMA0.999; native384→768; 600patch/ep·batch8·seed42; 최대100ep·검증5ep·patience20ep·minΔ0.02%p; 선택tile512 no-TTA·최종tile768 D4·overlap0.5; A그룹 비중복 후보 train72/valid18·검증14그룹(원본 folds.csv 미확인)
+원본 코드·folds.csv·초기 가중치·패키지 버전 미복구. EMA/WD 등 확인값은 configs/record_notes.json. cosine per-update·최저LR1e-7, 일부 증강 세부값·fine-tune 선택tile512는 가정. 후보 분할은 모델 점수를 보기 전에 고정했으며 원본·v1과 점수를 직접 비교할 수 없음.
+
+기존 E 중심선 재학습: D4 mIoU 79.847387%; 100epoch 경과 1082.1분(밤사이 절전 포함); 선택90epoch
+얇은 E 보존 기하 변형 (E softmask): D4 mIoU 80.039413%; 50epoch 111.3분; 선택30epoch
+저학습률 E 문맥 합성: D4 mIoU 79.845910%; 25epoch 57.0분; 선택5epoch
+상별 스타일 통계 교환: D4 mIoU 80.257541%; 75epoch 173.6분; 선택55epoch
+E 보호·주변 조명: D4 mIoU 80.043083%; 35epoch 76.1분; 선택25epoch
+
+초기 v1: 중심선77.26280490514819%, E softmask77.49962168453507% 실측값 보존.
+v1 low LR는 last.pt 20epoch를 보존한 뒤 중단; style/illum 미실행 취소.
+recorded_protocol의 2종 큐는 학습 시작 전 취소. 이 조건으로 재개하지 않습니다.
+
+평가: 이미지별 클래스 IoU를 평균한 뒤 이미지 평균; empty union 제외; 단위%.
+Test 10장의 정답이 없어 test mIoU는 산출하지 않으며 예측 마스크만 저장합니다.
+후보 A그룹 분할은 모델 평가 전에 고정: train72/valid18, 검증14 A그룹, 학습/검증 A그룹 비중복.
+원본 folds.csv 미복구: 과거 및 v1 점수와 직접 비교하는 통제 실험이 아닙니다.
+
+data/: 제공한 원본 복사본; records/data_manifest.json: 원본 해시
+records/historical_record_notes.json: 새로 확인한 원본 셀 메모
+configs/record_notes.json + split_group_fold0.json: 교정 설정 및 고정 후보 분할
+notes_recovered/runs/<실험>/: best.pt·last.pt·history·result·valid/test 마스크
+src/audit_results.py: 분할별 저장 마스크 독립 검산·그룹 조건·원본 해시 확인
+run_experiments.ps1: 교정 5종 재개 → 교정 분할 감사 → TXT/JSON 보고서 생성
+재실험_결과.xlsx는 검증 후 갱신한 원본 Google Sheet를 내보내어 저장합니다.
+requirements.lock.txt/records/environment.json: 현재 PC 환경; .venv는 다른 PC로 이동 실행 불가.

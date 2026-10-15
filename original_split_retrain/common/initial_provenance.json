@@ -1,0 +1,6 @@
+{
+  "source": "C:\\Users\\SSAFY\\Desktop\\KOMAP\\notes_recovered\\common\\initial_weights.pt",
+  "copy": "C:\\Users\\SSAFY\\Desktop\\KOMAP\\original_split_retrain\\common\\initial_weights.pt",
+  "sha256": "dc9106bf16c414017e7365555e31e78c4a3bfe598267d4270c4ada3fbba98bb2",
+  "purpose": "ImageNet pretrained encoder plus untrained seed42 decoder; no segmentation training"
+}

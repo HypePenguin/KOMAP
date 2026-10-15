@@ -1,0 +1,732 @@
+[
+  {
+    "row": 1,
+    "column": 3,
+    "note": "mIoU는 검증18장 사진별 평균 점수(%). 원본 정밀도를 숫자로 저장하고 화면에는 소수 둘째 자리까지 표시합니다."
+  },
+  {
+    "row": 1,
+    "column": 4,
+    "note": "TTA 적용 후 mIoU를 기입하는 열입니다. 이번 5조건 모두 TTA 미실시이므로 '-'로 기록합니다."
+  },
+  {
+    "row": 1,
+    "column": 9,
+    "note": "실험 완료: 2026-10-01. 기록: 2026-10-02.\n기준: Downloads/hsson-main의 s3 코드/설정. 해당 폴더에 학습 완료 체크포인트가 없어 동일 초기 가중치에서 5조건을 각각 학습했습니다.\nUnet + tu-tf_efficientnetv2_s.in21k_ft_in1k; ImageNet 인코더 + seed42 디코더. 인코더/디코더 모두 학습.\n각 100epoch × 600개 패치, batch8 = 7,500 학습 배치(업데이트 시도). AMP에 따른 성공 업데이트 횟수는 따로 집계하지 않았습니다.\nAdamW lr3e-4, encoder LR×0.1, weight decay0.05, CE+Dice, EMA0.999. 검증은 5epoch마다, tile512/overlap0.5, TTA·bias 보정 없음.\n5조건에서 원본 선택 순서와 초기 가중치/분할 동일. control/D4/photo crop 좌표도 동일.\n각 전략의 experiments/<strategy>/data에 60,000개 증강 재현 계획 및 64쌍의 예시, run에 config/metrics/best.pt/last.pt/검증 예측을 분리 저장했습니다. 온라인 증강이며 60,000장 PNG를 저장한 것은 아닙니다."
+  },
+  {
+    "row": 1,
+    "column": 10,
+    "note": "RTX 5060 Ti 기준. 총 시간은 100epoch 학습 + 주기적 검증/저장 + 최종 best 재로드 및 검증 예측 저장을 포함합니다. 초기 모델·데이터 준비는 제외합니다.\n'일반'은 첫 epoch와 검증 epoch를 제외한 79epoch 평균. '검증 포함'은 5epoch마다 수행한 20epoch 평균입니다. 첫 epoch는 초기 실행 비용으로 25~94초 소요됐습니다."
+  },
+  {
+    "row": 1,
+    "column": 11,
+    "note": "모든 점수는 % 단위. hsson folds.csv fold0, 학습72/검증18, seed42. A번호 중복 없음.\n공식 train70+valid20을 재분할한 내부 검증이며 공식 valid20 평가 또는 대회 점수가 아닙니다. 사진별 클래스 IoU를 평균한 점수입니다.\n최고 epoch와 최고 전략을 같은 검증 세트에서 선택했습니다. 단일 seed/fold이며 반복 실험은 하지 않았습니다.\nCI는 A그룹 단위 paired bootstrap 95% 구간입니다. 학습 seed 변동/다중 선택 효과는 반영하지 않았습니다.\n5개 최고 모델을 재로드하여 검증18/18 예측 일치를 확인했습니다.\nD4(best90)를 선택하여 test10장 예측을 생성했습니다. test 정답이 없어 test 점수는 없으며 대회 제출은 하지 않았습니다."
+  },
+  {
+    "row": 2,
+    "column": 1,
+    "note": "원본 결과: experiments/control/run/result.json\n시간 로그: experiments/control/run/metrics.csv"
+  },
+  {
+    "row": 3,
+    "column": 1,
+    "note": "원본 결과: experiments/geometry_d4/run/result.json\n시간 로그: experiments/geometry_d4/run/metrics.csv"
+  },
+  {
+    "row": 4,
+    "column": 1,
+    "note": "원본 결과: experiments/photometric_mild/run/result.json\n시간 로그: experiments/photometric_mild/run/metrics.csv"
+  },
+  {
+    "row": 5,
+    "column": 1,
+    "note": "원본 결과: experiments/class_aware_crop/run/result.json\n시간 로그: experiments/class_aware_crop/run/metrics.csv"
+  },
+  {
+    "row": 6,
+    "column": 1,
+    "note": "원본 결과: experiments/repository_recipe/run/result.json\n시간 로그: experiments/repository_recipe/run/metrics.csv"
+  },
+  {
+    "row": 8,
+    "column": 1,
+    "note": "단일 seed42·내부 fold0 학습72/검증18. 공식 valid20·대회 점수 아님. 기존 결과를 보고 같은 fold에서 후속 전략을 정한 탐색 실험. A그룹 paired bootstrap 95% CI는 학습 seed 변동·best epoch·다중/순차 선택을 보정하지 않음. test10은 정답 없어 점수 없음."
+  },
+  {
+    "row": 9,
+    "column": 3,
+    "note": "mIoU·상별 IoU 단위 %. 모든 primary 비교와 checkpoint 선택은 tile512."
+  },
+  {
+    "row": 9,
+    "column": 8,
+    "note": "추가 E precision/recall/경계/내부 및 CI는 각 Eutectic 셀 노트 참조."
+  },
+  {
+    "row": 9,
+    "column": 11,
+    "note": "단일 seed42·내부 fold0 학습72/검증18. 공식 valid20·대회 점수 아님. 기존 결과를 보고 같은 fold에서 후속 전략을 정한 탐색 실험. A그룹 paired bootstrap 95% CI는 학습 seed 변동·best epoch·다중/순차 선택을 보정하지 않음. test10은 정답 없어 점수 없음."
+  },
+  {
+    "row": 10,
+    "column": 1,
+    "note": "원본 결과: C:\\Users\\SSAFY\\Documents\\Codex\\2026-10-01\\https-komap-ai-front-competition2026-receipt\\outputs\\augmentation_study\\experiments\\geometry_d4\\run\\result.json\n독립 재평가: outputs/eutectic_followup/analysis/summary.json\nprimary tile512 결과."
+  },
+  {
+    "row": 10,
+    "column": 3,
+    "note": "검증18장 사진별 mIoU 평균(%). 숫자는 재평가 원본 정밀도로 저장하고 표시만 소수 둘째 자리. 기존 D4 대비 비교 대기"
+  },
+  {
+    "row": 10,
+    "column": 4,
+    "note": "TTA 후 mIoU를 기록하는 기존 열입니다. 이번 후속 모든 조건은 TTA 미실시이므로 '-'이며 0점이 아닙니다."
+  },
+  {
+    "row": 10,
+    "column": 8,
+    "note": "Eutectic IoU는 이미지별 평균(%).\n이미지평균 precision 73.4736%, recall 66.0228%.\n이미지평균 4이웃경계 recall 59.1752%, 내부 recall 73.0686%.\n별도 픽셀합산 경계 recall 59.9408%, 내부 recall 72.7326%.\n경계=상하좌우 비-E와 맞닿은 GT E픽셀, 경계·내부 모두 최외곽1px 제외. 전체 E recall/IoU는 외곽 포함. 거리/물리 두께 지표 아님.\n"
+  },
+  {
+    "row": 10,
+    "column": 9,
+    "note": "{\n  \"arch\": \"Unet\",\n  \"encoder\": \"tu-tf_efficientnetv2_s.in21k_ft_in1k\",\n  \"weights\": \"imagenet\",\n  \"fold\": 0,\n  \"crop\": 512,\n  \"input_scale\": 2.0,\n  \"batch\": 8,\n  \"epochs\": 100,\n  \"samples\": 600,\n  \"lr\": 0.0003,\n  \"enc_lr_mult\": 0.1,\n  \"wd\": 0.05,\n  \"ema\": 0.999,\n  \"loss\": \"ce_dice\",\n  \"label_smoothing\": 0.0,\n  \"eval_every\": 5,\n  \"tile\": 512,\n  \"overlap\": 0.5,\n  \"seed\": 42,\n  \"workers\": 2,\n  \"absent\": \"skip\",\n  \"initial_sha256\": \"401b67f68607def4bcba0a0987983012f2733a1c9dc62243e08433483e5c996e\",\n  \"train_steps\": 7500,\n  \"initialization\": \"Immutable initial state shared by all runs: ImageNet encoder + seed42 decoder; both are trainable\",\n  \"checkpoint_selection\": \"Highest validation image-wise mIoU without TTA; ties keep earliest\",\n  \"classes\": [\n    \"Al\",\n    \"Primary_Si\",\n    \"Al3Ni\",\n    \"Eutectic_Si\"\n  ],\n  \"parameters\": 22093908,\n  \"reproducibility\": \"Stateless epoch/sample augmentation seed; seeded model/optimizer; cuDNN benchmark enabled, no bitwise determinism guarantee\",\n  \"torch_num_threads\": 4,\n  \"boundary_lambda\": 0.1,\n  \"boundary_cap_pixels\": 32,\n  \"primary_eval_tile\": 512,\n  \"followup_context_crop\": 768,\n  \"strategy\": \"geometry_d4\",\n  \"split_sha256\": \"8fd0caa0b6bf0241173c089817ce92922d8ef66cee319348bb518b8d007dfd21\",\n  \"started_utc\": \"2026-10-01T09:00:23Z\",\n  \"evaluation\": \"No TTA, no bias calibration\"\n}\n실행 설정 원문."
+  },
+  {
+    "row": 10,
+    "column": 10,
+    "note": "minutes는 학습·주기 검증·최종 재로딩/저장을 포함한 기록. 초기 준비 제외. 일반 epoch는 첫 epoch와 5배수 검증 epoch 제외. test 추론 시간은 별도이며 학습 시간에 더하지 않음.\n성공 optimizer update: 미기록; AMP skip: 미기록.\n7,500은 학습 배치/업데이트 시도 수이며 baseline 성공 업데이트 수는 미기록."
+  },
+  {
+    "row": 10,
+    "column": 11,
+    "note": "단일 seed42·내부 fold0 학습72/검증18. 공식 valid20·대회 점수 아님. 기존 결과를 보고 같은 fold에서 후속 전략을 정한 탐색 실험. A그룹 paired bootstrap 95% CI는 학습 seed 변동·best epoch·다중/순차 선택을 보정하지 않음. test10은 정답 없어 점수 없음."
+  },
+  {
+    "row": 11,
+    "column": 1,
+    "note": "원본 결과: C:\\Users\\SSAFY\\Documents\\Codex\\2026-10-01\\https-komap-ai-front-competition2026-receipt\\outputs\\eutectic_followup\\experiments\\d4_eutectic_crop\\run\\result.json\n독립 재평가: outputs/eutectic_followup/analysis/summary.json\nprimary tile512 결과."
+  },
+  {
+    "row": 11,
+    "column": 3,
+    "note": "검증18장 사진별 mIoU 평균(%). 숫자는 재평가 원본 정밀도로 저장하고 표시만 소수 둘째 자리. 기존 D4 대비 +0.0045%p (95% CI -0.3040~+0.3359)"
+  },
+  {
+    "row": 11,
+    "column": 4,
+    "note": "TTA 후 mIoU를 기록하는 기존 열입니다. 이번 후속 모든 조건은 TTA 미실시이므로 '-'이며 0점이 아닙니다."
+  },
+  {
+    "row": 11,
+    "column": 8,
+    "note": "Eutectic IoU는 이미지별 평균(%).\n이미지평균 precision 73.0797%, recall 66.2550%.\n이미지평균 4이웃경계 recall 58.9910%, 내부 recall 73.6743%.\n별도 픽셀합산 경계 recall 59.8090%, 내부 recall 73.6918%.\n경계=상하좌우 비-E와 맞닿은 GT E픽셀, 경계·내부 모두 최외곽1px 제외. 전체 E recall/IoU는 외곽 포함. 거리/물리 두께 지표 아님.\nmiou: +0.0045%p (95% CI -0.3040~+0.3359)\neutectic_iou: +0.1520%p (95% CI -0.5496~+1.0284)\neutectic_precision: -0.3939%p (95% CI -1.2200~+0.5039)\neutectic_recall: +0.2322%p (95% CI -0.9190~+1.6328)\neutectic_boundary_recall: -0.1842%p (95% CI -1.1934~+0.8876)\neutectic_interior_recall: +0.6057%p (95% CI -0.6816~+2.2887)"
+  },
+  {
+    "row": 11,
+    "column": 9,
+    "note": "{\n  \"arch\": \"Unet\",\n  \"encoder\": \"tu-tf_efficientnetv2_s.in21k_ft_in1k\",\n  \"weights\": \"imagenet\",\n  \"fold\": 0,\n  \"crop\": 512,\n  \"input_scale\": 2.0,\n  \"batch\": 8,\n  \"epochs\": 100,\n  \"samples\": 600,\n  \"lr\": 0.0003,\n  \"enc_lr_mult\": 0.1,\n  \"wd\": 0.05,\n  \"ema\": 0.999,\n  \"loss\": \"ce_dice\",\n  \"label_smoothing\": 0.0,\n  \"eval_every\": 5,\n  \"tile\": 512,\n  \"overlap\": 0.5,\n  \"seed\": 42,\n  \"workers\": 2,\n  \"absent\": \"skip\",\n  \"initial_sha256\": \"401b67f68607def4bcba0a0987983012f2733a1c9dc62243e08433483e5c996e\",\n  \"train_steps\": 7500,\n  \"initialization\": \"Immutable initial state shared by all runs: ImageNet encoder + seed42 decoder; both are trainable\",\n  \"checkpoint_selection\": \"Highest validation image-wise mIoU without TTA; ties keep earliest\",\n  \"classes\": [\n    \"Al\",\n    \"Primary_Si\",\n    \"Al3Ni\",\n    \"Eutectic_Si\"\n  ],\n  \"parameters\": 22093908,\n  \"reproducibility\": \"Stateless epoch/sample augmentation seed; seeded model/optimizer; cuDNN benchmark enabled, no bitwise determinism guarantee\",\n  \"torch_num_threads\": 4,\n  \"boundary_lambda\": 0.0,\n  \"boundary_cap_pixels\": 32,\n  \"primary_eval_tile\": 512,\n  \"followup_context_crop\": 768,\n  \"strategy\": \"d4_eutectic_crop\",\n  \"micro_batch\": 8,\n  \"accumulation_steps\": 1,\n  \"split_sha256\": \"8fd0caa0b6bf0241173c089817ce92922d8ef66cee319348bb518b8d007dfd21\",\n  \"input_manifest_sha256\": \"97fa994b5742984a1eea648f52493b9a24b69e6ec3777da38ce2ccd37f2bb970\",\n  \"initial_weights_path\": \"C:\\\\Users\\\\SSAFY\\\\Documents\\\\Codex\\\\2026-10-01\\\\https-komap-ai-front-competition2026-receipt\\\\outputs\\\\augmentation_study\\\\common\\\\initial_weights.pt\",\n  \"started_utc\": \"2026-10-02T01:51:55Z\"\n}\n실행 설정 원문."
+  },
+  {
+    "row": 11,
+    "column": 10,
+    "note": "minutes는 학습·주기 검증·최종 재로딩/저장을 포함한 기록. 초기 준비 제외. 일반 epoch는 첫 epoch와 5배수 검증 epoch 제외. test 추론 시간은 별도이며 학습 시간에 더하지 않음.\n성공 optimizer update: 7500; AMP skip: 0.\n7,500은 학습 배치/업데이트 시도 수이며 baseline 성공 업데이트 수는 미기록."
+  },
+  {
+    "row": 11,
+    "column": 11,
+    "note": "단일 seed42·내부 fold0 학습72/검증18. 공식 valid20·대회 점수 아님. 기존 결과를 보고 같은 fold에서 후속 전략을 정한 탐색 실험. A그룹 paired bootstrap 95% CI는 학습 seed 변동·best epoch·다중/순차 선택을 보정하지 않음. test10은 정답 없어 점수 없음."
+  },
+  {
+    "row": 12,
+    "column": 1,
+    "note": "원본 결과: C:\\Users\\SSAFY\\Documents\\Codex\\2026-10-01\\https-komap-ai-front-competition2026-receipt\\outputs\\eutectic_followup\\experiments\\d4_boundary_loss\\run\\result.json\n독립 재평가: outputs/eutectic_followup/analysis/summary.json\nprimary tile512 결과."
+  },
+  {
+    "row": 12,
+    "column": 3,
+    "note": "검증18장 사진별 mIoU 평균(%). 숫자는 재평가 원본 정밀도로 저장하고 표시만 소수 둘째 자리. 기존 D4 대비 +0.0309%p (95% CI -0.0585~+0.1688)"
+  },
+  {
+    "row": 12,
+    "column": 4,
+    "note": "TTA 후 mIoU를 기록하는 기존 열입니다. 이번 후속 모든 조건은 TTA 미실시이므로 '-'이며 0점이 아닙니다."
+  },
+  {
+    "row": 12,
+    "column": 8,
+    "note": "Eutectic IoU는 이미지별 평균(%).\n이미지평균 precision 73.6456%, recall 65.9710%.\n이미지평균 4이웃경계 recall 58.9749%, 내부 recall 73.1332%.\n별도 픽셀합산 경계 recall 59.6333%, 내부 recall 72.6441%.\n경계=상하좌우 비-E와 맞닿은 GT E픽셀, 경계·내부 모두 최외곽1px 제외. 전체 E recall/IoU는 외곽 포함. 거리/물리 두께 지표 아님.\nmiou: +0.0309%p (95% CI -0.0585~+0.1688)\neutectic_iou: +0.0551%p (95% CI -0.2036~+0.4909)\neutectic_precision: +0.1720%p (95% CI +0.0151~+0.3403)\neutectic_recall: -0.0518%p (95% CI -0.3218~+0.4009)\neutectic_boundary_recall: -0.2003%p (95% CI -0.4142~+0.0799)\neutectic_interior_recall: +0.0646%p (95% CI -0.2281~+0.6173)"
+  },
+  {
+    "row": 12,
+    "column": 9,
+    "note": "{\n  \"arch\": \"Unet\",\n  \"encoder\": \"tu-tf_efficientnetv2_s.in21k_ft_in1k\",\n  \"weights\": \"imagenet\",\n  \"fold\": 0,\n  \"crop\": 512,\n  \"input_scale\": 2.0,\n  \"batch\": 8,\n  \"epochs\": 100,\n  \"samples\": 600,\n  \"lr\": 0.0003,\n  \"enc_lr_mult\": 0.1,\n  \"wd\": 0.05,\n  \"ema\": 0.999,\n  \"loss\": \"ce_dice\",\n  \"label_smoothing\": 0.0,\n  \"eval_every\": 5,\n  \"tile\": 512,\n  \"overlap\": 0.5,\n  \"seed\": 42,\n  \"workers\": 2,\n  \"absent\": \"skip\",\n  \"initial_sha256\": \"401b67f68607def4bcba0a0987983012f2733a1c9dc62243e08433483e5c996e\",\n  \"train_steps\": 7500,\n  \"initialization\": \"Immutable initial state shared by all runs: ImageNet encoder + seed42 decoder; both are trainable\",\n  \"checkpoint_selection\": \"Highest validation image-wise mIoU without TTA; ties keep earliest\",\n  \"classes\": [\n    \"Al\",\n    \"Primary_Si\",\n    \"Al3Ni\",\n    \"Eutectic_Si\"\n  ],\n  \"parameters\": 22093908,\n  \"reproducibility\": \"Stateless epoch/sample augmentation seed; seeded model/optimizer; cuDNN benchmark enabled, no bitwise determinism guarantee\",\n  \"torch_num_threads\": 4,\n  \"boundary_lambda\": 0.1,\n  \"boundary_cap_pixels\": 32,\n  \"primary_eval_tile\": 512,\n  \"followup_context_crop\": 768,\n  \"strategy\": \"d4_boundary_loss\",\n  \"micro_batch\": 8,\n  \"accumulation_steps\": 1,\n  \"split_sha256\": \"8fd0caa0b6bf0241173c089817ce92922d8ef66cee319348bb518b8d007dfd21\",\n  \"input_manifest_sha256\": \"97fa994b5742984a1eea648f52493b9a24b69e6ec3777da38ce2ccd37f2bb970\",\n  \"initial_weights_path\": \"C:\\\\Users\\\\SSAFY\\\\Documents\\\\Codex\\\\2026-10-01\\\\https-komap-ai-front-competition2026-receipt\\\\outputs\\\\augmentation_study\\\\common\\\\initial_weights.pt\",\n  \"started_utc\": \"2026-10-02T02:34:26Z\"\n}\n실행 설정 원문."
+  },
+  {
+    "row": 12,
+    "column": 10,
+    "note": "minutes는 학습·주기 검증·최종 재로딩/저장을 포함한 기록. 초기 준비 제외. 일반 epoch는 첫 epoch와 5배수 검증 epoch 제외. test 추론 시간은 별도이며 학습 시간에 더하지 않음.\n성공 optimizer update: 7499; AMP skip: 1.\n7,500은 학습 배치/업데이트 시도 수이며 baseline 성공 업데이트 수는 미기록."
+  },
+  {
+    "row": 12,
+    "column": 11,
+    "note": "단일 seed42·내부 fold0 학습72/검증18. 공식 valid20·대회 점수 아님. 기존 결과를 보고 같은 fold에서 후속 전략을 정한 탐색 실험. A그룹 paired bootstrap 95% CI는 학습 seed 변동·best epoch·다중/순차 선택을 보정하지 않음. test10은 정답 없어 점수 없음."
+  },
+  {
+    "row": 13,
+    "column": 1,
+    "note": "원본 결과: C:\\Users\\SSAFY\\Documents\\Codex\\2026-10-01\\https-komap-ai-front-competition2026-receipt\\outputs\\eutectic_followup\\experiments\\d4_context768\\run\\result.json\n독립 재평가: outputs/eutectic_followup/analysis/summary.json\nprimary tile512 결과."
+  },
+  {
+    "row": 13,
+    "column": 3,
+    "note": "검증18장 사진별 mIoU 평균(%). 숫자는 재평가 원본 정밀도로 저장하고 표시만 소수 둘째 자리. 기존 D4 대비 +0.3238%p (95% CI -0.2093~+0.9199)"
+  },
+  {
+    "row": 13,
+    "column": 4,
+    "note": "TTA 후 mIoU를 기록하는 기존 열입니다. 이번 후속 모든 조건은 TTA 미실시이므로 '-'이며 0점이 아닙니다."
+  },
+  {
+    "row": 13,
+    "column": 8,
+    "note": "Eutectic IoU는 이미지별 평균(%).\n이미지평균 precision 73.0277%, recall 67.7192%.\n이미지평균 4이웃경계 recall 60.5166%, 내부 recall 74.9898%.\n별도 픽셀합산 경계 recall 59.9541%, 내부 recall 74.6737%.\n경계=상하좌우 비-E와 맞닿은 GT E픽셀, 경계·내부 모두 최외곽1px 제외. 전체 E recall/IoU는 외곽 포함. 거리/물리 두께 지표 아님.\nmiou: +0.3238%p (95% CI -0.2093~+0.9199)\neutectic_iou: +0.7610%p (95% CI -0.5597~+2.4907)\neutectic_precision: -0.4459%p (95% CI -1.3650~+0.4384)\neutectic_recall: +1.6964%p (95% CI -0.1901~+4.0574)\neutectic_boundary_recall: +1.3414%p (95% CI -0.3558~+3.1686)\neutectic_interior_recall: +1.9212%p (95% CI -0.0891~+4.6011)"
+  },
+  {
+    "row": 13,
+    "column": 9,
+    "note": "{\n  \"arch\": \"Unet\",\n  \"encoder\": \"tu-tf_efficientnetv2_s.in21k_ft_in1k\",\n  \"weights\": \"imagenet\",\n  \"fold\": 0,\n  \"crop\": 768,\n  \"input_scale\": 2.0,\n  \"batch\": 8,\n  \"epochs\": 100,\n  \"samples\": 600,\n  \"lr\": 0.0003,\n  \"enc_lr_mult\": 0.1,\n  \"wd\": 0.05,\n  \"ema\": 0.999,\n  \"loss\": \"ce_dice\",\n  \"label_smoothing\": 0.0,\n  \"eval_every\": 5,\n  \"tile\": 512,\n  \"overlap\": 0.5,\n  \"seed\": 42,\n  \"workers\": 2,\n  \"absent\": \"skip\",\n  \"initial_sha256\": \"401b67f68607def4bcba0a0987983012f2733a1c9dc62243e08433483e5c996e\",\n  \"train_steps\": 7500,\n  \"initialization\": \"Immutable initial state shared by all runs: ImageNet encoder + seed42 decoder; both are trainable\",\n  \"checkpoint_selection\": \"Highest validation image-wise mIoU without TTA; ties keep earliest\",\n  \"classes\": [\n    \"Al\",\n    \"Primary_Si\",\n    \"Al3Ni\",\n    \"Eutectic_Si\"\n  ],\n  \"parameters\": 22093908,\n  \"reproducibility\": \"Stateless epoch/sample augmentation seed; seeded model/optimizer; cuDNN benchmark enabled, no bitwise determinism guarantee\",\n  \"torch_num_threads\": 4,\n  \"boundary_lambda\": 0.0,\n  \"boundary_cap_pixels\": 32,\n  \"primary_eval_tile\": 512,\n  \"followup_context_crop\": 768,\n  \"strategy\": \"d4_context768\",\n  \"micro_batch\": 8,\n  \"accumulation_steps\": 1,\n  \"split_sha256\": \"8fd0caa0b6bf0241173c089817ce92922d8ef66cee319348bb518b8d007dfd21\",\n  \"input_manifest_sha256\": \"97fa994b5742984a1eea648f52493b9a24b69e6ec3777da38ce2ccd37f2bb970\",\n  \"initial_weights_path\": \"C:\\\\Users\\\\SSAFY\\\\Documents\\\\Codex\\\\2026-10-01\\\\https-komap-ai-front-competition2026-receipt\\\\outputs\\\\augmentation_study\\\\common\\\\initial_weights.pt\",\n  \"started_utc\": \"2026-10-02T03:16:39Z\"\n}\n실행 설정 원문."
+  },
+  {
+    "row": 13,
+    "column": 10,
+    "note": "minutes는 학습·주기 검증·최종 재로딩/저장을 포함한 기록. 초기 준비 제외. 일반 epoch는 첫 epoch와 5배수 검증 epoch 제외. test 추론 시간은 별도이며 학습 시간에 더하지 않음.\n성공 optimizer update: 7500; AMP skip: 0.\n7,500은 학습 배치/업데이트 시도 수이며 baseline 성공 업데이트 수는 미기록."
+  },
+  {
+    "row": 13,
+    "column": 11,
+    "note": "단일 seed42·내부 fold0 학습72/검증18. 공식 valid20·대회 점수 아님. 기존 결과를 보고 같은 fold에서 후속 전략을 정한 탐색 실험. A그룹 paired bootstrap 95% CI는 학습 seed 변동·best epoch·다중/순차 선택을 보정하지 않음. test10은 정답 없어 점수 없음."
+  },
+  {
+    "row": 15,
+    "column": 1,
+    "note": "tile512로 선택한 같은 최고 checkpoint를 tile768로 재평가. 추가 학습 없음. 주 비교 최고 모델 선정에 혼합하지 않음."
+  },
+  {
+    "row": 16,
+    "column": 3,
+    "note": "tile768 추가 추론 점수. tile512 primary와 별도 section으로 유지."
+  },
+  {
+    "row": 16,
+    "column": 11,
+    "note": "단일 seed42·내부 fold0 학습72/검증18. 공식 valid20·대회 점수 아님. 기존 결과를 보고 같은 fold에서 후속 전략을 정한 탐색 실험. A그룹 paired bootstrap 95% CI는 학습 seed 변동·best epoch·다중/순차 선택을 보정하지 않음. test10은 정답 없어 점수 없음."
+  },
+  {
+    "row": 17,
+    "column": 1,
+    "note": "원본 결과: C:\\Users\\SSAFY\\Documents\\Codex\\2026-10-01\\https-komap-ai-front-competition2026-receipt\\outputs\\eutectic_followup\\experiments\\d4_context768\\run\\result.json\n독립 재평가: outputs/eutectic_followup/analysis/summary.json\n동일 768 모델의 별도 추론 평가이며 주 비교 순위에 섞지 않음."
+  },
+  {
+    "row": 17,
+    "column": 3,
+    "note": "검증18장 사진별 mIoU 평균(%). 숫자는 재평가 원본 정밀도로 저장하고 표시만 소수 둘째 자리. 동일 모델 tile768−tile512 +0.1064%p (95% CI -0.1556~+0.4298)"
+  },
+  {
+    "row": 17,
+    "column": 4,
+    "note": "TTA 후 mIoU를 기록하는 기존 열입니다. 이번 후속 모든 조건은 TTA 미실시이므로 '-'이며 0점이 아닙니다."
+  },
+  {
+    "row": 17,
+    "column": 8,
+    "note": "Eutectic IoU는 이미지별 평균(%).\n이미지평균 precision 73.9405%, recall 67.3897%.\n이미지평균 4이웃경계 recall 59.9322%, 내부 recall 74.7372%.\n별도 픽셀합산 경계 recall 59.1577%, 내부 recall 74.0604%.\n경계=상하좌우 비-E와 맞닿은 GT E픽셀, 경계·내부 모두 최외곽1px 제외. 전체 E recall/IoU는 외곽 포함. 거리/물리 두께 지표 아님.\nmiou: +0.1064%p (95% CI -0.1556~+0.4298)\neutectic_iou: +0.2543%p (95% CI -0.3785~+1.1702)\neutectic_precision: +0.9128%p (95% CI +0.3473~+1.4828)\neutectic_recall: -0.3296%p (95% CI -1.0577~+0.7340)\neutectic_boundary_recall: -0.5844%p (95% CI -1.1563~+0.2118)\neutectic_interior_recall: -0.2526%p (95% CI -1.1518~+0.9981)"
+  },
+  {
+    "row": 17,
+    "column": 9,
+    "note": "{\n  \"arch\": \"Unet\",\n  \"encoder\": \"tu-tf_efficientnetv2_s.in21k_ft_in1k\",\n  \"weights\": \"imagenet\",\n  \"fold\": 0,\n  \"crop\": 768,\n  \"input_scale\": 2.0,\n  \"batch\": 8,\n  \"epochs\": 100,\n  \"samples\": 600,\n  \"lr\": 0.0003,\n  \"enc_lr_mult\": 0.1,\n  \"wd\": 0.05,\n  \"ema\": 0.999,\n  \"loss\": \"ce_dice\",\n  \"label_smoothing\": 0.0,\n  \"eval_every\": 5,\n  \"tile\": 512,\n  \"overlap\": 0.5,\n  \"seed\": 42,\n  \"workers\": 2,\n  \"absent\": \"skip\",\n  \"initial_sha256\": \"401b67f68607def4bcba0a0987983012f2733a1c9dc62243e08433483e5c996e\",\n  \"train_steps\": 7500,\n  \"initialization\": \"Immutable initial state shared by all runs: ImageNet encoder + seed42 decoder; both are trainable\",\n  \"checkpoint_selection\": \"Highest validation image-wise mIoU without TTA; ties keep earliest\",\n  \"classes\": [\n    \"Al\",\n    \"Primary_Si\",\n    \"Al3Ni\",\n    \"Eutectic_Si\"\n  ],\n  \"parameters\": 22093908,\n  \"reproducibility\": \"Stateless epoch/sample augmentation seed; seeded model/optimizer; cuDNN benchmark enabled, no bitwise determinism guarantee\",\n  \"torch_num_threads\": 4,\n  \"boundary_lambda\": 0.0,\n  \"boundary_cap_pixels\": 32,\n  \"primary_eval_tile\": 512,\n  \"followup_context_crop\": 768,\n  \"strategy\": \"d4_context768\",\n  \"micro_batch\": 8,\n  \"accumulation_steps\": 1,\n  \"split_sha256\": \"8fd0caa0b6bf0241173c089817ce92922d8ef66cee319348bb518b8d007dfd21\",\n  \"input_manifest_sha256\": \"97fa994b5742984a1eea648f52493b9a24b69e6ec3777da38ce2ccd37f2bb970\",\n  \"initial_weights_path\": \"C:\\\\Users\\\\SSAFY\\\\Documents\\\\Codex\\\\2026-10-01\\\\https-komap-ai-front-competition2026-receipt\\\\outputs\\\\augmentation_study\\\\common\\\\initial_weights.pt\",\n  \"started_utc\": \"2026-10-02T03:16:39Z\"\n}\n실행 설정 원문."
+  },
+  {
+    "row": 17,
+    "column": 10,
+    "note": "minutes는 학습·주기 검증·최종 재로딩/저장을 포함한 기록. 초기 준비 제외. 일반 epoch는 첫 epoch와 5배수 검증 epoch 제외. test 추론 시간은 별도이며 학습 시간에 더하지 않음.\n성공 optimizer update: 7500; AMP skip: 0.\n7,500은 학습 배치/업데이트 시도 수이며 baseline 성공 업데이트 수는 미기록."
+  },
+  {
+    "row": 17,
+    "column": 11,
+    "note": "단일 seed42·내부 fold0 학습72/검증18. 공식 valid20·대회 점수 아님. 기존 결과를 보고 같은 fold에서 후속 전략을 정한 탐색 실험. A그룹 paired bootstrap 95% CI는 학습 seed 변동·best epoch·다중/순차 선택을 보정하지 않음. test10은 정답 없어 점수 없음."
+  },
+  {
+    "row": 19,
+    "column": 1,
+    "note": "내부 fold0 학습72/검증18, seed42. 공식 valid20·대회 점수 아님. 같은 검증 fold를 반복 사용한 탐색 실험. A그룹 paired bootstrap 95% CI는 학습 seed 변동과 checkpoint/전략 선택 편향을 보정하지 않음. test10은 정답 없어 점수 없음."
+  },
+  {
+    "row": 20,
+    "column": 4,
+    "note": "TTA 적용 후 mIoU를 기록하는 기존 열. 모두 TTA 미실시이므로 -."
+  },
+  {
+    "row": 21,
+    "column": 1,
+    "note": "결과: C:\\Users\\SSAFY\\Documents\\Codex\\2026-10-01\\https-komap-ai-front-competition2026-receipt\\outputs\\eutectic_followup\\experiments\\d4_context768\\run\\result.json\nSkeleton Recall Loss ECCV2024: https://arxiv.org/abs/2404.03010\n반복검증 연구2025: https://arxiv.org/abs/2508.11374\nE-only 변형이며 원 논문의 nnU-Net 완전 재현 아님."
+  },
+  {
+    "row": 21,
+    "column": 8,
+    "note": "이미지별 평균(%):\neutectic_precision: 73.027721\neutectic_recall: 67.719235\neutectic_boundary_recall: 60.516615\neutectic_interior_recall: 74.989777\neutectic_centerline_recall: 72.679688\n경계=GT E의4이웃경계, 경계·내부는최외곽1px제외. 중심선=native GT E skeletonize, dilation없음, 외곽포함. 물리두께/연결성보장 지표아님.\n별도 pooled FP source: [{\"class\": \"Al\", \"pixels\": 47166, \"share_of_eutectic_fp_pct\": 16.077637337914673, \"share_of_gt_class_pct\": 0.4860182425318206, \"share_of_predicted_eutectic_pct\": 4.159765474105314}, {\"class\": \"Primary_Si\", \"pixels\": 114818, \"share_of_eutectic_fp_pct\": 39.13840825731855, \"share_of_gt_class_pct\": 6.041971436690276, \"share_of_predicted_eutectic_pct\": 10.126276389895772}, {\"class\": \"Al3Ni\", \"pixels\": 131380, \"share_of_eutectic_fp_pct\": 44.783954404766774, \"share_of_gt_class_pct\": 3.1550991305826317, \"share_of_predicted_eutectic_pct\": 11.586947970740708}]"
+  },
+  {
+    "row": 21,
+    "column": 9,
+    "note": "{\n  \"arch\": \"Unet\",\n  \"encoder\": \"tu-tf_efficientnetv2_s.in21k_ft_in1k\",\n  \"weights\": \"imagenet\",\n  \"fold\": 0,\n  \"crop\": 768,\n  \"input_scale\": 2.0,\n  \"batch\": 8,\n  \"epochs\": 100,\n  \"samples\": 600,\n  \"lr\": 0.0003,\n  \"enc_lr_mult\": 0.1,\n  \"wd\": 0.05,\n  \"ema\": 0.999,\n  \"loss\": \"ce_dice\",\n  \"label_smoothing\": 0.0,\n  \"eval_every\": 5,\n  \"tile\": 512,\n  \"overlap\": 0.5,\n  \"seed\": 42,\n  \"workers\": 2,\n  \"absent\": \"skip\",\n  \"initial_sha256\": \"401b67f68607def4bcba0a0987983012f2733a1c9dc62243e08433483e5c996e\",\n  \"train_steps\": 7500,\n  \"initialization\": \"Immutable initial state shared by all runs: ImageNet encoder + seed42 decoder; both are trainable\",\n  \"checkpoint_selection\": \"Highest validation image-wise mIoU without TTA; ties keep earliest\",\n  \"classes\": [\n    \"Al\",\n    \"Primary_Si\",\n    \"Al3Ni\",\n    \"Eutectic_Si\"\n  ],\n  \"parameters\": 22093908,\n  \"reproducibility\": \"Stateless epoch/sample augmentation seed; seeded model/optimizer; cuDNN benchmark enabled, no bitwise determinism guarantee\",\n  \"torch_num_threads\": 4,\n  \"boundary_lambda\": 0.0,\n  \"boundary_cap_pixels\": 32,\n  \"primary_eval_tile\": 512,\n  \"followup_context_crop\": 768,\n  \"strategy\": \"d4_context768\",\n  \"micro_batch\": 8,\n  \"accumulation_steps\": 1,\n  \"split_sha256\": \"8fd0caa0b6bf0241173c089817ce92922d8ef66cee319348bb518b8d007dfd21\",\n  \"input_manifest_sha256\": \"97fa994b5742984a1eea648f52493b9a24b69e6ec3777da38ce2ccd37f2bb970\",\n  \"initial_weights_path\": \"C:\\\\Users\\\\SSAFY\\\\Documents\\\\Codex\\\\2026-10-01\\\\https-komap-ai-front-competition2026-receipt\\\\outputs\\\\augmentation_study\\\\common\\\\initial_weights.pt\",\n  \"started_utc\": \"2026-10-02T03:16:39Z\"\n}\n두 신규군은 E가 존재하는 patch의 1−soft recall 평균; epsilon1e−5. 전체 absent batch0. λ=.1 사전 고정. 보조손실만 변경, 이미지/GT/source/crop/D4 계획 동일."
+  },
+  {
+    "row": 21,
+    "column": 10,
+    "note": "총 분=학습+주기검증+최종best재로딩/검증저장. 초기 준비 및 test/secondary 추론 제외. 일반 epoch는 첫 epoch와 검증 epoch를 제외한79개 평균."
+  },
+  {
+    "row": 21,
+    "column": 11,
+    "note": "내부 fold0 학습72/검증18, seed42. 공식 valid20·대회 점수 아님. 같은 검증 fold를 반복 사용한 탐색 실험. A그룹 paired bootstrap 95% CI는 학습 seed 변동과 checkpoint/전략 선택 편향을 보정하지 않음. test10은 정답 없어 점수 없음."
+  },
+  {
+    "row": 22,
+    "column": 1,
+    "note": "결과: C:\\Users\\SSAFY\\Documents\\Codex\\2026-10-01\\https-komap-ai-front-competition2026-receipt\\outputs\\skeleton_recall_study\\experiments\\e_skeleton_recall\\run\\result.json\nSkeleton Recall Loss ECCV2024: https://arxiv.org/abs/2404.03010\n반복검증 연구2025: https://arxiv.org/abs/2508.11374\nE-only 변형이며 원 논문의 nnU-Net 완전 재현 아님."
+  },
+  {
+    "row": 22,
+    "column": 8,
+    "note": "이미지별 평균(%):\neutectic_precision: 70.797339\neutectic_recall: 70.763617\neutectic_boundary_recall: 64.478225\neutectic_interior_recall: 77.256634\neutectic_centerline_recall: 76.295768\n경계=GT E의4이웃경계, 경계·내부는최외곽1px제외. 중심선=native GT E skeletonize, dilation없음, 외곽포함. 물리두께/연결성보장 지표아님.\n별도 pooled FP source: [{\"class\": \"Al\", \"pixels\": 59241, \"share_of_eutectic_fp_pct\": 17.427719137218908, \"share_of_gt_class_pct\": 0.6104441060473134, \"share_of_predicted_eutectic_pct\": 4.859759263862262}, {\"class\": \"Primary_Si\", \"pixels\": 118992, \"share_of_eutectic_fp_pct\": 35.00547181134606, \"share_of_gt_class_pct\": 6.26161634233874, \"share_of_predicted_eutectic_pct\": 9.761355721974617}, {\"class\": \"Al3Ni\", \"pixels\": 161691, \"share_of_eutectic_fp_pct\": 47.56680905143503, \"share_of_gt_class_pct\": 3.883019740622898, \"share_of_predicted_eutectic_pct\": 13.264113285277984}]"
+  },
+  {
+    "row": 22,
+    "column": 9,
+    "note": "{\n  \"arch\": \"Unet\",\n  \"encoder\": \"tu-tf_efficientnetv2_s.in21k_ft_in1k\",\n  \"weights\": \"imagenet\",\n  \"fold\": 0,\n  \"crop\": 768,\n  \"input_scale\": 2.0,\n  \"batch\": 8,\n  \"epochs\": 100,\n  \"samples\": 600,\n  \"lr\": 0.0003,\n  \"enc_lr_mult\": 0.1,\n  \"wd\": 0.05,\n  \"ema\": 0.999,\n  \"loss\": \"ce_dice\",\n  \"label_smoothing\": 0.0,\n  \"eval_every\": 5,\n  \"tile\": 512,\n  \"overlap\": 0.5,\n  \"seed\": 42,\n  \"workers\": 2,\n  \"absent\": \"skip\",\n  \"initial_sha256\": \"401b67f68607def4bcba0a0987983012f2733a1c9dc62243e08433483e5c996e\",\n  \"train_steps\": 7500,\n  \"initialization\": \"Immutable initial state shared by all runs: ImageNet encoder + seed42 decoder; both are trainable\",\n  \"checkpoint_selection\": \"Highest validation image-wise mIoU without TTA; ties keep earliest\",\n  \"classes\": [\n    \"Al\",\n    \"Primary_Si\",\n    \"Al3Ni\",\n    \"Eutectic_Si\"\n  ],\n  \"parameters\": 22093908,\n  \"reproducibility\": \"Stateless epoch/sample augmentation seed; seeded model/optimizer; cuDNN benchmark enabled, no bitwise determinism guarantee\",\n  \"torch_num_threads\": 4,\n  \"primary_eval_tile\": 512,\n  \"recall_lambda\": 0.1,\n  \"recall_smooth\": 1e-05,\n  \"auxiliary_reduction\": \"Per-present-E-patch mean; absent batch differentiable zero\",\n  \"secondary_eval_tile\": 768,\n  \"baseline\": \"outputs/eutectic_followup/experiments/d4_context768/run\",\n  \"scheduler_ema_on_amp_skip\": \"Advance as in original comparator; count and report skipped updates\",\n  \"inference_selection\": \"Select once with primary tile512; use identical checkpoint for secondary tile768\",\n  \"hypothesis\": \"E-only skeleton target adds benefit beyond an equal-weight dense-E recall objective\",\n  \"auxiliary_targets\": {\n    \"e_skeleton_recall\": \"Final transformed E GT -> skeletonize -> cross dilation twice -> intersect E GT\",\n    \"e_dense_recall_control\": \"Final transformed complete E GT\"\n  },\n  \"metrics\": [\n    \"image mean mIoU\",\n    \"image mean E IoU\",\n    \"E precision\",\n    \"E recall\",\n    \"4-neighbor E boundary recall\",\n    \"E interior recall\",\n    \"E centerline recall\",\n    \"E false positive confusion\",\n    \"paired image/group bootstrap CI\"\n  ],\n  \"caveat\": \"One seed and one existing validation fold reused; internal validation only, not a competition score\",\n  \"strategy\": \"e_skeleton_recall\",\n  \"micro_batch\": 8,\n  \"accumulation_steps\": 1,\n  \"split_sha256\": \"8fd0caa0b6bf0241173c089817ce92922d8ef66cee319348bb518b8d007dfd21\",\n  \"input_manifest_sha256\": \"69cc65652af9333cae63bc7472e10aa3dcfc7658cea4cbfe9efed29c7f7fdb82\",\n  \"initial_weights_path\": \"C:\\\\Users\\\\SSAFY\\\\Documents\\\\Codex\\\\2026-10-01\\\\https-komap-ai-front-competition2026-receipt\\\\outputs\\\\augmentation_study\\\\common\\\\initial_weights.pt\",\n  \"started_utc\": \"2026-10-02T05:33:35Z\"\n}\n두 신규군은 E가 존재하는 patch의 1−soft recall 평균; epsilon1e−5. 전체 absent batch0. λ=.1 사전 고정. 보조손실만 변경, 이미지/GT/source/crop/D4 계획 동일."
+  },
+  {
+    "row": 22,
+    "column": 10,
+    "note": "총 분=학습+주기검증+최종best재로딩/검증저장. 초기 준비 및 test/secondary 추론 제외. 일반 epoch는 첫 epoch와 검증 epoch를 제외한79개 평균."
+  },
+  {
+    "row": 22,
+    "column": 11,
+    "note": "내부 fold0 학습72/검증18, seed42. 공식 valid20·대회 점수 아님. 같은 검증 fold를 반복 사용한 탐색 실험. A그룹 paired bootstrap 95% CI는 학습 seed 변동과 checkpoint/전략 선택 편향을 보정하지 않음. test10은 정답 없어 점수 없음.\n중심선−전체 E 통제군 직접 비교:\nmIoU +0.0159%p (95% CI -0.2322~+0.2035)\nE IoU -0.0390%p (95% CI -0.7590~+0.4098)\nE 중심선 recall +0.2073%p (95% CI -0.2693~+0.5615)"
+  },
+  {
+    "row": 23,
+    "column": 1,
+    "note": "결과: C:\\Users\\SSAFY\\Documents\\Codex\\2026-10-01\\https-komap-ai-front-competition2026-receipt\\outputs\\skeleton_recall_study\\experiments\\e_dense_recall_control\\run\\result.json\nSkeleton Recall Loss ECCV2024: https://arxiv.org/abs/2404.03010\n반복검증 연구2025: https://arxiv.org/abs/2508.11374\nE-only 변형이며 원 논문의 nnU-Net 완전 재현 아님."
+  },
+  {
+    "row": 23,
+    "column": 8,
+    "note": "이미지별 평균(%):\neutectic_precision: 70.560452\neutectic_recall: 71.148537\neutectic_boundary_recall: 65.055788\neutectic_interior_recall: 77.489327\neutectic_centerline_recall: 76.088427\n경계=GT E의4이웃경계, 경계·내부는최외곽1px제외. 중심선=native GT E skeletonize, dilation없음, 외곽포함. 물리두께/연결성보장 지표아님.\n별도 pooled FP source: [{\"class\": \"Al\", \"pixels\": 63525, \"share_of_eutectic_fp_pct\": 18.27521130488317, \"share_of_gt_class_pct\": 0.6545882384945491, \"share_of_predicted_eutectic_pct\": 5.171895824462477}, {\"class\": \"Primary_Si\", \"pixels\": 123638, \"share_of_eutectic_fp_pct\": 35.56884022531516, \"share_of_gt_class_pct\": 6.5060989086163525, \"share_of_predicted_eutectic_pct\": 10.066003241950282}, {\"class\": \"Al3Ni\", \"pixels\": 160439, \"share_of_eutectic_fp_pct\": 46.15594846980167, \"share_of_gt_class_pct\": 3.8529528802827437, \"share_of_predicted_eutectic_pct\": 13.062161262194968}]"
+  },
+  {
+    "row": 23,
+    "column": 9,
+    "note": "{\n  \"arch\": \"Unet\",\n  \"encoder\": \"tu-tf_efficientnetv2_s.in21k_ft_in1k\",\n  \"weights\": \"imagenet\",\n  \"fold\": 0,\n  \"crop\": 768,\n  \"input_scale\": 2.0,\n  \"batch\": 8,\n  \"epochs\": 100,\n  \"samples\": 600,\n  \"lr\": 0.0003,\n  \"enc_lr_mult\": 0.1,\n  \"wd\": 0.05,\n  \"ema\": 0.999,\n  \"loss\": \"ce_dice\",\n  \"label_smoothing\": 0.0,\n  \"eval_every\": 5,\n  \"tile\": 512,\n  \"overlap\": 0.5,\n  \"seed\": 42,\n  \"workers\": 2,\n  \"absent\": \"skip\",\n  \"initial_sha256\": \"401b67f68607def4bcba0a0987983012f2733a1c9dc62243e08433483e5c996e\",\n  \"train_steps\": 7500,\n  \"initialization\": \"Immutable initial state shared by all runs: ImageNet encoder + seed42 decoder; both are trainable\",\n  \"checkpoint_selection\": \"Highest validation image-wise mIoU without TTA; ties keep earliest\",\n  \"classes\": [\n    \"Al\",\n    \"Primary_Si\",\n    \"Al3Ni\",\n    \"Eutectic_Si\"\n  ],\n  \"parameters\": 22093908,\n  \"reproducibility\": \"Stateless epoch/sample augmentation seed; seeded model/optimizer; cuDNN benchmark enabled, no bitwise determinism guarantee\",\n  \"torch_num_threads\": 4,\n  \"primary_eval_tile\": 512,\n  \"recall_lambda\": 0.1,\n  \"recall_smooth\": 1e-05,\n  \"auxiliary_reduction\": \"Per-present-E-patch mean; absent batch differentiable zero\",\n  \"secondary_eval_tile\": 768,\n  \"baseline\": \"outputs/eutectic_followup/experiments/d4_context768/run\",\n  \"scheduler_ema_on_amp_skip\": \"Advance as in original comparator; count and report skipped updates\",\n  \"inference_selection\": \"Select once with primary tile512; use identical checkpoint for secondary tile768\",\n  \"hypothesis\": \"E-only skeleton target adds benefit beyond an equal-weight dense-E recall objective\",\n  \"auxiliary_targets\": {\n    \"e_skeleton_recall\": \"Final transformed E GT -> skeletonize -> cross dilation twice -> intersect E GT\",\n    \"e_dense_recall_control\": \"Final transformed complete E GT\"\n  },\n  \"metrics\": [\n    \"image mean mIoU\",\n    \"image mean E IoU\",\n    \"E precision\",\n    \"E recall\",\n    \"4-neighbor E boundary recall\",\n    \"E interior recall\",\n    \"E centerline recall\",\n    \"E false positive confusion\",\n    \"paired image/group bootstrap CI\"\n  ],\n  \"caveat\": \"One seed and one existing validation fold reused; internal validation only, not a competition score\",\n  \"strategy\": \"e_dense_recall_control\",\n  \"micro_batch\": 8,\n  \"accumulation_steps\": 1,\n  \"split_sha256\": \"8fd0caa0b6bf0241173c089817ce92922d8ef66cee319348bb518b8d007dfd21\",\n  \"input_manifest_sha256\": \"69cc65652af9333cae63bc7472e10aa3dcfc7658cea4cbfe9efed29c7f7fdb82\",\n  \"initial_weights_path\": \"C:\\\\Users\\\\SSAFY\\\\Documents\\\\Codex\\\\2026-10-01\\\\https-komap-ai-front-competition2026-receipt\\\\outputs\\\\augmentation_study\\\\common\\\\initial_weights.pt\",\n  \"started_utc\": \"2026-10-02T06:38:16Z\"\n}\n두 신규군은 E가 존재하는 patch의 1−soft recall 평균; epsilon1e−5. 전체 absent batch0. λ=.1 사전 고정. 보조손실만 변경, 이미지/GT/source/crop/D4 계획 동일."
+  },
+  {
+    "row": 23,
+    "column": 10,
+    "note": "총 분=학습+주기검증+최종best재로딩/검증저장. 초기 준비 및 test/secondary 추론 제외. 일반 epoch는 첫 epoch와 검증 epoch를 제외한79개 평균."
+  },
+  {
+    "row": 23,
+    "column": 11,
+    "note": "내부 fold0 학습72/검증18, seed42. 공식 valid20·대회 점수 아님. 같은 검증 fold를 반복 사용한 탐색 실험. A그룹 paired bootstrap 95% CI는 학습 seed 변동과 checkpoint/전략 선택 편향을 보정하지 않음. test10은 정답 없어 점수 없음.\n중심선−전체 E 통제군 직접 비교:\nmIoU +0.0159%p (95% CI -0.2322~+0.2035)\nE IoU -0.0390%p (95% CI -0.7590~+0.4098)\nE 중심선 recall +0.2073%p (95% CI -0.2693~+0.5615)"
+  },
+  {
+    "row": 25,
+    "column": 1,
+    "note": "내부 fold0 학습72/검증18, seed42. 공식 valid20·대회 점수 아님. 같은 검증 fold를 반복 사용한 탐색 실험. A그룹 paired bootstrap 95% CI는 학습 seed 변동과 checkpoint/전략 선택 편향을 보정하지 않음. test10은 정답 없어 점수 없음."
+  },
+  {
+    "row": 26,
+    "column": 4,
+    "note": "TTA 적용 후 mIoU를 기록하는 기존 열. 모두 TTA 미실시이므로 -."
+  },
+  {
+    "row": 27,
+    "column": 1,
+    "note": "결과: C:\\Users\\SSAFY\\Documents\\Codex\\2026-10-01\\https-komap-ai-front-competition2026-receipt\\outputs\\eutectic_followup\\experiments\\d4_context768\\run\\result.json\nSkeleton Recall Loss ECCV2024: https://arxiv.org/abs/2404.03010\n반복검증 연구2025: https://arxiv.org/abs/2508.11374\nE-only 변형이며 원 논문의 nnU-Net 완전 재현 아님."
+  },
+  {
+    "row": 27,
+    "column": 8,
+    "note": "이미지별 평균(%):\neutectic_precision: 73.940480\neutectic_recall: 67.389682\neutectic_boundary_recall: 59.932195\neutectic_interior_recall: 74.737160\neutectic_centerline_recall: 72.201102\n경계=GT E의4이웃경계, 경계·내부는최외곽1px제외. 중심선=native GT E skeletonize, dilation없음, 외곽포함. 물리두께/연결성보장 지표아님.\n별도 pooled FP source: [{\"class\": \"Al\", \"pixels\": 44864, \"share_of_eutectic_fp_pct\": 16.095978875462816, \"share_of_gt_class_pct\": 0.46229746921400156, \"share_of_predicted_eutectic_pct\": 4.039472736440251}, {\"class\": \"Primary_Si\", \"pixels\": 110263, \"share_of_eutectic_fp_pct\": 39.55935535719411, \"share_of_gt_class_pct\": 5.802277487186504, \"share_of_predicted_eutectic_pct\": 9.92787942087445}, {\"class\": \"Al3Ni\", \"pixels\": 123601, \"share_of_eutectic_fp_pct\": 44.34466576734307, \"share_of_gt_class_pct\": 2.968285946408463, \"share_of_predicted_eutectic_pct\": 11.128808614852698}]"
+  },
+  {
+    "row": 27,
+    "column": 9,
+    "note": "{\n  \"arch\": \"Unet\",\n  \"encoder\": \"tu-tf_efficientnetv2_s.in21k_ft_in1k\",\n  \"weights\": \"imagenet\",\n  \"fold\": 0,\n  \"crop\": 768,\n  \"input_scale\": 2.0,\n  \"batch\": 8,\n  \"epochs\": 100,\n  \"samples\": 600,\n  \"lr\": 0.0003,\n  \"enc_lr_mult\": 0.1,\n  \"wd\": 0.05,\n  \"ema\": 0.999,\n  \"loss\": \"ce_dice\",\n  \"label_smoothing\": 0.0,\n  \"eval_every\": 5,\n  \"tile\": 512,\n  \"overlap\": 0.5,\n  \"seed\": 42,\n  \"workers\": 2,\n  \"absent\": \"skip\",\n  \"initial_sha256\": \"401b67f68607def4bcba0a0987983012f2733a1c9dc62243e08433483e5c996e\",\n  \"train_steps\": 7500,\n  \"initialization\": \"Immutable initial state shared by all runs: ImageNet encoder + seed42 decoder; both are trainable\",\n  \"checkpoint_selection\": \"Highest validation image-wise mIoU without TTA; ties keep earliest\",\n  \"classes\": [\n    \"Al\",\n    \"Primary_Si\",\n    \"Al3Ni\",\n    \"Eutectic_Si\"\n  ],\n  \"parameters\": 22093908,\n  \"reproducibility\": \"Stateless epoch/sample augmentation seed; seeded model/optimizer; cuDNN benchmark enabled, no bitwise determinism guarantee\",\n  \"torch_num_threads\": 4,\n  \"boundary_lambda\": 0.0,\n  \"boundary_cap_pixels\": 32,\n  \"primary_eval_tile\": 512,\n  \"followup_context_crop\": 768,\n  \"strategy\": \"d4_context768\",\n  \"micro_batch\": 8,\n  \"accumulation_steps\": 1,\n  \"split_sha256\": \"8fd0caa0b6bf0241173c089817ce92922d8ef66cee319348bb518b8d007dfd21\",\n  \"input_manifest_sha256\": \"97fa994b5742984a1eea648f52493b9a24b69e6ec3777da38ce2ccd37f2bb970\",\n  \"initial_weights_path\": \"C:\\\\Users\\\\SSAFY\\\\Documents\\\\Codex\\\\2026-10-01\\\\https-komap-ai-front-competition2026-receipt\\\\outputs\\\\augmentation_study\\\\common\\\\initial_weights.pt\",\n  \"started_utc\": \"2026-10-02T03:16:39Z\"\n}\n두 신규군은 E가 존재하는 patch의 1−soft recall 평균; epsilon1e−5. 전체 absent batch0. λ=.1 사전 고정. 보조손실만 변경, 이미지/GT/source/crop/D4 계획 동일."
+  },
+  {
+    "row": 27,
+    "column": 10,
+    "note": "총 분=학습+주기검증+최종best재로딩/검증저장. 초기 준비 및 test/secondary 추론 제외. 일반 epoch는 첫 epoch와 검증 epoch를 제외한79개 평균."
+  },
+  {
+    "row": 27,
+    "column": 11,
+    "note": "내부 fold0 학습72/검증18, seed42. 공식 valid20·대회 점수 아님. 같은 검증 fold를 반복 사용한 탐색 실험. A그룹 paired bootstrap 95% CI는 학습 seed 변동과 checkpoint/전략 선택 편향을 보정하지 않음. test10은 정답 없어 점수 없음."
+  },
+  {
+    "row": 28,
+    "column": 1,
+    "note": "결과: C:\\Users\\SSAFY\\Documents\\Codex\\2026-10-01\\https-komap-ai-front-competition2026-receipt\\outputs\\skeleton_recall_study\\experiments\\e_skeleton_recall\\run\\result.json\nSkeleton Recall Loss ECCV2024: https://arxiv.org/abs/2404.03010\n반복검증 연구2025: https://arxiv.org/abs/2508.11374\nE-only 변형이며 원 논문의 nnU-Net 완전 재현 아님."
+  },
+  {
+    "row": 28,
+    "column": 8,
+    "note": "이미지별 평균(%):\neutectic_precision: 71.726283\neutectic_recall: 70.443867\neutectic_boundary_recall: 64.027406\neutectic_interior_recall: 76.979216\neutectic_centerline_recall: 75.819962\n경계=GT E의4이웃경계, 경계·내부는최외곽1px제외. 중심선=native GT E skeletonize, dilation없음, 외곽포함. 물리두께/연결성보장 지표아님.\n별도 pooled FP source: [{\"class\": \"Al\", \"pixels\": 56635, \"share_of_eutectic_fp_pct\": 17.493436293436293, \"share_of_gt_class_pct\": 0.5835907892505122, \"share_of_predicted_eutectic_pct\": 4.742672242701552}, {\"class\": \"Primary_Si\", \"pixels\": 113880, \"share_of_eutectic_fp_pct\": 35.175289575289575, \"share_of_gt_class_pct\": 5.992611848406074, \"share_of_predicted_eutectic_pct\": 9.536426503025563}, {\"class\": \"Al3Ni\", \"pixels\": 153235, \"share_of_eutectic_fp_pct\": 47.33127413127413, \"share_of_gt_class_pct\": 3.67994835800601, \"share_of_predicted_eutectic_pct\": 12.832054049799105}]"
+  },
+  {
+    "row": 28,
+    "column": 9,
+    "note": "{\n  \"arch\": \"Unet\",\n  \"encoder\": \"tu-tf_efficientnetv2_s.in21k_ft_in1k\",\n  \"weights\": \"imagenet\",\n  \"fold\": 0,\n  \"crop\": 768,\n  \"input_scale\": 2.0,\n  \"batch\": 8,\n  \"epochs\": 100,\n  \"samples\": 600,\n  \"lr\": 0.0003,\n  \"enc_lr_mult\": 0.1,\n  \"wd\": 0.05,\n  \"ema\": 0.999,\n  \"loss\": \"ce_dice\",\n  \"label_smoothing\": 0.0,\n  \"eval_every\": 5,\n  \"tile\": 512,\n  \"overlap\": 0.5,\n  \"seed\": 42,\n  \"workers\": 2,\n  \"absent\": \"skip\",\n  \"initial_sha256\": \"401b67f68607def4bcba0a0987983012f2733a1c9dc62243e08433483e5c996e\",\n  \"train_steps\": 7500,\n  \"initialization\": \"Immutable initial state shared by all runs: ImageNet encoder + seed42 decoder; both are trainable\",\n  \"checkpoint_selection\": \"Highest validation image-wise mIoU without TTA; ties keep earliest\",\n  \"classes\": [\n    \"Al\",\n    \"Primary_Si\",\n    \"Al3Ni\",\n    \"Eutectic_Si\"\n  ],\n  \"parameters\": 22093908,\n  \"reproducibility\": \"Stateless epoch/sample augmentation seed; seeded model/optimizer; cuDNN benchmark enabled, no bitwise determinism guarantee\",\n  \"torch_num_threads\": 4,\n  \"primary_eval_tile\": 512,\n  \"recall_lambda\": 0.1,\n  \"recall_smooth\": 1e-05,\n  \"auxiliary_reduction\": \"Per-present-E-patch mean; absent batch differentiable zero\",\n  \"secondary_eval_tile\": 768,\n  \"baseline\": \"outputs/eutectic_followup/experiments/d4_context768/run\",\n  \"scheduler_ema_on_amp_skip\": \"Advance as in original comparator; count and report skipped updates\",\n  \"inference_selection\": \"Select once with primary tile512; use identical checkpoint for secondary tile768\",\n  \"hypothesis\": \"E-only skeleton target adds benefit beyond an equal-weight dense-E recall objective\",\n  \"auxiliary_targets\": {\n    \"e_skeleton_recall\": \"Final transformed E GT -> skeletonize -> cross dilation twice -> intersect E GT\",\n    \"e_dense_recall_control\": \"Final transformed complete E GT\"\n  },\n  \"metrics\": [\n    \"image mean mIoU\",\n    \"image mean E IoU\",\n    \"E precision\",\n    \"E recall\",\n    \"4-neighbor E boundary recall\",\n    \"E interior recall\",\n    \"E centerline recall\",\n    \"E false positive confusion\",\n    \"paired image/group bootstrap CI\"\n  ],\n  \"caveat\": \"One seed and one existing validation fold reused; internal validation only, not a competition score\",\n  \"strategy\": \"e_skeleton_recall\",\n  \"micro_batch\": 8,\n  \"accumulation_steps\": 1,\n  \"split_sha256\": \"8fd0caa0b6bf0241173c089817ce92922d8ef66cee319348bb518b8d007dfd21\",\n  \"input_manifest_sha256\": \"69cc65652af9333cae63bc7472e10aa3dcfc7658cea4cbfe9efed29c7f7fdb82\",\n  \"initial_weights_path\": \"C:\\\\Users\\\\SSAFY\\\\Documents\\\\Codex\\\\2026-10-01\\\\https-komap-ai-front-competition2026-receipt\\\\outputs\\\\augmentation_study\\\\common\\\\initial_weights.pt\",\n  \"started_utc\": \"2026-10-02T05:33:35Z\"\n}\n두 신규군은 E가 존재하는 patch의 1−soft recall 평균; epsilon1e−5. 전체 absent batch0. λ=.1 사전 고정. 보조손실만 변경, 이미지/GT/source/crop/D4 계획 동일."
+  },
+  {
+    "row": 28,
+    "column": 10,
+    "note": "총 분=학습+주기검증+최종best재로딩/검증저장. 초기 준비 및 test/secondary 추론 제외. 일반 epoch는 첫 epoch와 검증 epoch를 제외한79개 평균."
+  },
+  {
+    "row": 28,
+    "column": 11,
+    "note": "내부 fold0 학습72/검증18, seed42. 공식 valid20·대회 점수 아님. 같은 검증 fold를 반복 사용한 탐색 실험. A그룹 paired bootstrap 95% CI는 학습 seed 변동과 checkpoint/전략 선택 편향을 보정하지 않음. test10은 정답 없어 점수 없음.\n중심선−전체 E 통제군 직접 비교:\nmIoU +0.0619%p (95% CI -0.0269~+0.1355)\nE IoU +0.1311%p (95% CI -0.1198~+0.2957)\nE 중심선 recall +0.4088%p (95% CI +0.0806~+0.7208)"
+  },
+  {
+    "row": 29,
+    "column": 1,
+    "note": "결과: C:\\Users\\SSAFY\\Documents\\Codex\\2026-10-01\\https-komap-ai-front-competition2026-receipt\\outputs\\skeleton_recall_study\\experiments\\e_dense_recall_control\\run\\result.json\nSkeleton Recall Loss ECCV2024: https://arxiv.org/abs/2404.03010\n반복검증 연구2025: https://arxiv.org/abs/2508.11374\nE-only 변형이며 원 논문의 nnU-Net 완전 재현 아님."
+  },
+  {
+    "row": 29,
+    "column": 8,
+    "note": "이미지별 평균(%):\neutectic_precision: 71.500329\neutectic_recall: 70.568531\neutectic_boundary_recall: 64.433088\neutectic_interior_recall: 76.922017\neutectic_centerline_recall: 75.411192\n경계=GT E의4이웃경계, 경계·내부는최외곽1px제외. 중심선=native GT E skeletonize, dilation없음, 외곽포함. 물리두께/연결성보장 지표아님.\n별도 pooled FP source: [{\"class\": \"Al\", \"pixels\": 60827, \"share_of_eutectic_fp_pct\": 18.47216739044611, \"share_of_gt_class_pct\": 0.6267869151185822, \"share_of_predicted_eutectic_pct\": 5.072505464282647}, {\"class\": \"Primary_Si\", \"pixels\": 116884, \"share_of_eutectic_fp_pct\": 35.4957636126211, \"share_of_gt_class_pct\": 6.15068882410516, \"share_of_predicted_eutectic_pct\": 9.747229498203312}, {\"class\": \"Al3Ni\", \"pixels\": 151579, \"share_of_eutectic_fp_pct\": 46.03206899693279, \"share_of_gt_class_pct\": 3.6401794117413973, \"share_of_predicted_eutectic_pct\": 12.640526505836213}]"
+  },
+  {
+    "row": 29,
+    "column": 9,
+    "note": "{\n  \"arch\": \"Unet\",\n  \"encoder\": \"tu-tf_efficientnetv2_s.in21k_ft_in1k\",\n  \"weights\": \"imagenet\",\n  \"fold\": 0,\n  \"crop\": 768,\n  \"input_scale\": 2.0,\n  \"batch\": 8,\n  \"epochs\": 100,\n  \"samples\": 600,\n  \"lr\": 0.0003,\n  \"enc_lr_mult\": 0.1,\n  \"wd\": 0.05,\n  \"ema\": 0.999,\n  \"loss\": \"ce_dice\",\n  \"label_smoothing\": 0.0,\n  \"eval_every\": 5,\n  \"tile\": 512,\n  \"overlap\": 0.5,\n  \"seed\": 42,\n  \"workers\": 2,\n  \"absent\": \"skip\",\n  \"initial_sha256\": \"401b67f68607def4bcba0a0987983012f2733a1c9dc62243e08433483e5c996e\",\n  \"train_steps\": 7500,\n  \"initialization\": \"Immutable initial state shared by all runs: ImageNet encoder + seed42 decoder; both are trainable\",\n  \"checkpoint_selection\": \"Highest validation image-wise mIoU without TTA; ties keep earliest\",\n  \"classes\": [\n    \"Al\",\n    \"Primary_Si\",\n    \"Al3Ni\",\n    \"Eutectic_Si\"\n  ],\n  \"parameters\": 22093908,\n  \"reproducibility\": \"Stateless epoch/sample augmentation seed; seeded model/optimizer; cuDNN benchmark enabled, no bitwise determinism guarantee\",\n  \"torch_num_threads\": 4,\n  \"primary_eval_tile\": 512,\n  \"recall_lambda\": 0.1,\n  \"recall_smooth\": 1e-05,\n  \"auxiliary_reduction\": \"Per-present-E-patch mean; absent batch differentiable zero\",\n  \"secondary_eval_tile\": 768,\n  \"baseline\": \"outputs/eutectic_followup/experiments/d4_context768/run\",\n  \"scheduler_ema_on_amp_skip\": \"Advance as in original comparator; count and report skipped updates\",\n  \"inference_selection\": \"Select once with primary tile512; use identical checkpoint for secondary tile768\",\n  \"hypothesis\": \"E-only skeleton target adds benefit beyond an equal-weight dense-E recall objective\",\n  \"auxiliary_targets\": {\n    \"e_skeleton_recall\": \"Final transformed E GT -> skeletonize -> cross dilation twice -> intersect E GT\",\n    \"e_dense_recall_control\": \"Final transformed complete E GT\"\n  },\n  \"metrics\": [\n    \"image mean mIoU\",\n    \"image mean E IoU\",\n    \"E precision\",\n    \"E recall\",\n    \"4-neighbor E boundary recall\",\n    \"E interior recall\",\n    \"E centerline recall\",\n    \"E false positive confusion\",\n    \"paired image/group bootstrap CI\"\n  ],\n  \"caveat\": \"One seed and one existing validation fold reused; internal validation only, not a competition score\",\n  \"strategy\": \"e_dense_recall_control\",\n  \"micro_batch\": 8,\n  \"accumulation_steps\": 1,\n  \"split_sha256\": \"8fd0caa0b6bf0241173c089817ce92922d8ef66cee319348bb518b8d007dfd21\",\n  \"input_manifest_sha256\": \"69cc65652af9333cae63bc7472e10aa3dcfc7658cea4cbfe9efed29c7f7fdb82\",\n  \"initial_weights_path\": \"C:\\\\Users\\\\SSAFY\\\\Documents\\\\Codex\\\\2026-10-01\\\\https-komap-ai-front-competition2026-receipt\\\\outputs\\\\augmentation_study\\\\common\\\\initial_weights.pt\",\n  \"started_utc\": \"2026-10-02T06:38:16Z\"\n}\n두 신규군은 E가 존재하는 patch의 1−soft recall 평균; epsilon1e−5. 전체 absent batch0. λ=.1 사전 고정. 보조손실만 변경, 이미지/GT/source/crop/D4 계획 동일."
+  },
+  {
+    "row": 29,
+    "column": 10,
+    "note": "총 분=학습+주기검증+최종best재로딩/검증저장. 초기 준비 및 test/secondary 추론 제외. 일반 epoch는 첫 epoch와 검증 epoch를 제외한79개 평균."
+  },
+  {
+    "row": 29,
+    "column": 11,
+    "note": "내부 fold0 학습72/검증18, seed42. 공식 valid20·대회 점수 아님. 같은 검증 fold를 반복 사용한 탐색 실험. A그룹 paired bootstrap 95% CI는 학습 seed 변동과 checkpoint/전략 선택 편향을 보정하지 않음. test10은 정답 없어 점수 없음.\n중심선−전체 E 통제군 직접 비교:\nmIoU +0.0619%p (95% CI -0.0269~+0.1355)\nE IoU +0.1311%p (95% CI -0.1198~+0.2957)\nE 중심선 recall +0.4088%p (95% CI +0.0806~+0.7208)"
+  },
+  {
+    "row": 31,
+    "column": 1,
+    "note": "내부 검증 18장, test 10장 무라벨. 100epoch×600패치×3군 전체 학습 및 tile512/768 추론 완료. 한 split/seed에서 전략 탐색 반복; 대회 점수와 일반화 보증 아님. train/valid A그룹은 비중복, train/test A그룹 일부 중복. 세부 내용은 행별 노트와 로컬 보고서 참조."
+  },
+  {
+    "row": 32,
+    "column": 4,
+    "note": "TTA 미실시: -"
+  },
+  {
+    "row": 33,
+    "column": 4,
+    "note": "TTA 미실시. 기존 TTA 결과 열 형식에 따라 -."
+  },
+  {
+    "row": 33,
+    "column": 8,
+    "note": "이미지별 평균(%): E precision 73.027721; recall 67.719235; boundary recall 60.516615; interior recall 74.989777; centerline recall 72.679688.\n경계=GT E 4이웃 경계(최외곽1px 제외); 중심선=native GT skeletonize. 물리적 두께나 연결성 보증 지표 아님."
+  },
+  {
+    "row": 33,
+    "column": 9,
+    "note": "별도 결과: C:\\Users\\SSAFY\\Documents\\Codex\\2026-10-01\\https-komap-ai-front-competition2026-receipt\\outputs\\micrograph_augmentation_study\\experiments\\d4_context768\\run\\result.json\n동일 split SHA256 8fd0caa0b6bf0241173c089817ce92922d8ef66cee319348bb518b8d007dfd21; 동일 초기weights SHA256 401b67f68607def4bcba0a0987983012f2733a1c9dc62243e08433483e5c996e.\nsource/crop/D4 표본 계획 동일; 증강만 분리. 온라인 증강 60,000패치/전략.\n기존 D4 기준 체크포인트 재사용."
+  },
+  {
+    "row": 33,
+    "column": 10,
+    "note": "총 분=학습+주기검증+최종 best 재로드 검증; test/secondary 추론 제외. 일반 epoch=첫 epoch와 검증 epoch 제외 79개."
+  },
+  {
+    "row": 33,
+    "column": 11,
+    "note": "동일 fold0/seed42의 내부 검증 반복; 공식 대회 점수 아님. A그룹 bootstrap은 seed 및 전략선택 변동성을 포함하지 않음. 학습·검증 A그룹 비중복; 학습·test A167/A51/A63/A87 중복, test 이미지 자체는 학습에 쓰지 않음. test10 무라벨. 상세 범위: C:\\Users\\SSAFY\\Documents\\Codex\\2026-10-01\\https-komap-ai-front-competition2026-receipt\\outputs\\micrograph_augmentation_study\\analysis\\limitations.md"
+  },
+  {
+    "row": 34,
+    "column": 1,
+    "note": "U-Net, MICCAI 2015: https://arxiv.org/pdf/1505.04597"
+  },
+  {
+    "row": 34,
+    "column": 4,
+    "note": "TTA 미실시. 기존 TTA 결과 열 형식에 따라 -."
+  },
+  {
+    "row": 34,
+    "column": 8,
+    "note": "이미지별 평균(%): E precision 72.854319; recall 67.950658; boundary recall 60.334600; interior recall 75.454488; centerline recall 72.556849.\n경계=GT E 4이웃 경계(최외곽1px 제외); 중심선=native GT skeletonize. 물리적 두께나 연결성 보증 지표 아님."
+  },
+  {
+    "row": 34,
+    "column": 9,
+    "note": "별도 결과: C:\\Users\\SSAFY\\Documents\\Codex\\2026-10-01\\https-komap-ai-front-competition2026-receipt\\outputs\\micrograph_augmentation_study\\experiments\\aug_elastic\\run\\result.json\n동일 split SHA256 8fd0caa0b6bf0241173c089817ce92922d8ef66cee319348bb518b8d007dfd21; 동일 초기weights SHA256 401b67f68607def4bcba0a0987983012f2733a1c9dc62243e08433483e5c996e.\nsource/crop/D4 표본 계획 동일; 증강만 분리. 온라인 증강 60,000패치/전략.\nU-Net, MICCAI 2015: https://arxiv.org/pdf/1505.04597"
+  },
+  {
+    "row": 34,
+    "column": 10,
+    "note": "총 분=학습+주기검증+최종 best 재로드 검증; test/secondary 추론 제외. 일반 epoch=첫 epoch와 검증 epoch 제외 79개."
+  },
+  {
+    "row": 34,
+    "column": 11,
+    "note": "동일 fold0/seed42의 내부 검증 반복; 공식 대회 점수 아님. A그룹 bootstrap은 seed 및 전략선택 변동성을 포함하지 않음. 학습·검증 A그룹 비중복; 학습·test A167/A51/A63/A87 중복, test 이미지 자체는 학습에 쓰지 않음. test10 무라벨. 상세 범위: C:\\Users\\SSAFY\\Documents\\Codex\\2026-10-01\\https-komap-ai-front-competition2026-receipt\\outputs\\micrograph_augmentation_study\\analysis\\limitations.md"
+  },
+  {
+    "row": 35,
+    "column": 1,
+    "note": "Al-Si microstructure CNN, Scientific Reports 2019: https://pmc.ncbi.nlm.nih.gov/articles/PMC6928157/"
+  },
+  {
+    "row": 35,
+    "column": 4,
+    "note": "TTA 미실시. 기존 TTA 결과 열 형식에 따라 -."
+  },
+  {
+    "row": 35,
+    "column": 8,
+    "note": "이미지별 평균(%): E precision 73.465055; recall 67.305693; boundary recall 59.601058; interior recall 75.042476; centerline recall 72.014318.\n경계=GT E 4이웃 경계(최외곽1px 제외); 중심선=native GT skeletonize. 물리적 두께나 연결성 보증 지표 아님."
+  },
+  {
+    "row": 35,
+    "column": 9,
+    "note": "별도 결과: C:\\Users\\SSAFY\\Documents\\Codex\\2026-10-01\\https-komap-ai-front-competition2026-receipt\\outputs\\micrograph_augmentation_study\\experiments\\aug_optical_blur\\run\\result.json\n동일 split SHA256 8fd0caa0b6bf0241173c089817ce92922d8ef66cee319348bb518b8d007dfd21; 동일 초기weights SHA256 401b67f68607def4bcba0a0987983012f2733a1c9dc62243e08433483e5c996e.\nsource/crop/D4 표본 계획 동일; 증강만 분리. 온라인 증강 60,000패치/전략.\nAl-Si microstructure CNN, Scientific Reports 2019: https://pmc.ncbi.nlm.nih.gov/articles/PMC6928157/"
+  },
+  {
+    "row": 35,
+    "column": 10,
+    "note": "총 분=학습+주기검증+최종 best 재로드 검증; test/secondary 추론 제외. 일반 epoch=첫 epoch와 검증 epoch 제외 79개."
+  },
+  {
+    "row": 35,
+    "column": 11,
+    "note": "동일 fold0/seed42의 내부 검증 반복; 공식 대회 점수 아님. A그룹 bootstrap은 seed 및 전략선택 변동성을 포함하지 않음. 학습·검증 A그룹 비중복; 학습·test A167/A51/A63/A87 중복, test 이미지 자체는 학습에 쓰지 않음. test10 무라벨. 상세 범위: C:\\Users\\SSAFY\\Documents\\Codex\\2026-10-01\\https-komap-ai-front-competition2026-receipt\\outputs\\micrograph_augmentation_study\\analysis\\limitations.md"
+  },
+  {
+    "row": 36,
+    "column": 1,
+    "note": "FDA, CVPR 2020: https://openaccess.thecvf.com/content_CVPR_2020/html/Yang_FDA_Fourier_Domain_Adaptation_for_Semantic_Segmentation_CVPR_2020_paper.html\n원논문 cross-domain 대신 이 연구는 학습 집합 내부 donor를 사용한 변형."
+  },
+  {
+    "row": 36,
+    "column": 4,
+    "note": "TTA 미실시. 기존 TTA 결과 열 형식에 따라 -."
+  },
+  {
+    "row": 36,
+    "column": 8,
+    "note": "이미지별 평균(%): E precision 72.579599; recall 67.001026; boundary recall 59.452835; interior recall 74.385532; centerline recall 71.549926.\n경계=GT E 4이웃 경계(최외곽1px 제외); 중심선=native GT skeletonize. 물리적 두께나 연결성 보증 지표 아님."
+  },
+  {
+    "row": 36,
+    "column": 9,
+    "note": "별도 결과: C:\\Users\\SSAFY\\Documents\\Codex\\2026-10-01\\https-komap-ai-front-competition2026-receipt\\outputs\\micrograph_augmentation_study\\experiments\\aug_train_fda\\run\\result.json\n동일 split SHA256 8fd0caa0b6bf0241173c089817ce92922d8ef66cee319348bb518b8d007dfd21; 동일 초기weights SHA256 401b67f68607def4bcba0a0987983012f2733a1c9dc62243e08433483e5c996e.\nsource/crop/D4 표본 계획 동일; 증강만 분리. 온라인 증강 60,000패치/전략.\nFDA, CVPR 2020: https://openaccess.thecvf.com/content_CVPR_2020/html/Yang_FDA_Fourier_Domain_Adaptation_for_Semantic_Segmentation_CVPR_2020_paper.html\n원논문 cross-domain 대신 이 연구는 학습 집합 내부 donor를 사용한 변형."
+  },
+  {
+    "row": 36,
+    "column": 10,
+    "note": "총 분=학습+주기검증+최종 best 재로드 검증; test/secondary 추론 제외. 일반 epoch=첫 epoch와 검증 epoch 제외 79개."
+  },
+  {
+    "row": 36,
+    "column": 11,
+    "note": "동일 fold0/seed42의 내부 검증 반복; 공식 대회 점수 아님. A그룹 bootstrap은 seed 및 전략선택 변동성을 포함하지 않음. 학습·검증 A그룹 비중복; 학습·test A167/A51/A63/A87 중복, test 이미지 자체는 학습에 쓰지 않음. test10 무라벨. 상세 범위: C:\\Users\\SSAFY\\Documents\\Codex\\2026-10-01\\https-komap-ai-front-competition2026-receipt\\outputs\\micrograph_augmentation_study\\analysis\\limitations.md"
+  },
+  {
+    "row": 38,
+    "column": 1,
+    "note": "내부 검증 18장, test 10장 무라벨. 100epoch×600패치×3군 전체 학습 및 tile512/768 추론 완료. 한 split/seed에서 전략 탐색 반복; 대회 점수와 일반화 보증 아님. train/valid A그룹은 비중복, train/test A그룹 일부 중복. 세부 내용은 행별 노트와 로컬 보고서 참조."
+  },
+  {
+    "row": 39,
+    "column": 4,
+    "note": "TTA 미실시: -"
+  },
+  {
+    "row": 40,
+    "column": 4,
+    "note": "TTA 미실시. 기존 TTA 결과 열 형식에 따라 -."
+  },
+  {
+    "row": 40,
+    "column": 8,
+    "note": "이미지별 평균(%): E precision 73.940480; recall 67.389682; boundary recall 59.932195; interior recall 74.737160; centerline recall 72.201102.\n경계=GT E 4이웃 경계(최외곽1px 제외); 중심선=native GT skeletonize. 물리적 두께나 연결성 보증 지표 아님."
+  },
+  {
+    "row": 40,
+    "column": 9,
+    "note": "별도 결과: C:\\Users\\SSAFY\\Documents\\Codex\\2026-10-01\\https-komap-ai-front-competition2026-receipt\\outputs\\micrograph_augmentation_study\\experiments\\d4_context768\\run\\result.json\n동일 split SHA256 8fd0caa0b6bf0241173c089817ce92922d8ef66cee319348bb518b8d007dfd21; 동일 초기weights SHA256 401b67f68607def4bcba0a0987983012f2733a1c9dc62243e08433483e5c996e.\nsource/crop/D4 표본 계획 동일; 증강만 분리. 온라인 증강 60,000패치/전략.\n기존 D4 기준 체크포인트 재사용."
+  },
+  {
+    "row": 40,
+    "column": 10,
+    "note": "총 분=학습+주기검증+최종 best 재로드 검증; test/secondary 추론 제외. 일반 epoch=첫 epoch와 검증 epoch 제외 79개."
+  },
+  {
+    "row": 40,
+    "column": 11,
+    "note": "동일 fold0/seed42의 내부 검증 반복; 공식 대회 점수 아님. A그룹 bootstrap은 seed 및 전략선택 변동성을 포함하지 않음. 학습·검증 A그룹 비중복; 학습·test A167/A51/A63/A87 중복, test 이미지 자체는 학습에 쓰지 않음. test10 무라벨. 상세 범위: C:\\Users\\SSAFY\\Documents\\Codex\\2026-10-01\\https-komap-ai-front-competition2026-receipt\\outputs\\micrograph_augmentation_study\\analysis\\limitations.md"
+  },
+  {
+    "row": 41,
+    "column": 1,
+    "note": "U-Net, MICCAI 2015: https://arxiv.org/pdf/1505.04597"
+  },
+  {
+    "row": 41,
+    "column": 4,
+    "note": "TTA 미실시. 기존 TTA 결과 열 형식에 따라 -."
+  },
+  {
+    "row": 41,
+    "column": 8,
+    "note": "이미지별 평균(%): E precision 73.644606; recall 67.292068; boundary recall 59.555942; interior recall 74.851985; centerline recall 71.786430.\n경계=GT E 4이웃 경계(최외곽1px 제외); 중심선=native GT skeletonize. 물리적 두께나 연결성 보증 지표 아님."
+  },
+  {
+    "row": 41,
+    "column": 9,
+    "note": "별도 결과: C:\\Users\\SSAFY\\Documents\\Codex\\2026-10-01\\https-komap-ai-front-competition2026-receipt\\outputs\\micrograph_augmentation_study\\experiments\\aug_elastic\\run\\result.json\n동일 split SHA256 8fd0caa0b6bf0241173c089817ce92922d8ef66cee319348bb518b8d007dfd21; 동일 초기weights SHA256 401b67f68607def4bcba0a0987983012f2733a1c9dc62243e08433483e5c996e.\nsource/crop/D4 표본 계획 동일; 증강만 분리. 온라인 증강 60,000패치/전략.\nU-Net, MICCAI 2015: https://arxiv.org/pdf/1505.04597"
+  },
+  {
+    "row": 41,
+    "column": 10,
+    "note": "총 분=학습+주기검증+최종 best 재로드 검증; test/secondary 추론 제외. 일반 epoch=첫 epoch와 검증 epoch 제외 79개."
+  },
+  {
+    "row": 41,
+    "column": 11,
+    "note": "동일 fold0/seed42의 내부 검증 반복; 공식 대회 점수 아님. A그룹 bootstrap은 seed 및 전략선택 변동성을 포함하지 않음. 학습·검증 A그룹 비중복; 학습·test A167/A51/A63/A87 중복, test 이미지 자체는 학습에 쓰지 않음. test10 무라벨. 상세 범위: C:\\Users\\SSAFY\\Documents\\Codex\\2026-10-01\\https-komap-ai-front-competition2026-receipt\\outputs\\micrograph_augmentation_study\\analysis\\limitations.md"
+  },
+  {
+    "row": 42,
+    "column": 1,
+    "note": "Al-Si microstructure CNN, Scientific Reports 2019: https://pmc.ncbi.nlm.nih.gov/articles/PMC6928157/"
+  },
+  {
+    "row": 42,
+    "column": 4,
+    "note": "TTA 미실시. 기존 TTA 결과 열 형식에 따라 -."
+  },
+  {
+    "row": 42,
+    "column": 8,
+    "note": "이미지별 평균(%): E precision 74.110404; recall 67.078894; boundary recall 59.273564; interior recall 74.953219; centerline recall 71.813567.\n경계=GT E 4이웃 경계(최외곽1px 제외); 중심선=native GT skeletonize. 물리적 두께나 연결성 보증 지표 아님."
+  },
+  {
+    "row": 42,
+    "column": 9,
+    "note": "별도 결과: C:\\Users\\SSAFY\\Documents\\Codex\\2026-10-01\\https-komap-ai-front-competition2026-receipt\\outputs\\micrograph_augmentation_study\\experiments\\aug_optical_blur\\run\\result.json\n동일 split SHA256 8fd0caa0b6bf0241173c089817ce92922d8ef66cee319348bb518b8d007dfd21; 동일 초기weights SHA256 401b67f68607def4bcba0a0987983012f2733a1c9dc62243e08433483e5c996e.\nsource/crop/D4 표본 계획 동일; 증강만 분리. 온라인 증강 60,000패치/전략.\nAl-Si microstructure CNN, Scientific Reports 2019: https://pmc.ncbi.nlm.nih.gov/articles/PMC6928157/"
+  },
+  {
+    "row": 42,
+    "column": 10,
+    "note": "총 분=학습+주기검증+최종 best 재로드 검증; test/secondary 추론 제외. 일반 epoch=첫 epoch와 검증 epoch 제외 79개."
+  },
+  {
+    "row": 42,
+    "column": 11,
+    "note": "동일 fold0/seed42의 내부 검증 반복; 공식 대회 점수 아님. A그룹 bootstrap은 seed 및 전략선택 변동성을 포함하지 않음. 학습·검증 A그룹 비중복; 학습·test A167/A51/A63/A87 중복, test 이미지 자체는 학습에 쓰지 않음. test10 무라벨. 상세 범위: C:\\Users\\SSAFY\\Documents\\Codex\\2026-10-01\\https-komap-ai-front-competition2026-receipt\\outputs\\micrograph_augmentation_study\\analysis\\limitations.md"
+  },
+  {
+    "row": 43,
+    "column": 1,
+    "note": "FDA, CVPR 2020: https://openaccess.thecvf.com/content_CVPR_2020/html/Yang_FDA_Fourier_Domain_Adaptation_for_Semantic_Segmentation_CVPR_2020_paper.html\n원논문 cross-domain 대신 이 연구는 학습 집합 내부 donor를 사용한 변형."
+  },
+  {
+    "row": 43,
+    "column": 4,
+    "note": "TTA 미실시. 기존 TTA 결과 열 형식에 따라 -."
+  },
+  {
+    "row": 43,
+    "column": 8,
+    "note": "이미지별 평균(%): E precision 73.022059; recall 66.511387; boundary recall 59.058847; interior recall 73.824797; centerline recall 71.046661.\n경계=GT E 4이웃 경계(최외곽1px 제외); 중심선=native GT skeletonize. 물리적 두께나 연결성 보증 지표 아님."
+  },
+  {
+    "row": 43,
+    "column": 9,
+    "note": "별도 결과: C:\\Users\\SSAFY\\Documents\\Codex\\2026-10-01\\https-komap-ai-front-competition2026-receipt\\outputs\\micrograph_augmentation_study\\experiments\\aug_train_fda\\run\\result.json\n동일 split SHA256 8fd0caa0b6bf0241173c089817ce92922d8ef66cee319348bb518b8d007dfd21; 동일 초기weights SHA256 401b67f68607def4bcba0a0987983012f2733a1c9dc62243e08433483e5c996e.\nsource/crop/D4 표본 계획 동일; 증강만 분리. 온라인 증강 60,000패치/전략.\nFDA, CVPR 2020: https://openaccess.thecvf.com/content_CVPR_2020/html/Yang_FDA_Fourier_Domain_Adaptation_for_Semantic_Segmentation_CVPR_2020_paper.html\n원논문 cross-domain 대신 이 연구는 학습 집합 내부 donor를 사용한 변형."
+  },
+  {
+    "row": 43,
+    "column": 10,
+    "note": "총 분=학습+주기검증+최종 best 재로드 검증; test/secondary 추론 제외. 일반 epoch=첫 epoch와 검증 epoch 제외 79개."
+  },
+  {
+    "row": 43,
+    "column": 11,
+    "note": "동일 fold0/seed42의 내부 검증 반복; 공식 대회 점수 아님. A그룹 bootstrap은 seed 및 전략선택 변동성을 포함하지 않음. 학습·검증 A그룹 비중복; 학습·test A167/A51/A63/A87 중복, test 이미지 자체는 학습에 쓰지 않음. test10 무라벨. 상세 범위: C:\\Users\\SSAFY\\Documents\\Codex\\2026-10-01\\https-komap-ai-front-competition2026-receipt\\outputs\\micrograph_augmentation_study\\analysis\\limitations.md"
+  },
+  {
+    "row": 45,
+    "column": 1,
+    "note": "10월 2일 최고점 78.3817041984701%를 기준으로 추론 개선. 동일 학습 checkpoint 재사용, 신규 학습 없음. 내부 검증 18장; test10 무라벨. 원본 기록은 수정하지 않음."
+  },
+  {
+    "row": 47,
+    "column": 11,
+    "note": "내부 검증18장·A그룹14개; seed42/fold0; 사진별 클래스 IoU 평균. 동일 best.pt. 대회 점수 아님.\nC:/Users/SSAFY/Documents/Codex/2026-10-01/https-komap-ai-front-competition2026-receipt/outputs/eutectic_miou_push/report.html"
+  },
+  {
+    "row": 48,
+    "column": 11,
+    "note": "내부 검증18장·A그룹14개; seed42/fold0; 사진별 클래스 IoU 평균. 동일 best.pt. 대회 점수 아님.\nC:/Users/SSAFY/Documents/Codex/2026-10-01/https-komap-ai-front-competition2026-receipt/outputs/eutectic_miou_push/report.html"
+  },
+  {
+    "row": 49,
+    "column": 1,
+    "note": "best.pt SHA256 8cd7995ea3e33d89cb16f2ad5875527532f8e96acb62b3ff7f2e84180c87c87a\n내부 검증18장·A그룹14개; seed42/fold0; 사진별 클래스 IoU 평균. 동일 best.pt. 대회 점수 아님."
+  },
+  {
+    "row": 49,
+    "column": 11,
+    "note": "내부 검증18장·A그룹14개; seed42/fold0; 사진별 클래스 IoU 평균. 동일 best.pt. 대회 점수 아님.\nC:/Users/SSAFY/Documents/Codex/2026-10-01/https-komap-ai-front-competition2026-receipt/outputs/eutectic_miou_push/report.html"
+  },
+  {
+    "row": 51,
+    "column": 1,
+    "note": "Dense 모델, 타일 변경, 배율 변경, 확률 혼합을 탐색적으로 비교. 주 선택은 단일 tile768 D4 TTA. 여러 후보의 동일 검증셋 선택 편향에 주의."
+  },
+  {
+    "row": 53,
+    "column": 11,
+    "note": "내부 검증18장·A그룹14개; seed42/fold0; 사진별 클래스 IoU 평균. 동일 best.pt. 대회 점수 아님.\nC:/Users/SSAFY/Documents/Codex/2026-10-01/https-komap-ai-front-competition2026-receipt/outputs/eutectic_miou_push/report.html"
+  },
+  {
+    "row": 54,
+    "column": 11,
+    "note": "내부 검증18장·A그룹14개; seed42/fold0; 사진별 클래스 IoU 평균. 동일 best.pt. 대회 점수 아님.\nC:/Users/SSAFY/Documents/Codex/2026-10-01/https-komap-ai-front-competition2026-receipt/outputs/eutectic_miou_push/report.html"
+  },
+  {
+    "row": 55,
+    "column": 11,
+    "note": "내부 검증18장·A그룹14개; seed42/fold0; 사진별 클래스 IoU 평균. 동일 best.pt. 대회 점수 아님.\nC:/Users/SSAFY/Documents/Codex/2026-10-01/https-komap-ai-front-competition2026-receipt/outputs/eutectic_miou_push/report.html"
+  },
+  {
+    "row": 56,
+    "column": 11,
+    "note": "내부 검증18장·A그룹14개; seed42/fold0; 사진별 클래스 IoU 평균. 동일 best.pt. 대회 점수 아님.\nC:/Users/SSAFY/Documents/Codex/2026-10-01/https-komap-ai-front-competition2026-receipt/outputs/eutectic_miou_push/report.html"
+  }
+]

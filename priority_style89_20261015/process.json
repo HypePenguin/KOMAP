@@ -1,0 +1,21 @@
+{
+  "wrapper_pid": 27104,
+  "started_at": "2026-10-15T13:54:46.1457501+09:00",
+  "executable": "C:\\Users\\SSAFY\\Desktop\\KOMAP\\.venv\\Scripts\\python.exe",
+  "arguments": [
+    "-u",
+    "-B",
+    "-X",
+    "utf8",
+    "C:\\Users\\SSAFY\\Desktop\\KOMAP\\src\\priority_style89.py"
+  ],
+  "working_directory": "C:\\Users\\SSAFY\\Desktop\\KOMAP",
+  "variant": "phase_style_exchange",
+  "counts": {
+    "train": 89,
+    "valid": 1,
+    "test": 10
+  },
+  "excluded_image": "A170_step4_sample3_image.png",
+  "completion": "independent mask audit then CPU model load and Bandizip ZIP verified under100MB"
+}

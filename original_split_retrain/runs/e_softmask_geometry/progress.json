@@ -1,0 +1,14 @@
+{
+  "variant": "e_softmask_geometry",
+  "stage": "training",
+  "epoch_completed": 4,
+  "epoch_in_progress": 5,
+  "batch_in_epoch": 75,
+  "batches_per_epoch": 75,
+  "max_epochs": 100,
+  "best_no_tta": -1.0,
+  "minutes": 11.275452311666717,
+  "attempts": 375,
+  "updates": 375,
+  "amp_skips": 0
+}

@@ -1,0 +1,54 @@
+{
+  "verified_at": "2026-10-15T13:56:52.1486517+09:00",
+  "process": {
+    "wrapper_pid": 27104,
+    "started_at": "2026-10-15T13:54:46.1457501+09:00",
+    "executable": "C:\\Users\\SSAFY\\Desktop\\KOMAP\\.venv\\Scripts\\python.exe",
+    "arguments": [
+      "-u",
+      "-B",
+      "-X",
+      "utf8",
+      "C:\\Users\\SSAFY\\Desktop\\KOMAP\\src\\priority_style89.py"
+    ],
+    "working_directory": "C:\\Users\\SSAFY\\Desktop\\KOMAP",
+    "variant": "phase_style_exchange",
+    "counts": {
+      "train": 89,
+      "valid": 1,
+      "test": 10
+    },
+    "excluded_image": "A170_step4_sample3_image.png",
+    "completion": "independent mask audit then CPU model load and Bandizip ZIP verified under100MB"
+  },
+  "power_guard": {
+    "guard_pid": 1332,
+    "updated_at": "2026-10-15T13:54:58.84567+09:00",
+    "display_required": false,
+    "manual_sleep_overridden": false,
+    "state": "active",
+    "windows_request_verified": true,
+    "flags": "0x80000001"
+  },
+  "checkpoint_write_probe": {
+    "passed": true,
+    "source": "C:\\Users\\SSAFY\\Desktop\\KOMAP\\original_split_retrain\\runs\\centerline_baseline\\last.pt",
+    "source_sha256": "7a250cdb2f2d5234669e3ad5d762bfa0dc44b4b53fe4e805d7fc4873fdad7e5f",
+    "probe": "C:\\Users\\SSAFY\\Desktop\\KOMAP\\priority_style89_20261015\\common\\checkpoint_write_probe.pt",
+    "probe_sha256": "34f7694655a468c2310d5244527bfb909458053ef9d142d01a3a51d8905b9e47",
+    "bytes": 355755568,
+    "epoch": 85,
+    "model_and_ema_tensors_equal": true,
+    "optimizer_scheduler_scaler_present": true
+  },
+  "actual_train_count": 89,
+  "actual_donor_count": 89,
+  "excluded_in_train": false,
+  "excluded_in_donors": false,
+  "gpu_utilization_percent_observed": 99,
+  "cpu_tests_passed": 15,
+  "old_four_run_queue_on_hold": true,
+  "priority_monitor_active": true,
+  "zip_not_yet_complete": true,
+  "intended_zip": "share_261015_priority_style89_A170_excluded.zip"
+}

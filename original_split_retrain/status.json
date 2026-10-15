@@ -1,0 +1,8 @@
+{
+  "state": "running",
+  "variant": "e_softmask_geometry",
+  "completed_variants": [
+    "centerline_baseline"
+  ],
+  "split_sha256": "af482b5d242ffda4cc4ebc77f859467f6bd369ed9d613b95bf20392a3789b084"
+}

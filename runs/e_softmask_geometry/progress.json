@@ -1,0 +1,19 @@
+{
+  "variant": "e_softmask_geometry",
+  "epoch": 55,
+  "max_epochs": 100,
+  "best_no_tta": 77.09234029666888,
+  "minutes": 119.4465329850015,
+  "last_epoch": {
+    "epoch": 55,
+    "loss": 0.27783074001471203,
+    "train_seconds": 131.54972310038283,
+    "augmentation_applied": 286,
+    "samples": 600,
+    "mIoU": 76.90719679159845,
+    "validation_seconds": 10.063603500369936
+  },
+  "attempts": 4125,
+  "updates": 4125,
+  "amp_skips": 0
+}

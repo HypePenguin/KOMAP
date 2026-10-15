@@ -1,0 +1,108 @@
+[
+  {
+    "epoch": 1,
+    "loss": 0.3211530468861262,
+    "train_seconds": 179.11543079999683,
+    "augmentation_applied": 279,
+    "samples": 600,
+    "mIoU": null
+  },
+  {
+    "epoch": 2,
+    "loss": 0.30197838445504505,
+    "train_seconds": 127.79952390000108,
+    "augmentation_applied": 296,
+    "samples": 600,
+    "mIoU": null
+  },
+  {
+    "epoch": 3,
+    "loss": 0.30826222240924833,
+    "train_seconds": 127.81676940000034,
+    "augmentation_applied": 277,
+    "samples": 600,
+    "mIoU": null
+  },
+  {
+    "epoch": 4,
+    "loss": 0.3060773944854736,
+    "train_seconds": 127.20408270000189,
+    "augmentation_applied": 292,
+    "samples": 600,
+    "mIoU": null
+  },
+  {
+    "epoch": 5,
+    "loss": 0.29645176728566486,
+    "train_seconds": 126.83157599999686,
+    "augmentation_applied": 263,
+    "samples": 600,
+    "mIoU": 85.63257093026841,
+    "validation_seconds": 28.989957600002526
+  },
+  {
+    "epoch": 6,
+    "loss": 0.2964305406808853,
+    "train_seconds": 128.25898460000462,
+    "augmentation_applied": 280,
+    "samples": 600,
+    "mIoU": null
+  },
+  {
+    "epoch": 7,
+    "loss": 0.2971577082077662,
+    "train_seconds": 127.17301369999768,
+    "augmentation_applied": 279,
+    "samples": 600,
+    "mIoU": null
+  },
+  {
+    "epoch": 8,
+    "loss": 0.29152012507120767,
+    "train_seconds": 136.52653389999614,
+    "augmentation_applied": 253,
+    "samples": 600,
+    "mIoU": null
+  },
+  {
+    "epoch": 9,
+    "loss": 0.29295336027940116,
+    "train_seconds": 134.5943602999978,
+    "augmentation_applied": 268,
+    "samples": 600,
+    "mIoU": null
+  },
+  {
+    "epoch": 10,
+    "loss": 0.29140527645746866,
+    "train_seconds": 132.73044410000148,
+    "augmentation_applied": 287,
+    "samples": 600,
+    "mIoU": 85.85841200155426,
+    "validation_seconds": 0.3396710000015446
+  },
+  {
+    "epoch": 11,
+    "loss": 0.29288226207097373,
+    "train_seconds": 132.17635750000045,
+    "augmentation_applied": 269,
+    "samples": 600,
+    "mIoU": null
+  },
+  {
+    "epoch": 12,
+    "loss": 0.2917599638303121,
+    "train_seconds": 129.48442649999924,
+    "augmentation_applied": 300,
+    "samples": 600,
+    "mIoU": null
+  },
+  {
+    "epoch": 13,
+    "loss": 0.28952006141344705,
+    "train_seconds": 129.41527280000446,
+    "augmentation_applied": 255,
+    "samples": 600,
+    "mIoU": null
+  }
+]

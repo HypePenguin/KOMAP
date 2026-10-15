@@ -1,0 +1,19 @@
+{
+  "variant": "centerline_baseline",
+  "epoch": 85,
+  "max_epochs": 100,
+  "best_no_tta": 78.13799383488232,
+  "minutes": 190.02876363833334,
+  "last_epoch": {
+    "epoch": 85,
+    "loss": 0.2738715209563573,
+    "train_seconds": 130.08762950000528,
+    "augmentation_applied": 0,
+    "samples": 600,
+    "mIoU": 77.43358810640323,
+    "validation_seconds": 9.654852599996957
+  },
+  "attempts": 6375,
+  "updates": 6375,
+  "amp_skips": 0
+}

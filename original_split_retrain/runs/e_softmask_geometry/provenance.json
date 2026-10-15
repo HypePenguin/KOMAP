@@ -1,0 +1,17 @@
+{
+  "variant": "e_softmask_geometry",
+  "plan_sha256": "6b51b45ccb2ecf927f61eb39b7fe7a47a8f643ae92acce08ec7bef001e147d0a",
+  "source_sha256": {
+    "src/original_split_retrain.py": "9cffea019f86e651ae3867c775230547ea2cfdd074f3ac3490f946d2d0217360",
+    "src/experiment.py": "24ad7ed40d9f104626916a1fd69ab89a73d409a743242f0e437095d7ff7029d4",
+    "src/audit_original_split.py": "4ddccb9af7f31f74f8fe47b987161fac82c7c903d5cf1cddb2c15f76a05cf27e",
+    "src/target_search.py": "c72657a91a7b801f101744e5b3cadab89efeef82ee07fba775b2a37a9f194177",
+    "src/training_awake.py": "98e9c6f65f146d4de4ea33fc13be4080a33f0a68f03735addd8e45b217710378"
+  },
+  "split_sha256": "af482b5d242ffda4cc4ebc77f859467f6bd369ed9d613b95bf20392a3789b084",
+  "data_manifest_sha256": "15cfef36482eb62a1d92f678c8d8690e75923a58b2c9bc77e7184445ef2d877d",
+  "initial_checkpoint": "C:\\Users\\SSAFY\\Desktop\\KOMAP\\original_split_retrain\\runs\\centerline_baseline\\best.pt",
+  "initial_checkpoint_sha256": "6bf6809c18cb49d576e704fa0738d54e9e83fc0abc47a21e227ec796ee2054be",
+  "source_subset_split_verified": true,
+  "initialization_lineage": "fresh approved initial -> new train70 baseline -> independent variant"
+}

@@ -1,0 +1,15 @@
+{
+  "event": "Windows sleep and hibernation interrupted wall-clock training",
+  "sleep_kst": "2026-10-13T18:01:12.8635977+09:00",
+  "sleep_reason": "Application API",
+  "hibernate_kst": "2026-10-13T20:02:19.5551608+09:00",
+  "resume_kst": "2026-10-14T08:21:51.2271152+09:00",
+  "training_process_pid": 4844,
+  "restart_performed": false,
+  "continued_epoch": 54,
+  "affected_run": "notes_recovered/runs/centerline_baseline",
+  "affected_epoch": 53,
+  "recorded_epoch53_wall_seconds": 51806.5,
+  "reporting_note": "Recorded train_minutes is elapsed wall-clock time including the overnight sleep/hibernate pause; it must not be described as active GPU training time or directly compared with historical active training duration. Original logs remain unchanged.",
+  "mitigation": "src/training_awake.py holds a verified Windows ES_CONTINUOUS|ES_SYSTEM_REQUIRED request while process4844 is alive, then releases it. Display and manual sleep are unaffected."
+}

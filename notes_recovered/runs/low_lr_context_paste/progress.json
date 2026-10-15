@@ -1,0 +1,19 @@
+{
+  "variant": "low_lr_context_paste",
+  "epoch": 25,
+  "max_epochs": 100,
+  "best_no_tta": 79.31569103067292,
+  "minutes": 56.980267063326515,
+  "last_epoch": {
+    "epoch": 25,
+    "loss": 0.2712508966525396,
+    "train_seconds": 131.52081740042195,
+    "augmentation_applied": 349,
+    "samples": 600,
+    "mIoU": 79.25413068951525,
+    "validation_seconds": 23.174147699959576
+  },
+  "attempts": 1875,
+  "updates": 1875,
+  "amp_skips": 0
+}

@@ -1,0 +1,54 @@
+{
+  "string": {
+    "valid": 18,
+    "groups": 14,
+    "test_overlap_matches": true,
+    "native_gt_thin_fraction": 74.35029191703866,
+    "ids": [
+      "A106_step4_sample1",
+      "A117_step4_sample2",
+      "A118_step2_sample1",
+      "A123_step1_sample1",
+      "A123_step4_sample2",
+      "A137_step4_sample2",
+      "A140_step4_sample2",
+      "A153_step1_sample4",
+      "A153_step3_sample3",
+      "A182_step4_sample3",
+      "A191_step3_sample1",
+      "A191_step4_sample1",
+      "A191_step4_sample3",
+      "A2_step4_sample1",
+      "A42_step2_sample4",
+      "A61_step2_sample2",
+      "A67_step1_sample1",
+      "A78_step4_sample1"
+    ]
+  },
+  "numeric": {
+    "valid": 18,
+    "groups": 14,
+    "test_overlap_matches": false,
+    "native_gt_thin_fraction": 75.8459931766749,
+    "ids": [
+      "A108_step2_sample2",
+      "A130_step1_sample1",
+      "A146_step2_sample1",
+      "A153_step1_sample4",
+      "A153_step3_sample3",
+      "A159_step4_sample4",
+      "A186_step2_sample2",
+      "A187_step2_sample1",
+      "A187_step4_sample4",
+      "A21_step2_sample4",
+      "A222_step2_sample2",
+      "A51_step4_sample4",
+      "A64_step2_sample3",
+      "A72_step4_sample4",
+      "A78_step4_sample1",
+      "A7_step1_sample2",
+      "A7_step1_sample4",
+      "A7_step4_sample3"
+    ]
+  }
+}

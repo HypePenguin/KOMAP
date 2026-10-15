@@ -1,0 +1,234 @@
+{
+  "version": 1,
+  "purpose": "improvement_not_historical_reproduction",
+  "target": {
+    "metric": "final D4 mean-image mIoU percent",
+    "threshold": 79.0,
+    "validation_images": 18,
+    "test_masks": 10
+  },
+  "base_config": {
+    "encoder": "tu-tf_efficientnetv2_s.in21k_ft_in1k",
+    "mean": [
+      0.5,
+      0.5,
+      0.5
+    ],
+    "std": [
+      0.5,
+      0.5,
+      0.5
+    ],
+    "native_crop": 384,
+    "input_crop": 768,
+    "patches_per_epoch": 600,
+    "batch": 8,
+    "workers": 2,
+    "inference_batch": 8,
+    "max_epochs": 100,
+    "patience_epochs": 20,
+    "min_delta_pp": 0.02,
+    "encoder_lr": 3e-05,
+    "decoder_lr": 0.0003,
+    "weight_decay": 0.05,
+    "ema_decay": 0.999,
+    "recall_smooth": 1e-05,
+    "center_after_final_transform": true,
+    "scheduler_per_step": true,
+    "min_lr": 1e-07,
+    "reference_mIoU": {
+      "centerline_baseline": 78.9309711410583,
+      "e_softmask_geometry": 79.00779879382462,
+      "low_lr_context_paste": 78.94274586106262,
+      "phase_style_exchange": 78.92420324957915,
+      "e_protected_illumination": 78.92165697045854
+    },
+    "source_notes_rows": [
+      1,
+      10,
+      22,
+      28
+    ],
+    "expected_parameters": 22093908,
+    "expected_original_initial_sha256": "401b67f68607def4bcba0a0987983012f2733a1c9dc62243e08433483e5c996e",
+    "confirmed_from_notes": [
+      "explicit encoder/pretrained tag",
+      "AdamW decoder3e-4 encoder multiplier0.1",
+      "weight decay0.05",
+      "EMA0.999",
+      "final-transformed GT skeleton + cross dilation twice intersect E",
+      "aux recall smooth1e-5 per-present-E-patch mean",
+      "primary checkpoint selection tile512 and secondary tile768",
+      "batch8 samples600 seed42 workers2 threads4",
+      "22,093,908 model parameters",
+      "train72 valid18 valid14 A groups and train/valid A group disjoint"
+    ],
+    "remaining_assumptions": [
+      "Original folds.csv not recovered; documented group split candidate frozen before any model evaluation.",
+      "Cosine per-update schedule with minimum1e-7 inferred; exact schedule not specified in recovered config notes.",
+      "Fine-tune selection tile512 inherited from earlier common protocol; final Oct7 fine-tune selection tile not explicit.",
+      "Original source code/software versions and detailed augmentation gates/intensities unavailable; reconstruct values retained.",
+      "Inference batch8, uniform overlap probability mean and FP16 AMP retained; exact original inference batching/blend unknown.",
+      "All five runs follow the final Oct7 max100/patience20/minDelta0.02 protocol, including the baseline retrain in row98."
+    ]
+  },
+  "base_config_sha256": "8b205df45e1f064ac065be0dc7e93a1d10919b9eb962bbe85436c66e7cf0b8f3",
+  "split_file": "C:\\Users\\SSAFY\\Desktop\\KOMAP\\configs\\split_group_fold0.json",
+  "split_sha256": "0ed56604ab6ef4c5dc541f851eafac29eb706c3bac71b2df24319d8a6e34b7e6",
+  "data_manifest_sha256": "15cfef36482eb62a1d92f678c8d8690e75923a58b2c9bc77e7184445ef2d877d",
+  "source_sha256": {
+    "src/experiment.py": "24ad7ed40d9f104626916a1fd69ab89a73d409a743242f0e437095d7ff7029d4",
+    "src/notes_recovered.py": "df842cf95c12edcc2a9d1f9ac9b28238a8349db66fa38d62eea394af8610b2f8",
+    "src/audit_results.py": "a0bd2427efda99aae9e3087ad5610f9b3bda8da5600696590ce1117959468603",
+    "src/target_search.py": "c72657a91a7b801f101744e5b3cadab89efeef82ee07fba775b2a37a9f194177",
+    "src/training_awake.py": "98e9c6f65f146d4de4ea33fc13be4080a33f0a68f03735addd8e45b217710378"
+  },
+  "baseline_checkpoint": "C:\\Users\\SSAFY\\Desktop\\KOMAP\\notes_recovered\\runs\\centerline_baseline\\best.pt",
+  "selection_tile": 512,
+  "final_tta_tile": 768,
+  "early_stop_enabled": true,
+  "original_split_verified": false,
+  "rationale": "Historical row71 lower-LR preservation; geometry rows88/96. Only initial encoder/decoder learning rates change; split, scheduler floor and all other settings stay fixed.",
+  "candidates": {
+    "e_softmask_lr_x0p1": {
+      "ratio": 0.1,
+      "encoder_lr": 3e-06,
+      "decoder_lr": 3e-05,
+      "config": {
+        "encoder": "tu-tf_efficientnetv2_s.in21k_ft_in1k",
+        "mean": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "std": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "native_crop": 384,
+        "input_crop": 768,
+        "patches_per_epoch": 600,
+        "batch": 8,
+        "workers": 2,
+        "inference_batch": 8,
+        "max_epochs": 100,
+        "patience_epochs": 20,
+        "min_delta_pp": 0.02,
+        "encoder_lr": 3e-06,
+        "decoder_lr": 3e-05,
+        "weight_decay": 0.05,
+        "ema_decay": 0.999,
+        "recall_smooth": 1e-05,
+        "center_after_final_transform": true,
+        "scheduler_per_step": true,
+        "min_lr": 1e-07,
+        "reference_mIoU": {
+          "centerline_baseline": 78.9309711410583,
+          "e_softmask_geometry": 79.00779879382462,
+          "low_lr_context_paste": 78.94274586106262,
+          "phase_style_exchange": 78.92420324957915,
+          "e_protected_illumination": 78.92165697045854
+        },
+        "source_notes_rows": [
+          1,
+          10,
+          22,
+          28
+        ],
+        "expected_parameters": 22093908,
+        "expected_original_initial_sha256": "401b67f68607def4bcba0a0987983012f2733a1c9dc62243e08433483e5c996e",
+        "confirmed_from_notes": [
+          "explicit encoder/pretrained tag",
+          "AdamW decoder3e-4 encoder multiplier0.1",
+          "weight decay0.05",
+          "EMA0.999",
+          "final-transformed GT skeleton + cross dilation twice intersect E",
+          "aux recall smooth1e-5 per-present-E-patch mean",
+          "primary checkpoint selection tile512 and secondary tile768",
+          "batch8 samples600 seed42 workers2 threads4",
+          "22,093,908 model parameters",
+          "train72 valid18 valid14 A groups and train/valid A group disjoint"
+        ],
+        "remaining_assumptions": [
+          "Original folds.csv not recovered; documented group split candidate frozen before any model evaluation.",
+          "Cosine per-update schedule with minimum1e-7 inferred; exact schedule not specified in recovered config notes.",
+          "Fine-tune selection tile512 inherited from earlier common protocol; final Oct7 fine-tune selection tile not explicit.",
+          "Original source code/software versions and detailed augmentation gates/intensities unavailable; reconstruct values retained.",
+          "Inference batch8, uniform overlap probability mean and FP16 AMP retained; exact original inference batching/blend unknown.",
+          "All five runs follow the final Oct7 max100/patience20/minDelta0.02 protocol, including the baseline retrain in row98."
+        ]
+      }
+    },
+    "e_softmask_lr_x1over30": {
+      "ratio": 0.03333333333333333,
+      "encoder_lr": 1e-06,
+      "decoder_lr": 1e-05,
+      "config": {
+        "encoder": "tu-tf_efficientnetv2_s.in21k_ft_in1k",
+        "mean": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "std": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "native_crop": 384,
+        "input_crop": 768,
+        "patches_per_epoch": 600,
+        "batch": 8,
+        "workers": 2,
+        "inference_batch": 8,
+        "max_epochs": 100,
+        "patience_epochs": 20,
+        "min_delta_pp": 0.02,
+        "encoder_lr": 1e-06,
+        "decoder_lr": 1e-05,
+        "weight_decay": 0.05,
+        "ema_decay": 0.999,
+        "recall_smooth": 1e-05,
+        "center_after_final_transform": true,
+        "scheduler_per_step": true,
+        "min_lr": 1e-07,
+        "reference_mIoU": {
+          "centerline_baseline": 78.9309711410583,
+          "e_softmask_geometry": 79.00779879382462,
+          "low_lr_context_paste": 78.94274586106262,
+          "phase_style_exchange": 78.92420324957915,
+          "e_protected_illumination": 78.92165697045854
+        },
+        "source_notes_rows": [
+          1,
+          10,
+          22,
+          28
+        ],
+        "expected_parameters": 22093908,
+        "expected_original_initial_sha256": "401b67f68607def4bcba0a0987983012f2733a1c9dc62243e08433483e5c996e",
+        "confirmed_from_notes": [
+          "explicit encoder/pretrained tag",
+          "AdamW decoder3e-4 encoder multiplier0.1",
+          "weight decay0.05",
+          "EMA0.999",
+          "final-transformed GT skeleton + cross dilation twice intersect E",
+          "aux recall smooth1e-5 per-present-E-patch mean",
+          "primary checkpoint selection tile512 and secondary tile768",
+          "batch8 samples600 seed42 workers2 threads4",
+          "22,093,908 model parameters",
+          "train72 valid18 valid14 A groups and train/valid A group disjoint"
+        ],
+        "remaining_assumptions": [
+          "Original folds.csv not recovered; documented group split candidate frozen before any model evaluation.",
+          "Cosine per-update schedule with minimum1e-7 inferred; exact schedule not specified in recovered config notes.",
+          "Fine-tune selection tile512 inherited from earlier common protocol; final Oct7 fine-tune selection tile not explicit.",
+          "Original source code/software versions and detailed augmentation gates/intensities unavailable; reconstruct values retained.",
+          "Inference batch8, uniform overlap probability mean and FP16 AMP retained; exact original inference batching/blend unknown.",
+          "All five runs follow the final Oct7 max100/patience20/minDelta0.02 protocol, including the baseline retrain in row98."
+        ]
+      }
+    }
+  }
+}

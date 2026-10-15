@@ -1,0 +1,14 @@
+{
+  "path": "C:\\Users\\SSAFY\\Desktop\\KOMAP\\share_261014_3_style_light.zip",
+  "bytes": 86119597,
+  "sha256": "4fce020c7beef8260873b2443873d6bebe6fa00a8fe8060960694b2e8eec06b0",
+  "under_100000000_bytes": true,
+  "verified_members": 78,
+  "best_pt_sha256": "bc3097a18206b21109b2f2d9cdff677cad130624a48d01a31b76590b7c1e02dc",
+  "model_weights_unchanged": true,
+  "bandizip_integrity_test_passed": true,
+  "selected_epoch": 55,
+  "cpu_checkpoint_load_passed": true,
+  "validation_mIoU": 80.25754088175019,
+  "source_sheet_row": 125
+}

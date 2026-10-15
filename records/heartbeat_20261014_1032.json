@@ -1,0 +1,20 @@
+{
+  "checked_at": "2026-10-14T10:37:38.8726744+09:00",
+  "completed_variants": [
+    "centerline_baseline"
+  ],
+  "completed_count": 1,
+  "mIoU": 79.84738714714055,
+  "independent_audit_passed": true,
+  "valid_masks": 18,
+  "test_masks": 10,
+  "sheet_range": "'승현_ 실험기록'!A120:K128",
+  "sheet_read_back_verified": true,
+  "xlsx_verified": true,
+  "xlsx_sha256": "e83f13120d75e61b22e6605be3d3081dad745c0360711c5a1f454b3e5bfca4cd",
+  "original_rows_1_101_preserved": true,
+  "user_notification_sent": false,
+  "notification_preference": "quiet_except_blocking_errors",
+  "ongoing_variant": "e_softmask_geometry",
+  "target_achieved": false
+}

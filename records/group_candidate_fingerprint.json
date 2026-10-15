@@ -1,0 +1,48 @@
+{
+  "archive_order_factorized_groupkfold": {
+    "native_gt_thin_fraction_pct": 75.1905959495173,
+    "valid_ids": [
+      "A125_step1_sample4",
+      "A125_step2_sample1",
+      "A155_step3_sample2",
+      "A166_step4_sample3",
+      "A170_step4_sample3",
+      "A186_step2_sample2",
+      "A187_step2_sample1",
+      "A187_step4_sample4",
+      "A191_step3_sample1",
+      "A191_step4_sample1",
+      "A191_step4_sample3",
+      "A21_step2_sample4",
+      "A2_step4_sample1",
+      "A57_step1_sample3",
+      "A67_step1_sample1",
+      "A78_step4_sample1",
+      "A96_step1_sample1",
+      "A98_step2_sample4"
+    ]
+  },
+  "archive_order_balanced_stable": {
+    "native_gt_thin_fraction_pct": 77.14990427584615,
+    "valid_ids": [
+      "A123_step1_sample1",
+      "A123_step4_sample2",
+      "A153_step1_sample4",
+      "A153_step3_sample3",
+      "A155_step3_sample2",
+      "A166_step4_sample3",
+      "A170_step4_sample3",
+      "A18_step2_sample1",
+      "A21_step2_sample4",
+      "A2_step4_sample1",
+      "A57_step1_sample3",
+      "A67_step1_sample1",
+      "A78_step4_sample1",
+      "A7_step1_sample2",
+      "A7_step1_sample4",
+      "A7_step4_sample3",
+      "A96_step1_sample1",
+      "A98_step2_sample4"
+    ]
+  }
+}

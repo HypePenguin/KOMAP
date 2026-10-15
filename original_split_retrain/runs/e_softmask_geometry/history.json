@@ -1,0 +1,34 @@
+[
+  {
+    "epoch": 1,
+    "loss": 0.34823377986749016,
+    "train_seconds": 157.26922339999874,
+    "augmentation_applied": 294,
+    "samples": 600,
+    "mIoU": null
+  },
+  {
+    "epoch": 2,
+    "loss": 0.33556538343429565,
+    "train_seconds": 130.05012200000056,
+    "augmentation_applied": 303,
+    "samples": 600,
+    "mIoU": null
+  },
+  {
+    "epoch": 3,
+    "loss": 0.34669222593307497,
+    "train_seconds": 129.71166139999696,
+    "augmentation_applied": 292,
+    "samples": 600,
+    "mIoU": null
+  },
+  {
+    "epoch": 4,
+    "loss": 0.337097042798996,
+    "train_seconds": 129.68124859999807,
+    "augmentation_applied": 303,
+    "samples": 600,
+    "mIoU": null
+  }
+]

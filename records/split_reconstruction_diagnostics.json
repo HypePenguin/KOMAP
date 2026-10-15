@@ -1,0 +1,98 @@
+{
+  "global_lex": {
+    "ids": [
+      "A101_step3_sample3",
+      "A111_step1_sample2",
+      "A121_step2_sample2",
+      "A123_step4_sample2",
+      "A139_step3_sample4",
+      "A147_step4_sample4",
+      "A153_step3_sample3",
+      "A155_step3_sample2",
+      "A166_step4_sample3",
+      "A181_step1_sample1",
+      "A181_step4_sample4",
+      "A187_step4_sample4",
+      "A224_step1_sample2",
+      "A224_step4_sample2",
+      "A55_step2_sample1",
+      "A63_step1_sample4",
+      "A7_step4_sample3",
+      "A8_step3_sample3"
+    ],
+    "weighted": 78.79799972714011,
+    "image_mean": 81.3839780283449
+  },
+  "source_then_lex": {
+    "ids": [
+      "A101_step3_sample3",
+      "A111_step1_sample2",
+      "A125_step2_sample1",
+      "A137_step4_sample2",
+      "A147_step4_sample4",
+      "A154_step2_sample3",
+      "A159_step4_sample4",
+      "A164_step1_sample2",
+      "A187_step2_sample1",
+      "A191_step3_sample1",
+      "A191_step4_sample1",
+      "A21_step2_sample4",
+      "A61_step2_sample2",
+      "A64_step2_sample3",
+      "A8_step2_sample3",
+      "A117_step4_sample2",
+      "A44_step4_sample3",
+      "A71_step2_sample1"
+    ],
+    "weighted": 77.05010910476574,
+    "image_mean": 80.22210666437793
+  },
+  "natural_id": {
+    "ids": [
+      "A2_step4_sample1",
+      "A8_step2_sample3",
+      "A18_step2_sample1",
+      "A39_step2_sample3",
+      "A51_step4_sample4",
+      "A59_step3_sample1",
+      "A66_step3_sample2",
+      "A69_step4_sample4",
+      "A89_step1_sample2",
+      "A101_step3_sample3",
+      "A106_step4_sample1",
+      "A111_step3_sample4",
+      "A139_step3_sample4",
+      "A139_step4_sample3",
+      "A155_step3_sample2",
+      "A164_step4_sample1",
+      "A191_step3_sample1",
+      "A201_step3_sample4"
+    ],
+    "weighted": 76.47055764981151,
+    "image_mean": 80.81508845210033
+  },
+  "archive_order": {
+    "ids": [
+      "A69_step4_sample4",
+      "A118_step2_sample1",
+      "A94_step4_sample2",
+      "A167_step3_sample4",
+      "A64_step2_sample3",
+      "A139_step3_sample4",
+      "A15_step1_sample1",
+      "A200_step4_sample3",
+      "A147_step4_sample4",
+      "A156_step4_sample2",
+      "A8_step3_sample3",
+      "A140_step4_sample2",
+      "A51_step4_sample4",
+      "A21_step2_sample4",
+      "A78_step4_sample1",
+      "A72_step4_sample4",
+      "A125_step1_sample4",
+      "A71_step2_sample1"
+    ],
+    "weighted": 77.41675466923787,
+    "image_mean": 82.90384277418761
+  }
+}

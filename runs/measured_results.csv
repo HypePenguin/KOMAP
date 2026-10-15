@@ -1,0 +1,3 @@
+﻿variant,mIoU,Al,Primary Si,Al3Ni,Eutectic Si,epochs,best_epoch,train_minutes,historical_mIoU,difference_pp,status
+centerline_baseline,77.26280490514819,90.97405270865201,87.64143840805659,77.56428500119404,52.87144350269007,70,65,161.01078466999655,78.9309711410583,-1.6681662359101068,"reconstructed; original split not verified; historical difference is unpaired, not a controlled comparison"
+e_softmask_geometry,77.49962168453507,91.3192630796828,87.38256055030588,78.51573440721148,52.78092870094015,55,35,119.45425468167134,79.00779879382462,-1.508177109289548,"reconstructed; original split not verified; historical difference is unpaired, not a controlled comparison"

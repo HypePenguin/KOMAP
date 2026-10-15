@@ -1,0 +1,25 @@
+{
+  "wrapper_pid": 25940,
+  "started_at": "2026-10-15T09:18:04.8916268+09:00",
+  "executable": "C:\\Users\\SSAFY\\Desktop\\KOMAP\\.venv\\Scripts\\python.exe",
+  "arguments": [
+    "-u",
+    "-B",
+    "-X",
+    "utf8",
+    "C:\\Users\\SSAFY\\Desktop\\KOMAP\\src\\original_split_retrain.py"
+  ],
+  "working_directory": "C:\\Users\\SSAFY\\Desktop\\KOMAP",
+  "source_split": {
+    "test": 10,
+    "train": 70,
+    "valid": 20
+  },
+  "initialization": "fresh initial weights; no old trained checkpoint",
+  "variants": [
+    "centerline_baseline",
+    "e_softmask_geometry",
+    "low_lr_context_paste",
+    "phase_style_exchange"
+  ]
+}

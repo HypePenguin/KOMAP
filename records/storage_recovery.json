@@ -1,0 +1,9 @@
+{
+  "date": "2026-10-13",
+  "failed_epoch": 49,
+  "resume_epoch": 46,
+  "checkpoint_epoch": 45,
+  "host_C_free_GiB": 13.12,
+  "error": "OSError28 during history.json temporary write in sandbox execution",
+  "recovery": "resume existing checkpoint outside sandbox; loader workers2; no personal files deleted"
+}

@@ -1,0 +1,20 @@
+{
+  "recorded_at": "2026-10-15T13:54:31.3402089+09:00",
+  "priority": "User requested row125 style with originaltrain70+valid19 exceptA170",
+  "old_queue_state": "Esoftmask process already exited after torch checkpoint save I/O error",
+  "old_error_time": "2026-10-15T12:42:11+09:00",
+  "old_artifacts_preserved": true,
+  "old_automation_paused": true,
+  "disk_free_bytes": 16735961088,
+  "old_error_cause": "I/O stream error; exact cause unconfirmed; adequate space now",
+  "clean_baseline_verified_D4_valid20_mIoU": 78.81838026518486,
+  "cpu_tests_passed": 15,
+  "counts": {
+    "train": 89,
+    "valid": 1,
+    "test": 10
+  },
+  "excluded_id": "A170_step4_sample3",
+  "plan_sha256": "5934fb0be4cc13229fc52b0c8046113b82f790a1cd5d25e3a4d3b7d0b08c4669",
+  "expected_zip": "share_261015_priority_style89_A170_excluded.zip"
+}

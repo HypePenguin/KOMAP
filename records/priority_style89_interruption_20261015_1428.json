@@ -1,0 +1,16 @@
+{
+  "detected_at": "2026-10-15T14:29:33.4709800+09:00",
+  "previous_python_pid": 1332,
+  "last_progress_epoch": 14,
+  "last_progress_batch": 50,
+  "stderr_empty": true,
+  "windows_crash_event_found": false,
+  "exact_exit_cause": "unknown",
+  "checkpoint_verified_epoch": 10,
+  "checkpoint_updates": 750,
+  "checkpoint_sha256": "316ef1509215df965cd506c004471c5a2563f3c2757a1e49d43307e0e3bcc37d",
+  "resume_epoch": 11,
+  "frozen_source_and_split_verified": true,
+  "model_optimizer_ema_rng_states_verified": true,
+  "uncheckpointed_progress_must_be_recomputed": true
+}

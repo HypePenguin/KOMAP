@@ -1,0 +1,18 @@
+{
+  "package": "share_261015_priority_style89_A170_excluded",
+  "created_utc": "2026-10-15T06:48:17.166611+00:00",
+  "train_count": 89,
+  "excluded_image": "A170_step4_sample3_image.png",
+  "holdout_count": 1,
+  "metric_scope": "single-image reference, not original valid20 or independent test",
+  "model_sha256": "e464af75e27dc7e8204287b2dc6f11fca8184c05aad09db5050dd0a320b0c626",
+  "weight_conversion": "none",
+  "final_holdout_mIoU": 86.61428017677498,
+  "zip_path": "C:\\Users\\SSAFY\\Desktop\\KOMAP\\share_261015_priority_style89_A170_excluded.zip",
+  "zip_bytes": 84024863,
+  "zip_sha256": "32f506b4d3ca31c027c161be4a9faf98df2035d5ea1a13dbc12ae4cd6b5d9e5e",
+  "under_100MB": true,
+  "zip_integrity_verified": true,
+  "cpu_checkpoint_verified": true,
+  "package_completed_utc": "2026-10-15T06:48:29.973163+00:00"
+}

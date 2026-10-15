@@ -1,0 +1,16 @@
+{
+  "date": "2026-10-15",
+  "file": "C:/Users/SSAFY/Desktop/KOMAP/모델링결과서_KOMAP_실험별개정_20261015.docx",
+  "pages": 9,
+  "numbered_tables": 15,
+  "reference_sha256_unchanged": "dbb917db0aa04609f0fbec231435edbe9ca6ab8844f895e90396bd0d7928b788",
+  "review": {
+    "metrics": "Original records directly checked; same-condition deltas; different folds/holdout scopes separated.",
+    "protocol": "Independent agent reviewed; FDA amplitude wording and separate Dense-E model caption corrected.",
+    "citations": "Independent primary-source review; CLAHE switched to verified OpenCV documentation; historical motives distinguished from theoretical explanation.",
+    "layout": "All nine final pages rendered with native Word and viewed individually. No clipped text, blank pages or split comparison tables.",
+    "renderer": "Canonical renderer attempted; LibreOffice unavailable as logged. Native Word PDF export and pypdfium2 PNG rendering succeeded."
+  },
+  "training": "Priority89 finished, valid1/test10 audited, ZIP SHA matched and 84,024,863 bytes. Completion notified and komap heartbeat deleted. Original 70/20 remaining experiments not restarted.",
+  "unfilled_admin_fields": ["팀명", "수상경력", "접수번호 자동발급"]
+}

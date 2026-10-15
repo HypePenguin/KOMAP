@@ -1,0 +1,31 @@
+{
+  "checked_at": "2026-10-14T07:13:20.954Z",
+  "completed_variants": [
+    "centerline_baseline",
+    "e_softmask_geometry",
+    "low_lr_context_paste",
+    "phase_style_exchange"
+  ],
+  "completed_count": 4,
+  "measurements": {
+    "centerline_baseline": 79.84738714714055,
+    "e_softmask_geometry": 80.03941302084225,
+    "low_lr_context_paste": 79.84590980850167,
+    "phase_style_exchange": 80.25754088175019
+  },
+  "independent_audit_passed": true,
+  "valid_masks_per_model": 18,
+  "test_masks_per_model": 10,
+  "sheet_range": "'승현_ 실험기록'!A120:K128",
+  "sheet_read_back_verified": true,
+  "xlsx_verified": true,
+  "xlsx_sha256": "2e8916598ef0ecdceef2ad99611d720df43982bb4b389df90c9748e73d372adb",
+  "original_rows_1_101_preserved": true,
+  "user_notification_sent": false,
+  "notification_preference": "quiet_except_blocking_errors",
+  "ongoing_variant": "e_protected_illumination",
+  "e_softmask_target_achieved": true,
+  "all_five_complete": false,
+  "continue_remaining_original_variants": true,
+  "additional_target_search_needed": false
+}

@@ -1,0 +1,10 @@
+{
+  "started_at": "2026-10-15T14:29:33.5486970+09:00",
+  "launcher_pid": 23260,
+  "launch_method": "Native Win32 process, hidden window",
+  "launcher": "C:\\Users\\SSAFY\\Desktop\\KOMAP\\priority_style89_20261015\\resume_native_20261015_1428.cmd",
+  "arguments": "--resume",
+  "verified_saved_epoch": 10,
+  "resume_epoch": 11,
+  "no_training_source_changes": true
+}

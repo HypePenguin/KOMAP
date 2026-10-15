@@ -1,0 +1,87 @@
+[
+  {
+    "variant": "centerline_baseline",
+    "independent_mIoU": 79.84738714714055,
+    "difference": 0.0,
+    "valid_masks": 18,
+    "test_masks": 10,
+    "passed": true,
+    "split_file": "C:\\Users\\SSAFY\\Desktop\\KOMAP\\configs\\split_group_fold0.json",
+    "split_sha256": "0ed56604ab6ef4c5dc541f851eafac29eb706c3bac71b2df24319d8a6e34b7e6",
+    "group_invariants": {
+      "train_images": 72,
+      "valid_images": 18,
+      "valid_A_groups": 14,
+      "train_valid_group_overlap": []
+    },
+    "source_hashes_verified": 100
+  },
+  {
+    "variant": "e_protected_illumination",
+    "independent_mIoU": 80.04308293550106,
+    "difference": 0.0,
+    "valid_masks": 18,
+    "test_masks": 10,
+    "passed": true,
+    "split_file": "C:\\Users\\SSAFY\\Desktop\\KOMAP\\configs\\split_group_fold0.json",
+    "split_sha256": "0ed56604ab6ef4c5dc541f851eafac29eb706c3bac71b2df24319d8a6e34b7e6",
+    "group_invariants": {
+      "train_images": 72,
+      "valid_images": 18,
+      "valid_A_groups": 14,
+      "train_valid_group_overlap": []
+    },
+    "source_hashes_verified": 100
+  },
+  {
+    "variant": "e_softmask_geometry",
+    "independent_mIoU": 80.03941302084225,
+    "difference": 0.0,
+    "valid_masks": 18,
+    "test_masks": 10,
+    "passed": true,
+    "split_file": "C:\\Users\\SSAFY\\Desktop\\KOMAP\\configs\\split_group_fold0.json",
+    "split_sha256": "0ed56604ab6ef4c5dc541f851eafac29eb706c3bac71b2df24319d8a6e34b7e6",
+    "group_invariants": {
+      "train_images": 72,
+      "valid_images": 18,
+      "valid_A_groups": 14,
+      "train_valid_group_overlap": []
+    },
+    "source_hashes_verified": 100
+  },
+  {
+    "variant": "low_lr_context_paste",
+    "independent_mIoU": 79.84590980850167,
+    "difference": 0.0,
+    "valid_masks": 18,
+    "test_masks": 10,
+    "passed": true,
+    "split_file": "C:\\Users\\SSAFY\\Desktop\\KOMAP\\configs\\split_group_fold0.json",
+    "split_sha256": "0ed56604ab6ef4c5dc541f851eafac29eb706c3bac71b2df24319d8a6e34b7e6",
+    "group_invariants": {
+      "train_images": 72,
+      "valid_images": 18,
+      "valid_A_groups": 14,
+      "train_valid_group_overlap": []
+    },
+    "source_hashes_verified": 100
+  },
+  {
+    "variant": "phase_style_exchange",
+    "independent_mIoU": 80.25754088175019,
+    "difference": 0.0,
+    "valid_masks": 18,
+    "test_masks": 10,
+    "passed": true,
+    "split_file": "C:\\Users\\SSAFY\\Desktop\\KOMAP\\configs\\split_group_fold0.json",
+    "split_sha256": "0ed56604ab6ef4c5dc541f851eafac29eb706c3bac71b2df24319d8a6e34b7e6",
+    "group_invariants": {
+      "train_images": 72,
+      "valid_images": 18,
+      "valid_A_groups": 14,
+      "train_valid_group_overlap": []
+    },
+    "source_hashes_verified": 100
+  }
+]

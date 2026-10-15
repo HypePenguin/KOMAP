@@ -1,0 +1,116 @@
+{
+  "passed": true,
+  "device": "NVIDIA GeForce RTX 5060 Ti",
+  "torch": "2.12.0.dev20260408+cu128",
+  "model_sha256": "e464af75e27dc7e8204287b2dc6f11fca8184c05aad09db5050dd0a320b0c626",
+  "efficient_py_sha256": "ad0e5313d5c54631c5be877a8d1f384070fe2a85357d0868ae955fd572de63c9",
+  "saved_masks_checked": 11,
+  "all_saved_masks_identical": false,
+  "reference_probability_arrays_bit_equal": true,
+  "padding_odd_shape_checked": [
+    173,
+    219
+  ],
+  "boundary_metric_scope": "A170 one-image reference only; test10 has no ground truth",
+  "records": [
+    {
+      "id": "A170_step4_sample3",
+      "pixels": 324000,
+      "different_mask_pixels": 4,
+      "probability_sum_max_error": 1.7881393432617188e-07,
+      "reference_proba_max_abs_error": 0.0,
+      "original_code_vs_saved_mask_pixels": 4,
+      "single_image_mIoU": 86.61630488518036,
+      "stored_model_reference_mIoU": 86.61428017677498,
+      "seconds": 18.53204729999561
+    },
+    {
+      "id": "A107_step1_sample3",
+      "pixels": 1076250,
+      "different_mask_pixels": 2,
+      "probability_sum_max_error": 1.7881393432617188e-07,
+      "reference_proba_max_abs_error": 0.0,
+      "original_code_vs_saved_mask_pixels": 2,
+      "seconds": 22.344895700000052
+    },
+    {
+      "id": "A122_step4_sample1",
+      "pixels": 1076250,
+      "different_mask_pixels": 1,
+      "probability_sum_max_error": 1.7881393432617188e-07,
+      "reference_proba_max_abs_error": 0.0,
+      "original_code_vs_saved_mask_pixels": 1,
+      "seconds": 4.942727300003753
+    },
+    {
+      "id": "A124_step4_sample3",
+      "pixels": 1076250,
+      "different_mask_pixels": 3,
+      "probability_sum_max_error": 1.7881393432617188e-07,
+      "reference_proba_max_abs_error": 0.0,
+      "original_code_vs_saved_mask_pixels": 3,
+      "seconds": 4.930095000003348
+    },
+    {
+      "id": "A127_step3_sample2",
+      "pixels": 1474560,
+      "different_mask_pixels": 5,
+      "probability_sum_max_error": 1.7881393432617188e-07,
+      "reference_proba_max_abs_error": 0.0,
+      "original_code_vs_saved_mask_pixels": 5,
+      "seconds": 22.58121779999783
+    },
+    {
+      "id": "A133_step4_sample1",
+      "pixels": 1076250,
+      "different_mask_pixels": 3,
+      "probability_sum_max_error": 1.7881393432617188e-07,
+      "reference_proba_max_abs_error": 0.0,
+      "original_code_vs_saved_mask_pixels": 3,
+      "seconds": 4.93701819999842
+    },
+    {
+      "id": "A167_step3_sample3",
+      "pixels": 1161702,
+      "different_mask_pixels": 0,
+      "probability_sum_max_error": 1.7881393432617188e-07,
+      "seconds": 2.5160462999992887
+    },
+    {
+      "id": "A38_step2_sample2",
+      "pixels": 324000,
+      "different_mask_pixels": 2,
+      "probability_sum_max_error": 1.7881393432617188e-07,
+      "reference_proba_max_abs_error": 0.0,
+      "original_code_vs_saved_mask_pixels": 2,
+      "seconds": 1.3047073999987333
+    },
+    {
+      "id": "A51_step3_sample3",
+      "pixels": 1161702,
+      "different_mask_pixels": 6,
+      "probability_sum_max_error": 2.384185791015625e-07,
+      "reference_proba_max_abs_error": 0.0,
+      "original_code_vs_saved_mask_pixels": 6,
+      "seconds": 5.056997299994691
+    },
+    {
+      "id": "A63_step2_sample3",
+      "pixels": 324000,
+      "different_mask_pixels": 6,
+      "probability_sum_max_error": 1.7881393432617188e-07,
+      "reference_proba_max_abs_error": 0.0,
+      "original_code_vs_saved_mask_pixels": 6,
+      "seconds": 1.3089028000031249
+    },
+    {
+      "id": "A87_step1_sample4",
+      "pixels": 324000,
+      "different_mask_pixels": 7,
+      "probability_sum_max_error": 1.7881393432617188e-07,
+      "reference_proba_max_abs_error": 0.0,
+      "original_code_vs_saved_mask_pixels": 7,
+      "seconds": 1.3435619000010774
+    }
+  ]
+}

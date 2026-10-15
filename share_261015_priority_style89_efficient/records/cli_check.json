@@ -1,0 +1,67 @@
+{
+  "passed": true,
+  "standalone_files": [
+    "efficient.py",
+    "model/best.pt"
+  ],
+  "other_local_modules_or_configs_present": false,
+  "output_shape": [
+    4,
+    480,
+    675
+  ],
+  "probabilities_labels_and_rgb_masks_consistent": true,
+  "model_sha256": "e464af75e27dc7e8204287b2dc6f11fca8184c05aad09db5050dd0a320b0c626",
+  "inference_info": {
+    "model_sha256": "e464af75e27dc7e8204287b2dc6f11fca8184c05aad09db5050dd0a320b0c626",
+    "selected_epoch": 25,
+    "parameters": 22093908,
+    "device": "cuda",
+    "model_kind": "EMA",
+    "weight_conversion": "none",
+    "classes": [
+      "Al",
+      "Primary Si",
+      "Al3Ni",
+      "Eutectic Si"
+    ],
+    "palette": [
+      [
+        153,
+        127,
+        76
+      ],
+      [
+        76,
+        178,
+        76
+      ],
+      [
+        25,
+        76,
+        153
+      ],
+      [
+        204,
+        204,
+        204
+      ]
+    ],
+    "tile": 768,
+    "stride": 384,
+    "upscale": 2,
+    "tta": "D4",
+    "blend": "uniform probability mean",
+    "batch_size": 8,
+    "probability_layout": "C,H,W",
+    "probability_dtype": "float32",
+    "resolution": "original image",
+    "mIoU": null,
+    "count": 1,
+    "inputs": [
+      "A170_step4_sample3_image.png"
+    ],
+    "save_probs": true,
+    "note": "No ground-truth metrics computed by this inference command."
+  }
+}

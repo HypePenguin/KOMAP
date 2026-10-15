@@ -1,0 +1,13 @@
+Traceback (most recent call last):
+  File "C:\Users\SSAFY\AppData\Local\Programs\Python\Python312\Lib\site-packages\torch\serialization.py", line 1004, in save
+    _save(
+  File "C:\Users\SSAFY\AppData\Local\Programs\Python\Python312\Lib\site-packages\torch\serialization.py", line 1313, in _save
+    zip_file.write_record(name, storage, num_bytes)
+RuntimeError: ios_base::badbit set: iostream stream error
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+object address  : 00000279D5B3C340
+object refcount : 3
+object 

@@ -1,0 +1,9 @@
+# Install CUDA-enabled torch/torchvision first; see environment.json.
+numpy==2.5.2
+opencv-python-headless==5.0.0.93
+pillow==12.3.0
+scikit-image==0.26.0
+scikit-learn==1.9.1
+scipy==1.18.1
+segmentation_models_pytorch==0.5.0
+timm==1.0.22

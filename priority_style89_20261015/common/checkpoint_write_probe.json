@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "source": "C:\\Users\\SSAFY\\Desktop\\KOMAP\\original_split_retrain\\runs\\centerline_baseline\\last.pt",
+  "source_sha256": "7a250cdb2f2d5234669e3ad5d762bfa0dc44b4b53fe4e805d7fc4873fdad7e5f",
+  "probe": "C:\\Users\\SSAFY\\Desktop\\KOMAP\\priority_style89_20261015\\common\\checkpoint_write_probe.pt",
+  "probe_sha256": "34f7694655a468c2310d5244527bfb909458053ef9d142d01a3a51d8905b9e47",
+  "bytes": 355755568,
+  "epoch": 85,
+  "model_and_ema_tensors_equal": true,
+  "optimizer_scheduler_scaler_present": true
+}

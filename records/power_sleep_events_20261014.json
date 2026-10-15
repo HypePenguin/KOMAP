@@ -1,0 +1,12 @@
+[
+  {
+    "TimeCreated": "2026-10-13T20:02:19.5551608+09:00",
+    "Id": 42,
+    "Message": "시스템이 절전 모드로 전환하는 중입니다.\r\n\r\n절전 모드 전환 이유: Hibernate from Sleep - Fixed Timeout"
+  },
+  {
+    "TimeCreated": "2026-10-13T18:01:12.8635977+09:00",
+    "Id": 42,
+    "Message": "시스템이 절전 모드로 전환하는 중입니다.\r\n\r\n절전 모드 전환 이유: Application API"
+  }
+]

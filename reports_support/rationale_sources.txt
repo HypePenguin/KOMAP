@@ -1,0 +1,210 @@
+KOMAP 실험별 선택 이유 — 보고서 표용 근거 메모 (2026-10-15)
+범위: 문헌과 이전에 확인한 구현에 근거한 설명. 이번 작업에서는 GPU 작업·실행 상태를 읽거나 변경하지 않았다.
+
+작성 기준
+- [기록 확인]은 원메모에 목적이나 비교 질문이 실제로 적힌 경우에만 쓴다. 방법명·수치·결과만 남은 행에 사후 추론을 당시 의도로 적지 않는다.
+- 아래 '왜 바꾸는가'는 원칙적으로 [원리 기반 해석]이다. 해당 날짜 메모에 같은 목적이 확인되면 그 부분만 [기록 확인]으로 승격한다.
+- [관찰 결과]는 실제 측정값과 유효한 동일 분할 비교로 따로 작성한다. 점수가 올랐다는 사실만으로 그 기법이 원인임을 확정하지 않는다.
+- '왜 이 변수인가'는 시험할 가설이며, '왜 정확히 이 수치인가'와 다르다. 반경2·skeleton 가중치0.1에는 R3의 선례가 있지만 KOMAP 최적성은 입증되지 않았다.
+- 권장 참고문헌 14개: 아래 R1–R14. 이전 목록의 CutMix·clDice는 직접 구현과 거리가 있어 본문 중심 인용에서 제외한다. 원문 알고리즘과 직접 구현이 다른 경우 표에 '적응/관련 원리'로 표기한다.
+
+표 권장 열
+날짜/실험 | 바꾼 변수 | 해결하려는 문제(선택 이유) | 어떻게 작용하는가 | 확인된 결과 | 근거/한계
+기법 표에는 예상 효과를, 결과 표에는 실제 관찰을 쓴다. '성능을 높이기 위해'보다 '작은 E 성분의 누락을 줄일 수 있는지 확인'처럼 평가 질문을 적는다.
+
+전체 기법 매핑
+
+1. D4 학습 증강
+원리: 정방형 패치의 0/90/180/270도 회전 × 반전으로 영상과 정답을 함께 변환한다.
+왜 그 변수: [원리 기반 해석] 조직의 방향이 클래스 자체를 바꾸지 않는다는 가정 아래, 특정 방향에 의존한 분류를 줄일 수 있는지 시험한다.
+문헌: R1은 현미경 분할에서 회전·변형 불변성의 필요성과 증강을 설명한다.
+수치/해석 한계: D4 8가지라는 구체적 구성은 현재 구현이다. 방향이 물리적으로 중요한 촬영 조건에서는 불변성 가정부터 확인해야 한다. 증강 후 표본 수가 늘어도 독립 원본 수가 늘지는 않는다.
+
+2. D4 추론 평균(TTA)
+원리: 각 방향의 예측확률을 원좌표로 역변환하고 평균한다.
+왜 그 변수: [원리 기반 해석] 한 모델의 방향별 예측 변동을 평균하여 단일 방향 예측의 편향을 줄일 수 있는지 비교한다.
+문헌: R1의 회전 예측 평균, R11의 변환 입력 확률 평균.
+수치/해석 한계: 원 U-Net v1은 7 rotated versions라고 서술한다. '원 논문의 D4 8개 그대로'라고 쓰지 않는다. 추론량이 증가하며 개선은 측정으로 확인한다.
+
+3. 768 문맥/큰 타일과 384→768 확대의 구별
+원리: 같은 배율에서 타일을 넓히면 더 많은 원본 주변 정보를 본다. 같은384 crop을768로 확대하는 것은 동일 시야를 더 촘촘한 격자로 표시하는 일이다.
+왜 그 변수: [원리 기반 해석] 큰 시야는 E/Al3Ni/주변상 관계를 볼 수 있는지, 확대는 얇은 구조가 네트워크의 축소 과정에서 너무 작아지는 것을 완화하는지 각각 시험한다.
+문헌: R1의 문맥–위치정확도 절충, R11의 crop/context 실험.
+수치/해석 한계: 현재 추론 입력을 x2 확대하므로 tile768의 원본 시야는384, tile512는256이다. '384를768로 키워 문맥이 두 배'는 잘못이다. 픽셀 확대는 새로운 광학 정보를 만들지 않는다. R11의 큰 crop 이득은 atrous 구조에서 확인되어 U-Net의 동일 수치 근거가 아니다.
+
+4. 겹침 타일(Overlap)
+원리: 인접 타일 예측을 겹치는 영역에서 평균해 큰 영상을 처리한다.
+왜 그 변수: [원리 기반 해석] 패치 경계 위치에 따른 예측 차이를 줄이면서 GPU 메모리 범위에 맞게 추론하려는 선택이다.
+문헌: R1 Fig.2 overlap-tile.
+수치/해석 한계: 현재 stride=tile/2, 균일 확률 평균이다. 원 U-Net의 valid-convolution overlap-tile과 완전히 같지 않으며 Hann/Gaussian blending은 없다. overlap0.5의 최적성은 별도 비교가 필요하다.
+
+5. Center/Skeleton recall
+원리: E 정답 골격을 반경2로 팽창한 영역에서 E 예측확률의 recall을 높이는 보조항이다.
+왜 그 변수: [원리 기반 해석] 면적 손실에서 상대적으로 작은 얇은 E 연결부의 누락에 직접 학습 신호를 주려는 선택이다. 원메모가 Skeleton Recall Loss 논문을 명시했다는 사실은 [기록 확인]으로 쓸 수 있다.
+문헌: R3 §3.2, Algorithm1, Eq1, §4.4 Eq2.
+수치/해석 한계: R3에는 diamond 반경2와 weight0.1 선례가 있다. 현재는 E-only, 최종변환 후 골격 재계산, E 내부 교집합, E존재 샘플 평균으로 적응했다. 원논문의 모든 foreground/multiclass 처리와 다르다. clDice 직접 구현이 아니다.
+
+6. Dense E recall
+원리: 중심선 대신 E 영역 전체의 예측확률에 recall 보조항을 적용한다.
+왜 그 변수: [원리 기반 해석] 연결부만 강조하는 것과 전체 E 면적의 누락을 강조하는 것 중 어떤 신호가 유리한지 비교한다. 중심선 생성 오차의 영향을 줄일 가능성도 가설이다.
+문헌: R3의 recall 구성요소와 비교하여 설명하되 dense 변경 자체는 자체 변형이다.
+수치/해석 한계: dense를 '더 정확한 topology loss'라고 부르면 안 된다. 현재 low_lr_context_paste는 dense recall과 LR·paste가 함께 바뀌므로 단일 효과 분리가 안 된다.
+
+7. Boundary loss / 경계 강조
+원리: 영역 면적 중심 목적함수에 경계 위치 정보를 보완한다.
+왜 그 변수: [원리 기반 해석] 작은 상에서 경계의 몇 픽셀 이동이 큰 면적 오차가 되는 문제를 따로 다루기 위한 실험이다.
+문헌: R10은 경계 간 거리 기반 손실을 softmax 영역 적분으로 표현하여 region loss를 보완한다.
+수치/해석 한계: 기록의 'boundary'가 signed distance boundary loss인지, 경계 band 가중 CE인지 먼저 구분한다. band 가중이면 R10 그대로 구현했다고 쓰지 않는다. 현재 최종 experiment.py의 CE+Dice+recall에는 별도 boundary-distance 항이 없다.
+
+8. Elastic 변형
+원리: 공간적으로 매끄러운 변위장으로 영상과 정답을 함께 휜다.
+왜 그 변수: [원리 기반 해석] 국소 형상·굽음 변동을 늘려 특정 곡선 모양에 과적합하는지 시험한다.
+문헌: R1 §3.1; R14 ElasticTransform 연산 정의.
+수치/해석 한계: 조직의 실제 변동을 모사한다는 가정이다. 강한 변형/보간은 얇은 E 연결부를 끊거나 면적을 바꿀 수 있다. alpha/sigma/확률의 최적값은 원기록 및 검증 대상이며 현재 최종5변형 코드에 elastic은 없다.
+
+9. Optical distortion
+원리: 렌즈/카메라의 방사형 왜곡 모형에 따라 좌표를 바꾼다.
+왜 그 변수: [원리 기반 해석] 촬영의 위치별 기하 차이를 가정하고 그 변화에 대한 내성을 시험한다.
+문헌: R14 OpticalDistortion 공식 정의.
+수치/해석 한계: 광학 왜곡은 blur와 다르다. 실제 KOMAP 촬영계의 왜곡을 측정했다는 근거가 없으면 '실제 렌즈 왜곡을 복원했다'고 쓰지 않는다. 계수·확률은 실험 설정이다.
+
+10. Blur
+원리: 주변 픽셀을 필터로 혼합하여 고주파 성분을 줄인다.
+왜 그 변수: [원리 기반 해석] 초점/선명도 변화에 견디거나 고주파 잡음에 덜 의존하는지 시험한다.
+문헌: R12 Gaussian filtering 공식 정의.
+수치/해석 한계: 작은 E 경계 자체도 고주파여서 과하면 중요한 증거가 사라진다. Gaussian blur는 실제 현미경 PSF를 측정·재현한 것과 다르다. kernel/sigma의 타당성은 별도 검증한다.
+
+11. FDA
+원리: source 영상의 Fourier 위상을 유지하며 저주파 amplitude 일부를 다른 영상의 것으로 교환한다.
+왜 그 변수: [원리 기반 해석] 외관·조명 차이에 해당할 수 있는 저수준 통계를 바꿔 특정 색/밝기 환경 의존을 줄이는지 시험한다.
+문헌: R6.
+수치/해석 한계: beta/교환 주파수 범위와 donor 정책은 기록에서 확인한다. 현재 phase_style_exchange는 FFT를 쓰지 않아 FDA와 별도 행으로 설명해야 한다. 원 FDA는 unsupervised domain adaptation 맥락이므로 동종 훈련데이터 증강은 적응이다.
+
+12. Crop/관심 영역 sampling
+원리: 원본에서 일부 시야를 추출해 제한된 입력 크기로 학습한다.
+왜 그 변수: [원리 기반 해석] GPU 제약 아래 여러 위치를 노출하고, crop 크기와 대상 포함 확률을 조절하여 세부 형태·주변 문맥·E 관찰 빈도의 균형을 비교한다.
+문헌: R1; R11.
+수치/해석 한계: 균일 랜덤 crop과 E-rich crop은 별도 전략이다. 현재 확인한 코드는 균일 원본/위치 sampling이므로 근거 없이 E-rich sampler라 쓰지 않는다. 작은 crop은 주변 문맥 손실, 조건부 crop은 실제 클래스 분포 변화를 낳을 수 있다.
+
+13. Copy-paste/context paste
+원리: donor E 성분과 정답을 recipient에 함께 이식한다.
+왜 그 변수: [원리 기반 해석] 작은 E가 나타나는 위치·배경 조합을 늘리되 Al 배치 조건으로 비현실적 삽입을 줄여보려는 선택이다.
+문헌: R4.
+수치/해석 한계: 현재 E성분4–300픽셀·최대8개·Al98%·색차보정·확률0.58은 자체 규칙이다. instance segmentation 논문이 해당 규칙의 우수성을 증명하지 않는다. 낮은 LR와 동시에 바뀌면 paste 단독 기여를 추정할 수 없다.
+
+14. Multiscale
+원리: 학습 입력 크기를 무작위 변경하거나 여러 scale의 추론확률을 합친다.
+왜 그 변수: [원리 기반 해석] 작은 E와 큰 상의 문맥을 서로 다른 상대 크기에서 관찰할 때 누락/혼동이 줄어드는지 시험한다.
+문헌: R11 §4.2의 multi-scale/flip 확률 평균, Fig.2의 scale별 문맥·세부 설명.
+수치/해석 한계: train scale jitter와 test multi-scale ensemble은 분리한다. DeepLab의 multi-rate ASPP 구조를 사용했다는 의미도 아니다. 현재 고정 x2 +D4는 여러 배율의 추론 앙상블이 아니다.
+
+15. Illumination / E-protected illumination
+원리: 밝기·contrast·공간 gradient를 바꾸되 E 인접부를 보호한다.
+왜 그 변수: [원리 기반 해석] 촬영 명암에 대한 내성을 늘리면서 얇은 E의 미세한 밝기 증거가 훼손되는 것을 줄일 수 있는지 시험한다.
+문헌: R1의 gray-value variation 증강은 일반 동기. E 보호 마스크는 자체 설계다.
+수치/해석 한계: 보호 dilation3·contrast0.95–1.05·gradient±0.04·확률0.56은 확인된 코드 설정이며 논문 최적값이 아니다. 색상/명암 변화가 실제 물성·상 정보까지 바꾸는 위험은 성능/시각 검증으로 판단한다.
+
+16. CLAHE
+원리: 작은 타일별 히스토그램 평활화를 수행하고 contrast 제한으로 잡음 증폭을 줄인다.
+왜 그 변수: [원리 기반 해석] 전역 밝기는 비슷해도 국소 대비가 낮은 영역의 상 경계를 드러내는 데 도움이 되는지 시험한다.
+문헌: R12 CLAHE 공식 문서.
+수치/해석 한계: 처리 자체가 segmentation 개선을 보장하지 않는다. 과한 clipLimit/작은 tile은 미세 질감과 잡음도 증폭할 수 있다. RGB별 적용인지 밝기 채널만 적용인지, augmentation인지 고정 전처리인지 기록으로 확인한다.
+
+17. Histogram matching
+원리: reference 영상의 채널별 누적 분포에 맞춰 입력 intensity를 재배치한다.
+왜 그 변수: [원리 기반 해석] 촬영 조건 사이의 전체 색/밝기 분포 차이를 줄이거나 학습 중 외관 다양성을 만들어볼 수 있다.
+문헌: R13 공식 예제.
+수치/해석 한계: CLAHE는 국소 대비 조절이고 matching은 reference 분포 정합이므로 같은 기법이 아니다. 클래스 비율이 다른 영상을 전역 matching하면 클래스별 색 관계가 왜곡될 수 있다. reference가 훈련 집합인지 반드시 확인한다.
+
+18. Softmask 기하 증강
+원리: 클래스 정수값 대신 one-hot 채널을 bilinear 회전·resize하여 경계의 혼합 표적을 만들고 정규화한다.
+왜 그 변수: [원리 기반 해석] 작은 기하 변환 후 hard nearest label만 사용했을 때의 경계 불연속을 완화하면서 얇은 E의 학습 신호를 유지할 수 있는지 시험한다.
+문헌: R12 interpolation 연산 정의; R1 기하 증강 일반 동기.
+수치/해석 한계: 'softmask이므로 연결성을 보장'하지 않는다. 현재 면적0.85–1.15·성분수0.6–1.6 승인 조건을 둔 자체 보완이다. ±3–7도·32 crop·확률0.5는 개별 설정이다.
+
+19. Phase/class style exchange
+원리: 재료상별 RGB 중앙값/IQR을 donor와 맞춰 일부 혼합한다.
+왜 그 변수: [원리 기반 해석] 전체 영상 색 정합 대신 같은 상끼리 외관을 교환하여 클래스 의미를 유지하면서 색·대비 의존을 줄일 수 있는지 시험한다.
+문헌: R5는 통계적 style transfer의 관련 동기. 현재 구현은 AdaIN 직접 재현이 아니다.
+수치/해석 한계: 'phase'는 재료상이며 Fourier phase가 아니다. feature 평균/분산 대신 RGB median/IQR, ratio0.75–1.25, 혼합0.2–0.4,확률0.47을 사용한다. 이 수치와 성능은 논문 보장이 없다.
+
+20. 낮은 LR / encoder·decoder 차등 LR
+원리: 업데이트 폭을 줄이거나 사전학습 encoder와 새 decoder의 업데이트 크기를 다르게 설정한다.
+왜 그 변수: [원리 기반 해석] 이미 얻은 표현을 크게 손상시키지 않으면서 새 증강 분포에 적응하는지 시험한다.
+문헌: R9는 optimizer/weight decay의 일반 원리이며 정확한 낮은 LR 선택의 직접 실증은 아니다.
+수치/해석 한계: 낮추면 적응이 부족할 수도 있다. encoder1e-6/decoder1e-5 또는10배 비율의 최적성은 별도 비교가 필요하다. copy-paste와 묶인 변화의 결과를 LR 단독 효과로 쓰지 않는다.
+
+21. EMA / AdamW / cosine
+원리: 각각 시간에 따른 가중치 평활화, decoupled weight decay, 학습 후반 업데이트 축소.
+왜 그 변수: [원리 기반 해석] 최적화·선택의 변동을 줄이는 공통 학습 조건이다. 증강법별 차이를 볼 때 동일하게 유지할 공통 요인으로 설명한다.
+문헌: R7, R9, R8.
+수치/해석 한계: EMA0.999·WD0.05·최대100epoch/eta_min1e-7은 이 실험의 수치다. Mean Teacher consistency loss와 warm restart는 구현하지 않는다. patience20/minDelta0.02는 별도 조기종료 규칙이다.
+
+권장 참조 14개(논문11개, 공식 개발자 문서3개; 문서 하위 페이지는 같은 문서 묶음)
+[R1] Ronneberger, Fischer, Brox (2015). U-Net: Convolutional Networks for Biomedical Image Segmentation.
+https://arxiv.org/abs/1505.04597
+직접 지원: encoder-decoder 문맥/위치 결합, 탄성·명암 증강, overlap-tile, 회전 예측 평균. 현재 설정 전체의 동일 재현은 아님.
+
+[R2] Tan, Le (2021). EfficientNetV2: Smaller Models and Faster Training. ICML.
+https://proceedings.mlr.press/v139/tan21a.html
+직접 지원: 효율적 encoder 설계. 본 4클래스 합금 분할에서 최적 backbone이라는 증거는 아님.
+
+[R3] Kirchhoff, Rokuss, Roy, Kovacs, Ulrich, Wald, Zenk, Vollmuth, Kleesiek, Isensee, Maier-Hein (2024). Skeleton Recall Loss for Connectivity Conserving and Resource Efficient Segmentation of Thin Tubular Structures. ECCV.
+https://arxiv.org/html/2404.03010v2
+직접 지원: GT tubed skeleton/CPU 계산/soft recall; radius2,weight0.1 선례. E-only 적용은 적응.
+
+[R4] Ghiasi et al. (2021). Simple Copy-Paste Is a Strong Data Augmentation Method for Instance Segmentation. CVPR.
+https://openaccess.thecvf.com/content/CVPR2021/html/Ghiasi_Simple_Copy-Paste_Is_a_Strong_Data_Augmentation_Method_for_Instance_CVPR_2021_paper.html
+직접 지원: 객체와 mask를 함께 합성하는 증강. E-only context 조건은 자체 규칙.
+
+[R5] Huang, Belongie (2017). Arbitrary Style Transfer in Real-Time With Adaptive Instance Normalization. ICCV.
+https://openaccess.thecvf.com/content_iccv_2017/html/Huang_Arbitrary_Style_Transfer_ICCV_2017_paper.html
+관련 동기: 통계에 의한 style 조절. 현재 median/IQR RGB 방식은 AdaIN이 아님.
+
+[R6] Yang, Soatto (2020). FDA: Fourier Domain Adaptation for Semantic Segmentation. CVPR.
+https://openaccess.thecvf.com/content_CVPR_2020/html/Yang_FDA_Fourier_Domain_Adaptation_for_Semantic_Segmentation_CVPR_2020_paper.html
+직접 지원: Fourier 저주파 amplitude 교환. RGB phase-style과 구분.
+
+[R7] Tarvainen, Valpola (2017). Mean teachers are better role models: Weight-averaged consistency targets improve semi-supervised deep learning results. NeurIPS.
+https://proceedings.neurips.cc/paper_files/paper/2017/hash/68053af2923e00204c3ca7c6a3150cf7-Abstract.html
+관련 구성요소: EMA weights. 현재 consistency loss/반지도학습은 없음.
+
+[R8] Loshchilov, Hutter (2017). SGDR: Stochastic Gradient Descent with Warm Restarts. ICLR.
+https://arxiv.org/abs/1608.03983
+직접 지원: 식5 cosine annealing. 현재 warm restart 없음.
+
+[R9] Loshchilov, Hutter (2019). Decoupled Weight Decay Regularization. ICLR.
+https://arxiv.org/abs/1711.05101
+직접 지원: AdamW. 현재 WD0.05, 차등LR의 최적값은 아님.
+
+[R10] Kervadec, Bouchtiba, Desrosiers, Granger, Dolz, Ben Ayed (2019). Boundary loss for highly unbalanced segmentation. MIDL, PMLR102:285–296.
+https://proceedings.mlr.press/v102/kervadec19a.html
+직접 지원: contour distance를 region-integral loss로 표현해 region loss를 보완. 단순 boundary-band CE와는 다름.
+
+[R11] Chen, Papandreou, Schroff, Adam (2017). Rethinking Atrous Convolution for Semantic Image Segmentation.
+https://arxiv.org/abs/1706.05587
+https://arxiv.org/pdf/1706.05587
+직접 지원: §4.1 crop/context, §4.2 multi-scale/flip 확률 평균. DeepLab 고유 ASPP 결과를 현재 U-Net에 그대로 전이해 단정하지 않음.
+
+[R12] OpenCV 공식 Image Processing 문서 묶음(연도 미지정).
+CLAHE/Histogram equalization:
+https://docs.opencv.org/4.x/d5/daf/tutorial_py_histogram_equalization.html
+Gaussian blur:
+https://docs.opencv.org/4.x/d4/d13/tutorial_py_filtering.html
+Bilinear/nearest interpolation:
+https://docs.opencv.org/4.x/da/d54/group__imgproc__transform.html
+직접 지원: 연산 정의. segmentation 성능 향상 논문은 아님. 서로 다른 연산을 하나의 '최적화'로 혼동하지 않음.
+
+[R13] scikit-image 공식 Histogram matching 예제(연도 미지정).
+https://scikit-image.org/docs/stable/auto_examples/color_exposure/plot_histogram_matching.html
+직접 지원: reference 채널 분포 정합, 촬영 조건 차이에 대한 가벼운 normalization 용도. 본 데이터 개선 보장 없음.
+
+[R14] Albumentations 공식 Geometric Distortion 문서(연도 미지정).
+https://albumentations.ai/docs/api-reference/albumentations/augmentations/geometric/distortion/
+직접 지원: ElasticTransform/OpticalDistortion의 좌표 변환과 영상·정답 동시 변환 정의. 최신 API 기본값을 과거 코드의 실제 설정으로 대입하지 않음.
+
+마지막 확인
+- Boundary/elastic/optical/blur/FDA/CLAHE/histogram/multiscale는 과거 행 해석에 쓰는 항목이다. 모두 현재 최종 모델에 포함됐다고 쓰지 않는다.
+- 반복적으로 같은 전략이 나타나도 적용 확률/강도/손실 가중치/초기화/분할이 다르면 해당 행의 실제 변경점을 따로 적는다.
+- 원기록이 말하지 않은 동기는 '이론상', '가능성을 비교', '원리상 해석'으로 적는다. '그 문제를 발견해서 선택했다'는 과거 사실로 꾸미지 않는다.
+
